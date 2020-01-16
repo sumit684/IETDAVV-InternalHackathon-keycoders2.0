@@ -14,18 +14,18 @@ The Directorate of Higher Education has **7 Government Colleges** and **26 aided
 
  The said application should have the following features:-
 
-(a) Allow the Alumni members to register themselves
+(a) Allow the **Alumni members to register** themselves
 
-(b) Allow colleges to verify and authenticate their registered alumni
+(b) Allow **colleges to verify and authenticate** their registered alumni
 
-(c) Provision for alumni members to update their details
+(c) Provision for **alumni members to update** their details
 
-(d) Allow the colleges to search details based on criteria such as year, subject, etc.
+(d) Allow the **colleges to search details** based on criteria such as _year, subject_, etc.
 
-(e) Allow the Directorate to search details based on criteria such as colleges, year, subject, etc.
+(e) Allow the **Directorate to search** details based on criteria such as colleges, year, subject, etc.
 
-(f) Send messages and emails to alumni members
+(f) **Send messages and emails** to alumni members
 
-(g) Group chats, create events, and publish notices on the portal
+(g) **Group chats, create events, and publish notices** on the portal
 
-(h) Security features with login for every user.
+(h) **Security features** with login for every user.
