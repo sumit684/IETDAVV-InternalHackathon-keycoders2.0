@@ -9,7 +9,7 @@ class Alumni extends CI_Controller {
 
 	public function index()
 	{
-		echo "This is Alumni Login Page";
+		$this->load->view('alumni/registration_form');
 	}
 
 	public function alumniLogin(){
