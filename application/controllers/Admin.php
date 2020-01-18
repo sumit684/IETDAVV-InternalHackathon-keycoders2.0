@@ -27,7 +27,9 @@ class Admin extends CI_Controller {
 	}
 
 	public function requests(){
-		$this->Admin_Model->getnewstudents();
+		$data['pending']=$this->Admin_Model->getnewstudents();
+		$this->load->view('admin/college/requests',$data);
+
 	}
 
 	public function events(){
