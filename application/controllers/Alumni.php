@@ -76,4 +76,12 @@ class Alumni extends CI_Controller {
 	public function user(){
 		echo "This is admin user_page";
 	}
+
+	public function events(){
+		echo "events page";
+	}
+
+	public function chat(){
+		echo "chat page";
+	}
 }

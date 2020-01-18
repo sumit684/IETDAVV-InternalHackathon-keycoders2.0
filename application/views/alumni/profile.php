@@ -36,7 +36,7 @@
 				<div class="collapse navbar-collapse" id="navbarColor01">
 					<ul class="navbar-nav mr-auto">
 						<li class="nav-item createTest">
-							<a class="nav-link" href="<?=base_url()?>createTest">Events</a>
+							<a class="nav-link" href="<?=base_url()?>alumni/events">Events</a>
 						</li>
 						<!-- <li class="nav-item addQuestion">
 							<a class="nav-link" href="<?=base_url()?>addQuestion">Add Questions</a>
@@ -48,10 +48,10 @@
 							<a class="nav-link" href="<?=base_url()?>admin/Student/batchesPage">Manage Batches</a>
 						</li> -->
 						<li class="nav-item student">
-							<a class="nav-link" href="<?=base_url()?>admin/Student/studentPage">Profile</a>
+							<a class="nav-link" href="<?=base_url()?>alumni/profile">Profile</a>
 						</li>
                         <li class="nav-item student">
-							<a class="nav-link" href="<?=base_url()?>admin/Student/studentPage">Chat</a>
+							<a class="nav-link" href="<?=base_url()?>alumni/chat">Chat</a>
 						</li>
 					</ul>
 					<div class="float-right">
