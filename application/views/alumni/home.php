@@ -70,79 +70,47 @@
 
 
 <div class="container" id="admin-home-container">
-	<div class="row mt-4">
+	<div class="row mt-4" style="padding:5px;">
 		<div class="col-md-6">
-			<div class="card">
+			<div class="card bg-info" style="color:white;border: 1px solid rgb(255, 255, 255);">
 				<div class="card-body">
-					<h4 class="card-title">Test Section:</h4>
-					<p class="card-text">You can Create New Test and also manage already created and previous test.</p>
-					<a href="<?=base_url()?>createTest" class="m-1 card-link btn btn-light btn-outline-dark">Create New Test</a>
-					<a href="<?=base_url()?>admin/Test/showAllTest" class="m-1 card-link btn btn-light btn-outline-dark">Manage Other Tests</a>
+					<h4 class="card-title">Aakshank 2k20</h4>
+					<p class="card-text">Cultural fest on 21/3/20</p>
+					<!-- <a href="<?=base_url()?>createTest" class="m-1 card-link btn btn-light btn-outline-dark">Create New Test</a>
+					<a href="<?=base_url()?>admin/Test/showAllTest" class="m-1 card-link btn btn-light btn-outline-dark">Manage Other Tests</a> -->
 				</div>
 			</div>
 		</div>
 		<div class="col-md-6">
-			<div class="card">
+			<div class="card bg-info" style="color:white;border: 1px solid rgb(255, 255, 255);">
 				<div class="card-body">
-					<h4 class="card-title">Batches and Students:</h4>
-					<p class="card-text">You can manage batches and students from here. You can also view details about them.</p>
-					<a href="<?=base_url()?>admin/Student/batchesPage" class="m-1 card-link btn btn-light btn-outline-dark">Manage Batches</a>
-					<a href="<?=base_url()?>admin/Student/studentPage" class="m-1 card-link btn btn-light btn-outline-dark">Manage Students</a>
+					<h4 class="card-title">INVENTO 2K19 </h4>
+					<p class="card-text">Invento on 12/12/19</p>
+					<!-- <a href="<?=base_url()?>admin/Student/batchesPage" class="m-1 card-link btn btn-light btn-outline-dark">Manage Batches</a>
+					<a href="<?=base_url()?>admin/Student/studentPage" class="m-1 card-link btn btn-light btn-outline-dark">Manage Students</a> -->
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="row mt-2">
+	<div class="row mt-2" style="padding:5px;">
 		<div class="col-md-6">
-			<div class="card">
+			<div class="card bg-info" style="color:white;border: 1px solid rgb(255, 255, 255);">
 				<div class="card-body">
-					<h4 class="card-title">Subjects and Chapters:</h4>
-					<p class="card-text">You can manage Subjects and Chapters from here. You can also view details about them.</p>
-					<a href="<?=base_url()?>admin/Subject/showSubject" class="m-1 card-link btn btn-light btn-outline-dark">Manage Subjects/Chapters</a>
+					<h4 class="card-title">SIH HACKATHON</h4>
+                    <p class="card-text">SIH Internal Hackathon on 18/2/20</p>
+					<!-- <p class="card-text">You can manage Subjects and Chapters from here. You can also view details about them.</p>
+					<a href="<?=base_url()?>admin/Subject/showSubject" class="m-1 card-link btn btn-light btn-outline-dark">Manage Subjects/Chapters</a> -->
 				</div>
 			</div>
 		</div>
 		<div class="col-md-6">
-			<div class="card">
+			<div class="card bg-info" style="color:white;border: 1px solid rgb(255, 255, 255);">
 				<div class="card-body">
-					<h4 class="card-title">Questions and Pattern:</h4>
-					<p class="card-text">You can manage Questions and Test Pattern from here. You can also view details about them.</p>
-					<a href="<?=base_url()?>addQuestion" class="m-1 card-link btn btn-light btn-outline-dark">Add Questions</a>
+					<h4 class="card-title">ACM Meet</h4>
+					<p class="card-text">ACM Chapter Meet on 24/3/20</p>
+					<!-- <a href="<?=base_url()?>addQuestion" class="m-1 card-link btn btn-light btn-outline-dark">Add Questions</a>
 					<a href="<?=base_url()?>testPattern" class="m-1 card-link btn btn-light btn-outline-dark">Manage Pattern</a>
-					<a href="<?=base_url()?>editQuestion" class="m-1 card-link btn btn-light btn-outline-dark">Edit Questions</a>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="row mt-2">
-		<div class="col-md-6">
-			<div class="card">
-				<div class="card-body">
-					<h4 class="card-title">Operator:</h4>
-					<p class="card-text">You can manage data entry operator from here. You can also view details about them.</p>
-					<a href="<?=base_url()?>admin/Operator/add" class="m-1 card-link btn btn-light btn-outline-dark">Add Operator</a>
-					<a href="<?=base_url()?>admin/Operator/view" class="m-1 card-link btn btn-light btn-outline-dark">View Operators</a>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-6">
-			<div class="card">
-				<div class="card-body">
-					<h4 class="card-title">Ad Manager:</h4>
-					<p class="card-text">You can manage Test Screen Ads from here. You can do everything from one place only.</p>
-					<a href="<?=base_url()?>AdManager/manage_files" class="m-1 card-link btn btn-light btn-outline-dark">TestApp Ads</a>
-					<a href="<?=base_url()?>AdManager/manage_student_home_files" class="m-1 card-link btn btn-light btn-outline-dark">Student Ads</a>
-					<a href="<?=base_url()?>AdManager/manage_login_files" class="m-1 card-link btn btn-light btn-outline-dark">Login Ads</a>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-6">
-			<div class="card">
-				<div class="card-body">
-					<h4 class="card-title">Promocode:</h4>
-					<p class="card-text">You can manage promocodes from here. You can do everything from one place only.</p>
-					<a href="<?=base_url()?>Promocode/create" class="m-1 card-link btn btn-light btn-outline-dark">Create Promocode</a>
-					<a href="<?=base_url()?>Promocode/view" class="m-1 card-link btn btn-light btn-outline-dark">View Promocodes</a>
+					<a href="<?=base_url()?>editQuestion" class="m-1 card-link btn btn-light btn-outline-dark">Edit Questions</a> -->
 				</div>
 			</div>
 		</div>
