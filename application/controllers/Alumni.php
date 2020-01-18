@@ -22,8 +22,9 @@ class Alumni extends CI_Controller {
 		$result = $this->Alumni_Model->authenticateAlumni($data);
 		if($result){
 			$this->session->set_userdata($data);
-			$result['alumni'] = $result;
-			$this->load->view('alumni/home',$result);
+			// $result['alumni'] = $result;
+			// $this->load->view('alumni/home',$result);
+			$this->events();
 		}else{
 			$this->session->set_flashdata('error','Invalid Details');
 			$this->load->view('alumni/alumniLogin');
