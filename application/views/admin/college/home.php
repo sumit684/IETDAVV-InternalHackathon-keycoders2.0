@@ -69,24 +69,26 @@
 				</div>
 			</nav>
 		</div>
+
 <div >
 <u>	<h1 class="text-center pt-4">ALUMNI</h1></u>
 	
 </div>
 		<div class="row ml-4">
+
 			<nav class="navbar navbar-expand-sm bg-light navbar-light;" style="display: contents; margin-left: auto; margin-right: auto;">
 				<ul class="navbar-nav">
 					<li class="nav-item active">
-						 <div class="form-group">
-							 	<select class="form-control" name="year">
-							 		<option disabled selected>Year </option>
-							 		<option value="">1</option>
-							 		<option>2</option>
-							 		<option>3</option>
-							 		<option>4</option>
-							 		<option>5</option>
-							 	</select>
-							 </div>
+						<div class="form-group">
+							<select class="form-control" name="year">
+								<option disabled selected>Year </option>
+								<option value="">1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</div>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="#">Link</a>
@@ -113,40 +115,19 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<th scope="row">1</th>
-						<td>Mark</td>
-						<td>Otto</td>
-						<td>@mdo</td>
-						<td>@mdo</td>
-						<td>@mdo</td>
-					</tr>
 
-					<tr>
-						<th scope="row">1</th>
-						<td>Mark</td>
-						<td>Otto</td>
-						<td>@mdo</td>
-						<td>@mdo</td>
-						<td>@mdo</td>
-					</tr>
-					<tr>
-						<th scope="row">1</th>
-						<td>Mark</td>
-						<td>Otto</td>
-						<td>@mdo</td>
-						<td>@mdo</td>
-						<td>@mdo</td>
-					</tr>
-					<tr>
-						<th scope="row">1</th>
-						<td>Mark</td>
-						<td>Otto</td>
-						<td>@mdo</td>
-						<td>@mdo</td>
-						<td>@mdo</td>
-					</tr>
-					
+					<?php 
+					foreach ($alumni as $key => $data) {?>
+						<tr>
+							<th scope="row"><?=$key?></th>
+							<td><?= $data->enroll_no;?></td>
+							<td><?= $data->fname;?> <?=$data->lname?></td>
+							<td><?= $data->course;?></td>
+							<td><?= $data->year_adm;?>-<?= $data->year_leaving?></td>
+							<td><?= $data->email_id;?></td>
+						</tr>
+
+					<?php } ?>					
 				</tbody>
 			</table>
 
