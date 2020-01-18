@@ -5,17 +5,17 @@ class Admin_model extends CI_Model {
 	}
 	
 	public function getregisteredAlumni(){
-		echo "<pre>";
-		print_r($this->db->get_where('alumni',array('status'=>'1'))->result_array());
+		
+		$this->db->get_where('alumni',array('status'=>'1'))->result_array();
 		$result = $this->db->order_by("created", "asc");
-		print_r($result);
+		return $result;
+
 	}
 
 	public function getnewstudents(){
-		echo "<pre>";
 		$this->db->get_where('alumni',array('status'=>'0'))->result_array();
 		$result = $this->db->order_by("created", "asc");
-		print_r($result);
+		return $result;
 	}
 }
 ?>

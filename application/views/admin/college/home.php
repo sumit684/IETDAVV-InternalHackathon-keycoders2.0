@@ -22,10 +22,10 @@
 	</script>
 </head>
 <body>
-	<div class="container">
-		<div class="row">
-			<img src="<?= base_url()?>assets/img/logo.jpeg" class="m-3 col-lg-3 col-md-10 col-sm-10 col-xs-10 mr-auto img-fluid"  style="width:100%; height:100%;">
-			<div class="p-4">
+	<div class="container-fluid">
+		<div class="row" style="margin: 1em;">
+			<img src="<?= base_url()?>assets/img/logo.jpeg"  style="width:17%;">
+			<div class="p-4" style="float: left;">
 				<div class="h1">Govt. of Goa | <b style="color:#858080">Admin</b>
 				</div>
 			</div>
@@ -69,86 +69,87 @@
 				</div>
 			</nav>
 		</div>
+		<?php echo "<pre>"; print_r($alumni);?>
+
+		<div class="row">
+			<nav class="navbar navbar-expand-sm bg-light navbar-light">
+				<ul class="navbar-nav">
+					<li class="nav-item active">
+						 <div class="form-group">
+							 	<select class="form-control" name="year">
+							 		<option disabled selected>Year </option>
+							 		<option value="">1</option>
+							 		<option>2</option>
+							 		<option>3</option>
+							 		<option>4</option>
+							 		<option>5</option>
+							 	</select>
+							 </div>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Link</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Link</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link disabled" href="#">Disabled</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		<div class="pt-4">
+			<table class="table table-hover ">
+				<thead>
+					<tr>
+						<th scope="col">S.no</th>
+						<th scope="col">Enroll no.</th>
+						<th scope="col">Name</th>
+						<th scope="col">Course</th>
+						<th scope="col">Batch</th>
+						<th scope="col">Email ID</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row">1</th>
+						<td>Mark</td>
+						<td>Otto</td>
+						<td>@mdo</td>
+						<td>@mdo</td>
+						<td>@mdo</td>
+					</tr>
+
+					<tr>
+						<th scope="row">1</th>
+						<td>Mark</td>
+						<td>Otto</td>
+						<td>@mdo</td>
+						<td>@mdo</td>
+						<td>@mdo</td>
+					</tr>
+					<tr>
+						<th scope="row">1</th>
+						<td>Mark</td>
+						<td>Otto</td>
+						<td>@mdo</td>
+						<td>@mdo</td>
+						<td>@mdo</td>
+					</tr>
+					<tr>
+						<th scope="row">1</th>
+						<td>Mark</td>
+						<td>Otto</td>
+						<td>@mdo</td>
+						<td>@mdo</td>
+						<td>@mdo</td>
+					</tr>
+					
+				</tbody>
+			</table>
+
+
+		</div>
 	</div>
-
-
-
-	<div class="container" id="admin-home-container">
-		<div class="row mt-4">
-			<div class="col-md-6">
-				<div class="card">
-					<div class="card-body">
-						<h4 class="card-title">Test Section:</h4>
-						<p class="card-text">You can Create New Test and also manage already created and previous test.</p>
-						<a href="<?=base_url()?>createTest" class="m-1 card-link btn btn-light btn-outline-dark">Create New Test</a>
-						<a href="<?=base_url()?>admin/Test/showAllTest" class="m-1 card-link btn btn-light btn-outline-dark">Manage Other Tests</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-6">
-				<div class="card">
-					<div class="card-body">
-						<h4 class="card-title">Batches and Students:</h4>
-						<p class="card-text">You can manage batches and students from here. You can also view details about them.</p>
-						<a href="<?=base_url()?>admin/Student/batchesPage" class="m-1 card-link btn btn-light btn-outline-dark">Manage Batches</a>
-						<a href="<?=base_url()?>admin/Student/studentPage" class="m-1 card-link btn btn-light btn-outline-dark">Manage Students</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row mt-2">
-			<div class="col-md-6">
-				<div class="card">
-					<div class="card-body">
-						<h4 class="card-title">Subjects and Chapters:</h4>
-						<p class="card-text">You can manage Subjects and Chapters from here. You can also view details about them.</p>
-						<a href="<?=base_url()?>admin/Subject/showSubject" class="m-1 card-link btn btn-light btn-outline-dark">Manage Subjects/Chapters</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-6">
-				<div class="card">
-					<div class="card-body">
-						<h4 class="card-title">Questions and Pattern:</h4>
-						<p class="card-text">You can manage Questions and Test Pattern from here. You can also view details about them.</p>
-						<a href="<?=base_url()?>addQuestion" class="m-1 card-link btn btn-light btn-outline-dark">Add Questions</a>
-						<a href="<?=base_url()?>testPattern" class="m-1 card-link btn btn-light btn-outline-dark">Manage Pattern</a>
-						<a href="<?=base_url()?>editQuestion" class="m-1 card-link btn btn-light btn-outline-dark">Edit Questions</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row mt-2">
-			<div class="col-md-6">
-				<div class="card">
-					<div class="card-body">
-						<h4 class="card-title">Operator:</h4>
-						<p class="card-text">You can manage data entry operator from here. You can also view details about them.</p>
-						<a href="<?=base_url()?>admin/Operator/add" class="m-1 card-link btn btn-light btn-outline-dark">Add Operator</a>
-						<a href="<?=base_url()?>admin/Operator/view" class="m-1 card-link btn btn-light btn-outline-dark">View Operators</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-6">
-				<div class="card">
-					<div class="card-body">
-						<h4 class="card-title">Ad Manager:</h4>
-						<p class="card-text">You can manage Test Screen Ads from here. You can do everything from one place only.</p>
-						<a href="<?=base_url()?>AdManager/manage_files" class="m-1 card-link btn btn-light btn-outline-dark">TestApp Ads</a>
-						<a href="<?=base_url()?>AdManager/manage_student_home_files" class="m-1 card-link btn btn-light btn-outline-dark">Student Ads</a>
-						<a href="<?=base_url()?>AdManager/manage_login_files" class="m-1 card-link btn btn-light btn-outline-dark">Login Ads</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-6">
-				<div class="card">
-					<div class="card-body">
-						<h4 class="card-title">Promocode:</h4>
-						<p class="card-text">You can manage promocodes from here. You can do everything from one place only.</p>
-						<a href="<?=base_url()?>Promocode/create" class="m-1 card-link btn btn-light btn-outline-dark">Create Promocode</a>
-						<a href="<?=base_url()?>Promocode/view" class="m-1 card-link btn btn-light btn-outline-dark">View Promocodes</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+</body>
+</html>
