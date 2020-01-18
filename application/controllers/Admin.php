@@ -37,6 +37,8 @@ class Admin extends CI_Controller {
 	public function sendemail(){
 		echo "email is sent";
 	}
-
+    public function clgAdminLogin(){
+		$this->load->view('admin/college/clgAdminLogin');
+	}
 
 }

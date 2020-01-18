@@ -54,6 +54,10 @@
 					</form>
 				</div>
 				<div class="card-footer">
+				<div class="d-flex justify-content-center links">
+						Login as Alumni<a href="<?=base_url();?>alumni/index">Sign In</a>
+					</div>
+
 					<div class="d-flex justify-content-center links">
 						Don't have an account?<a href="#">Sign Up</a>
 					</div>

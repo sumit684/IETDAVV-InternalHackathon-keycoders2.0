@@ -46,7 +46,7 @@
 							<input type="password" class="form-control" name="login-password" placeholder="password">
 						</div>
 						<div class="row align-items-center remember">
-							<input type="checkbox">Remember Me
+							<input type="checkbox">Remember Metooo
 						</div>
 						<div class="form-group">
 							<input type="submit" value="Login" class="btn float-right login_btn">
@@ -54,6 +54,10 @@
 					</form>
 				</div>
 				<div class="card-footer">
+				<div class="d-flex justify-content-center links">
+						Login as Admin<a href="<?=base_url();?>Admin/clgAdminLogin">Sign In</a>
+					</div>
+
 					<div class="d-flex justify-content-center links">
 						Don't have an account?<a href="<?=base_url();?>Alumni/form">Sign Up</a>
 					</div>
@@ -61,7 +65,9 @@
 						<a href="#">Forgot your password?</a>
 					</div>
 				</div>
+
 			</div>
+			
 		</div>
 	</div>
 </body>
