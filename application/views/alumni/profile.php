@@ -78,6 +78,7 @@
                 <h3>Pratik Mehta</h3>
             </div>
         </div>
+        <!-- <?= print_r($alumni);?> -->
         <div class="col-md-9">
             <div class="jumbotron text-center">
                 <h1>IET-DAVV Indore M.P</h1>
