@@ -5,15 +5,15 @@ class Alumni_model extends CI_Model {
 	}
 	public function authenticateAlumni($data) {
 		if ($data == null){
-			return array("id"=>0);
+			return FALSE;
 		}
 		else
 		{
-			$result = $this->db->get_where('admin', $data); 
+			$result = $this->db->get_where('alumni', $data); 
 			if ($result->num_rows()) {
-				return array("id"=>$result->result_array()[0]["id"], "name"=>$result->result_array()[0]["name"], "college_id" => $result->result_array()[0]["college_id"]);
+				return $result->result_array();
 			}
-			return array("id"=>0);
+			return FALSE;
 		}
 	}
 

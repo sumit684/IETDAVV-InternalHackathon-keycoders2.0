@@ -10,7 +10,22 @@ class Admin extends CI_Controller {
 
 
 	public function index()
-	{	$data['alumni'] = $this->Admin_Model->getregisteredAlumni();
+	{	
+		$this->load->view('admin/college/clgAdminLogin');
+	}
+
+	public function adminLogin(){
+		$data = array("mob_no"=>$this->input->post('mob-no'), "password"=>$this->input->post('login-password'));
+		$result = $this->Admin_Model->authenticateAdmin($data);
+		if($result["id"]){
+			echo "Authentic Admin User";
+		}else{
+			echo "Non-Authentic Admin User";
+		}
+	}
+
+	public function home(){
+		$data['alumni'] = $this->Admin_Model->getregisteredAlumni();
 		$this->load->view('admin/college/home',$data);
 	}
 

@@ -640,3 +640,304 @@ input {
     padding: 50px 40px;
   }
 }
+
+/*captcha*/
+.btn-def {
+    border-radius: 2px;
+    border: solid 1px #5e6ab0;
+    transition: .5s ease;
+    margin: 0 auto;
+    color: #5e6ab0;
+    background-color: transparent;
+}
+
+.btn-def:hover {
+    color: #ffffff;
+    background-color: #5e6ab0;
+}
+
+.btn-def:hover a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.btn-def-op {
+    border-radius: 2px;
+    border: solid 1px #5e6ab0;
+    transition: .5s ease;
+    margin: 0 auto;
+    color: #ffffff;
+    background-color: #5e6ab0;
+}
+
+.btn-def-op:hover {
+    color: #5e6ab0;
+    background-color: #ffffff;
+}
+
+.btn-def-op:hover a {
+    color: #5e6ab0;
+    text-decoration: none;
+}
+
+ /*inner global start here*/
+ .table-sm{
+     max-width: 600px;
+    text-align: left;
+ }
+ .table-sm td {
+    padding: 5px 5px;
+    /* min-height: 79px; */
+        opacity: 0.9;
+}
+.marg-20-70{
+  margin: 50px auto 70px;
+}
+.marg-150-70{
+     padding: 150px 0 70px;
+}
+.sel {
+      border-radius: 3px;
+      height: 50px;
+      width: 100%;
+        border: solid 1px #413d4a54;
+      background-position:98%;
+          margin-bottom: 40px;
+}
+
+.passport-status table td, .passport-status table th, .imp-contacts table td, .imp-contacts table th {
+    padding: 20px 20px;
+    min-height: 50px;
+    border: solid 1px #413d4a54;
+        font-size: 1.143em;
+}
+.imp-contacts h6 , .passport-status h6{
+    min-height: 24px;
+    font-size: 1.286em;
+    font-weight: bold;
+    line-height: 1.22;
+}
+.header-history {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 130px;
+    margin: 0;
+    background: #fff;
+    z-index: 1;
+    padding-top:50px;
+}
+.header-history hr.head-border{
+        border-top: 6px solid #39429b;
+    width: 50px;
+    height: 0;
+    margin: 0 auto 15px;
+    border-radius: 5px;
+}
+
+
+
+.history-inner .fp-tableCell {
+    display: table-cell;
+    vertical-align: top;
+    width: 100%;
+    height: 100%;
+    padding-top: 30px;
+     height: calc(100vh - 133px) !important;
+}
+.fp-section.fp-table, .fp-slide.fp-table,
+.fp-scrollable{
+    height: calc(100vh - 133px) !important;
+}
+ /*inner global end here*/
+ /*Initiatives start here*/
+
+
+
+.init-page h4{ 
+    line-height:1.7;
+    
+}
+.init-page p{
+    text-align: justify;
+    font-size: 18px;
+    opacity: 0.9;
+    line-height: 1.67;
+    
+}
+/*Initiatives end here*/
+ /*press release page start here*/
+ .info-box{
+ border-radius: 3px;
+  box-shadow: 0 5px 15px 0 rgba(65, 61, 74, 0.08);
+  box-shadow: 0 5px 15px 0 var(--charcoal-grey-8);
+  border: solid 1px rgba(65,61,74, 0.3);
+  max-width: 976px;
+  margin: auto;
+}
+.wide-info-panel{
+  padding: 20px 0 0;
+  border-bottom:  solid 0.5px rgba(65,61,74, 0.3);
+}
+.tenders .wide-info-panel p{
+    margin:0;
+}
+.wide-info-panel:hover{
+  background-color: #ffffff;
+    box-shadow: 0px 0px 20px 3px rgba(65, 61, 74, 0.05);
+    border-bottom: solid 0.5px rgba(65, 61, 74, 0);
+    transform: scale(1.002, 1.05);
+    transition: .15s;
+}
+.pdf{
+    width: 30px;
+  height: 30px;
+}
+ /*press release page start here*/
+/*history page start here*/
+.scroll-d{
+  text-align: center;
+}
+
+.history-inner .his-date{
+  text-align: center;
+font-size: 1.286em;
+padding: 17px 0;
+  font-weight: bold;
+}
+.history-inner img{
+      height: 240px;
+    width: 100%;
+    object-fit: contain;
+}
+.history-inner .his-des h1{
+    font-size: 24px;
+    position: relative;
+    margin-bottom: 10px;
+}
+.history-inner .his-des h1 span{
+    font-size: 100px;
+    position: absolute;
+    opacity: 0.2;
+    top: -37px;
+    /* right: 267px; */
+    /* left: -20px; */
+    margin-left: -35px;
+
+  
+}
+.history-inner .his-des p{
+
+    opacity: 0.9;
+    line-height: 1.88;
+  }
+  .scroll-d img{
+  height: 33px;
+  margin: 95px 0 0;
+}
+/*history page end here*/
+
+
+
+
+
+/*online complaint page start here*/
+.form-group.m-b-30{
+margin-bottom:15px;  
+}
+/*.form-control.sty{*/
+/*  height: 45px;*/
+/*  border-radius: 3px;*/
+/*  border: solid 1px rgba(65, 61, 74, 0.5);*/
+/*}*/
+
+.form-control.sty {
+    height: 45px;
+    width: 100%;
+    border-radius: 3px;
+    border: solid 1px rgba(65, 61, 74, 0.5);
+}
+
+.form-control.styCp {
+    height: 50px;
+    border-radius: 3px;
+    border: solid 1px rgba(65, 61, 74, 0.5);
+}
+.cancel-btn{
+    height: 50px;
+    border-radius: 3px;
+    max-width: 210px;
+    margin-right: 10px;
+    margin: 25px 0 15px;
+}
+.mt-25{
+  margin-top: 25px;
+}
+.form-des p{
+  margin-bottom: 40px;
+      /*text-align: left;*/
+      font-size:1.286em;
+}
+.form-des p a{
+    color:#413d4a;
+}
+.agree-check{
+    line-height: 1.88;
+    letter-spacing: 0.2px;
+  
+}
+
+label {
+    font-size: 1.143em;
+    line-height: 1.44;
+}
+.cpt img{
+  /*width: 148px;*/
+  max-width:100%;
+  height: 47px;
+  border-radius: 3px;
+}
+.submit-btn{
+  height: 50px;
+  border-radius: 3px;
+    max-width: 210px;
+    margin-left: 10px;
+    margin: 25px 15px 15px;
+} 
+input.big-check[type=checkbox], input.big-check[type=radio] {
+    width: 20px;
+    height: 20px;
+}
+textarea.form-control {
+    height: 170px;
+    border-radius: 3px;
+    border: solid 1px rgba(65, 61, 74, 0.5);
+}
+/*online complaint page end here*/
+
+
+
+
+
+
+@media(min-width:768px) {
+    .inner-search{
+        position: absolute;
+    top: -63px;
+    left: 360px;
+}
+
+}
+@media(min-width:992px) and (max-width:1200px)
+{
+    .inner-search{
+
+    left: 455px;
+}
+}
+
+@media(max-width:991px){
+    .inner-search{
+        left:428px;
+    }
+}
