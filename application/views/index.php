@@ -33,7 +33,7 @@
 	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-		<div class="jumbotron text-center">
+		<div class="jumbotron text-center" style="height:100%">
         <div align="center">
 						<img src="<?=base_url()?>assets/img/logo.jpeg" class="img-fluid" style="max-height: 140px; ">
 					</div>
