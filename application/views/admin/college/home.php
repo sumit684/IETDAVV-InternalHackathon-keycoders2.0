@@ -19,9 +19,9 @@
 </head>
 <body>
 	<div class="container">
-		<div class="row">
-			<img src="<?= base_url()?>assets/img/logo.jpeg" class="m-3 col-lg-3 col-md-10 col-sm-10 col-xs-10 mr-auto img-fluid"  style="width:100%; height:100%;">
-			<div class="p-4">
+		<div class="row" style="margin: 1em;">
+			<img src="<?= base_url()?>assets/img/logo.jpeg"  style="width:17%;">
+			<div class="p-4" style="float: left;">
 				<div class="h1">Govt. of Goa | <b style="color:#858080">Admin</b>
 				</div>
 			</div>
@@ -53,14 +53,10 @@
 					</ul>
 					<div class="float-right">
 						<div class="btn-group">
-							<button type="button" class="btn btn-outline-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								Admin
+							<button type="button" class="btn btn-outline-light "  aria-haspopup="true" aria-expanded="false">
+								Pending Requests
 							</button>
-							<div class="dropdown-menu dropdown-menu-right">
-								<a class="dropdown-item change-password" href="<?=base_url()?>admin/Authenticate/changePasswordPage">Change password</a>
-								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="<?=base_url()?>adminLogout">Logout</a>
-							</div>
+							
 						</div>
 					</div>
 				</div>
