@@ -15,11 +15,15 @@ class Alumni extends CI_Controller {
 	public function alumniLogin(){
 		$data = array("mob_no"=>$this->input->post('mob-no'), "password"=>$this->input->post('login-password'));
 		$result = $this->Alumni_Model->authenticateAlumni($data);
-		if($result["id"]){
-			echo "Authentic Alumni";
+		if($result){
+			$this->session->set_userdata($data);
+			$result['alumni'] = $result;
+			$this->load->view('alumni/home',$result);
 		}else{
-			echo "Not Authentic Alumni";
+			$this->session->set_flashdata('error','Invalid Details');
+			$this->load->view('alumni/alumniLogin');
 		}
+		// print_r($result);
 	}
 
 	public function form(){
@@ -58,7 +62,11 @@ class Alumni extends CI_Controller {
 		$this->load->view('alumni/home');
 	}
 	public function profile(){
-		$this->load->view('alumni/profile');
+		$data = array('mob_no'=>$this->session->userdata('mob_no'),'password'=>$this->session->userdata('password'));
+		// print_r($data);
+		$result['alumni'] = $this->Alumni_Model->authenticateAlumni($data);
+		// print_r($result);
+		$this->load->view('alumni/profile',$result);
 	}
 	public function user(){
 		echo "This is admin user_page";
