@@ -16,9 +16,9 @@ class Alumni extends CI_Controller {
 		$data = array("mob_no"=>$this->input->post('mob-no'), "password"=>$this->input->post('login-password'));
 		$result = $this->Alumni_Model->authenticateAlumni($data);
 		if($result["id"]){
-			echo "sahi hai bhai";
+			echo "Authentic Alumni";
 		}else{
-			echo "galat hai bhai";
+			echo "Not Authentic Alumni";
 		}
 	}
 
