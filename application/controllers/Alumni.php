@@ -54,8 +54,12 @@ class Alumni extends CI_Controller {
 			echo "not registered";
 		}
 	}
-
-
+	public function home(){
+		$this->load->view('alumni/home');
+	}
+	public function profile(){
+		$this->load->view('alumni/profile');
+	}
 	public function user(){
 		echo "This is admin user_page";
 	}
