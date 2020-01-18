@@ -23,6 +23,9 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/college/home');
 	}
 
+	public function search(){
+		$this->load->view('admin/college/search');
+	}
 	public function user(){
 		echo "This is admin user_page";
 	}
