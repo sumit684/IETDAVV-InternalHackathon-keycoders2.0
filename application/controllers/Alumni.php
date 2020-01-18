@@ -7,11 +7,16 @@ class Alumni extends CI_Controller {
 		$this->load->model('Alumni_Model');
 	}
 
-	public function index()
+	public function index(){
+		$this->load->view('index');
+	}
+
+	
+	public function login()
 	{
 		$this->load->view('alumni/alumniLogin');
 	}
-
+	
 	public function alumniLogin(){
 		$data = array("mob_no"=>$this->input->post('mob-no'), "password"=>$this->input->post('login-password'));
 		$result = $this->Alumni_Model->authenticateAlumni($data);
