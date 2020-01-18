@@ -291,7 +291,16 @@
 							<strong>
 								<textarea class="input--style-4" maxlength="200" cols="60" rows="2" placeholder="max. 200 characters" name="profile"></textarea>		
 							</strong>
-						</div>						
+						</div>	
+						 <div class="form-group cpt m-b-30 col-md-2 col-sm-3 col-xs-6">
+                                            <label for="subject">Captcha *</label> <img src="https://mumbaipolice.gov.in/captcha/default?N23BnDhd"  id="mycaptcha" style="width:90px !important;">&nbsp;<img src="<?=base_url()?>assets/img/refresh.png" data-value="https://mumbaipolice.gov.in/captcha/default?9nwAjs4C" id="captcha_refresh" onclick="return refreshcaptcha();" style="cursor:pointer;width:30px;height:34px;">
+                         </div>
+                                        
+                          <div class="form-group m-b-30 mt-25 col-md-4 col-sm-4 col-xs-6">
+                                            <input class="form-control styCp" name="captcha" onkeyup="this.value=this.value.replace(/[^\d]/,'')" maxlength="5" placeholder="Enter Captcha Here *" type="text" title="Enter Captcha Here" autocomplete="off" required="">
+                                            <span class="validity"></span>
+                        </div>
+
 						<div class="p-t-15">
 							<button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
 						</div>
@@ -303,6 +312,7 @@
 
 	<!-- Jquery JS-->
 	<script src="<?=base_url();?>/assets/jquery/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 	<!-- Vendor JS-->
 	<script src="<?=base_url();?>/assets/select2/select2.min.js"></script>
 	<script src="<?=base_url();?>/assets/datepicker/moment.min.js"></script>
@@ -310,6 +320,8 @@
 
 	<!-- Main JS-->
 	<script src="<?=base_url();?>/assets/js/global.js"></script>
+	<script src="<?=base_url();?>/assets/js/captcha.js"></script>
+
 
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 
