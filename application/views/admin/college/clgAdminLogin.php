@@ -23,7 +23,7 @@
 		<div class="d-flex justify-content-center h-100">
 			<div class="card">
 				<div class="card-header">
-					<h3>Sign In</h3>
+					<h3>Admin Sign In</h3>
 					<div class="d-flex justify-content-end social_icon">
 						<span><i class="fab fa-facebook-square"></i></span>
 						<span><i class="fab fa-google-plus-square"></i></span>
@@ -31,7 +31,7 @@
 					</div>
 				</div>
 				<div class="card-body">
-					<form action="Alumni/alumniLogin" method="post">
+					<form action="Admin/adminLogin" method="post">
 						<div class="input-group form-group">
 							<div class="input-group-prepend">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -54,6 +54,10 @@
 					</form>
 				</div>
 				<div class="card-footer">
+				<div class="d-flex justify-content-center links">
+						Login as Alumni<a href="<?=base_url();?>alumni/login">Sign In</a>
+					</div>
+
 					<div class="d-flex justify-content-center links">
 						Don't have an account?<a href="#">Sign Up</a>
 					</div>

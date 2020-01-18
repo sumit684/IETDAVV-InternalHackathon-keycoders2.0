@@ -23,7 +23,7 @@
 		<div class="d-flex justify-content-center h-100">
 			<div class="card">
 				<div class="card-header">
-					<h3>Sign In</h3>
+					<h3>Alumni Sign In</h3>
 					<div class="d-flex justify-content-end social_icon">
 						<span><i class="fab fa-facebook-square"></i></span>
 						<span><i class="fab fa-google-plus-square"></i></span>
@@ -53,15 +53,22 @@
 						</div>
 					</form>
 				</div>
+				<span class="text-danger" align="center"><?php echo $this->session->flashdata('error')?></span>
 				<div class="card-footer">
+				<div class="d-flex justify-content-center links">
+						Login as Admin<a href="<?=base_url();?>Admin/">Sign In</a>
+					</div>
+
 					<div class="d-flex justify-content-center links">
-						Don't have an account?<a href="#">Sign Up</a>
+						Don't have an account?<a href="<?=base_url();?>Alumni/form">Sign Up</a>
 					</div>
 					<div class="d-flex justify-content-center">
 						<a href="#">Forgot your password?</a>
 					</div>
 				</div>
+
 			</div>
+			
 		</div>
 	</div>
 </body>
