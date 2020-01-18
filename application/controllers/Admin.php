@@ -10,17 +10,33 @@ class Admin extends CI_Controller {
 
 
 	public function index()
-	{
-		$this->load->view('admin/college/home');
+	{	$data['alumni'] = $this->Admin_Model->getregisteredAlumni();
+		$this->load->view('admin/college/home',$data);
 	}
 
 	public function search(){
 		$this->load->view('admin/college/search');
 	}
+
 	public function user(){
 		echo "This is admin user_page";
 	}
-	public function students(){
+
+	public function alumni(){
 		$this->Admin_Model->getregisteredAlumni();
 	}
+
+	public function requests(){
+		$this->Admin_Model->getnewstudents();
+	}
+
+	public function events(){
+		echo "events Page";
+	}
+
+	public function sendemail(){
+		echo "email is sent";
+	}
+
+
 }
