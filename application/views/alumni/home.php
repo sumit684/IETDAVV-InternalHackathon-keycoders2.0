@@ -96,8 +96,8 @@
 		<div class="col-md-6">
 			<div class="card bg-info" style="color:white;border: 1px solid rgb(255, 255, 255);">
 				<div class="card-body">
-					<h4 class="card-title">SIH HACKATHON</h4>
-                    <p class="card-text">SIH Internal Hackathon on 18/2/20</p>
+					<h4 class="card-title">SIH 2020</h4>
+                    <p class="card-text"> Internal Hackathon on 18/2/20</p>
 					<!-- <p class="card-text">You can manage Subjects and Chapters from here. You can also view details about them.</p>
 					<a href="<?=base_url()?>admin/Subject/showSubject" class="m-1 card-link btn btn-light btn-outline-dark">Manage Subjects/Chapters</a> -->
 				</div>
