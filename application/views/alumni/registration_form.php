@@ -15,12 +15,14 @@
 	<!-- Icons font CSS-->
 	<link href="<?=base_url();?>assets/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
 	<link href="<?=base_url();?>assets/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+
 	<!-- Font special for pages-->
 	<link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 	<!-- Vendor CSS-->
 	<link href="<?=base_url();?>assets/select2/select2.min.css" rel="stylesheet" media="all">
 	<link href="<?=base_url();?>assets/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+	<link rel="stylesheet" type="text/css" href="<?=base_url();?>assets/bootstrap.min.css">
 
 	<!-- Main CSS-->
 	<link href="<?=base_url();?>assets/css/main.css" rel="stylesheet" media="all">
@@ -314,32 +316,50 @@
 						</strong>
 					</div>
 
-					<div class="input-group">
-						<label class="label">Special Achievements</label>
-						<strong>
-							<textarea class="input--style-4" maxlength="200" cols="60" rows="2" placeholder="max. 200 characters" name="achievements"></textarea>		
-						</strong>
-					</div>						
-					<div class="p-t-15">
-						<button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
-					</div>
-				</form>
+						<div class="input-group">
+							<label class="label">Special Achievements</label>
+							<strong>
+								<textarea class="input--style-4" maxlength="200" cols="60" rows="2" placeholder="max. 200 characters" name="achievements"></textarea>		
+							</strong>
+						</div>
+					
+						<div class="form-group cpt m-b-30 col-md-2 col-sm-3 col-xs-6">
+                                            <label for="subject">Captcha *</label> <img src="https://mumbaipolice.gov.in/captcha/default?N23BnDhd"  id="mycaptcha" style="width:90px !important;">&nbsp;
+                                            <img src="<?=base_url()?>assets/img/refresh.png" data-value="https://mumbaipolice.gov.in/captcha/default?9nwAjs4C" id="captcha_refresh" onclick="return refreshcaptcha();" style="cursor:pointer;width:30px;height:34px;">
+                                        </div>
+                                        
+                                        <div class="form-group m-b-30 mt-25 col-md-4 col-sm-4 col-xs-6">
+                                            <input class="form-control styCp" name="captcha" onkeyup="this.value=this.value.replace(/[^\d]/,'')" maxlength="5" placeholder="Enter Captcha Here *" type="number" title="Enter Captcha Here" autocomplete="off" required="">
+                                            <span class="validity"></span>
+                                        </div>
+       
+						<div class="p-t-15">
+							<button class="btn btn--radius-2 btn--blue" name="submit" id="submit_button" title="Submit" type="submit">Submit</button>
+						</div>
+					</form>
+				</div>
+
 			</div>
 		</div>
 	</div>
 </div>
 
-<!-- Jquery JS-->
-<script src="<?=base_url();?>/assets/jquery/jquery.min.js"></script>
-<!-- Vendor JS-->
-<script src="<?=base_url();?>/assets/select2/select2.min.js"></script>
-<script src="<?=base_url();?>/assets/datepicker/moment.min.js"></script>
-<script src="<?=base_url();?>/assets/datepicker/daterangepicker.js"></script>
+	<!-- Jquery JS-->
+	<script src="<?=base_url();?>/assets/jquery/jquery.min.js"></script>
 
-<!-- Main JS-->
-<script src="<?=base_url();?>/assets/js/global.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+	<!-- Vendor JS-->
+	<script src="<?=base_url();?>/assets/select2/select2.min.js"></script>
+	<script src="<?=base_url();?>/assets/datepicker/moment.min.js"></script>
+	<script src="<?=base_url();?>/assets/datepicker/daterangepicker.js"></script>
 
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+	<!-- Main JS-->
+	<script src="<?=base_url();?>/assets/js/global.js"></script>
+	<!-- captcha -->
+	<script src="<?=base_url();?>/assets/js/captcha.js"></script>
+
+
+</body>
 
 </html>
 <!-- end document-->

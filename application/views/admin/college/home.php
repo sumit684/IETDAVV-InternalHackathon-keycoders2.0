@@ -69,11 +69,13 @@
 				</div>
 			</nav>
 		</div>
-		<div >
-			<u>	<h1 class="text-center pt-4">ALUMNI</h1></u>
 
-		</div>
-		<div class="row">
+<div >
+<u>	<h1 class="text-center pt-4">ALUMNI</h1></u>
+	
+</div>
+		<div class="row ml-4">
+
 			<nav class="navbar navbar-expand-sm bg-light navbar-light;" style="display: contents; margin-left: auto; margin-right: auto;">
 				<ul class="navbar-nav">
 					<li class="nav-item active">
