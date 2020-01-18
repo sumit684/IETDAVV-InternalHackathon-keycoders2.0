@@ -22,7 +22,7 @@
 	</script>
 </head>
 <body>
-	<div class="container-fluid">
+	<div class="container-fluid" >
 		<div class="row" style="margin: 1em;">
 			<img src="<?= base_url()?>assets/img/logo.jpeg"  style="width:17%;">
 			<div class="p-4" style="float: left;">
@@ -69,10 +69,12 @@
 				</div>
 			</nav>
 		</div>
-		<?php echo "<pre>"; print_r($alumni);?>
-
+<div >
+<u>	<h1 class="text-center pt-4">ALUMNI</h1></u>
+	
+</div>
 		<div class="row">
-			<nav class="navbar navbar-expand-sm bg-light navbar-light">
+			<nav class="navbar navbar-expand-sm bg-light navbar-light;" style="display: contents; margin-left: auto; margin-right: auto;">
 				<ul class="navbar-nav">
 					<li class="nav-item active">
 						 <div class="form-group">
