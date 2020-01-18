@@ -21,5 +21,6 @@ class Alumni_model extends CI_Model {
 		$result = $this->db->insert('alumni',$data);
 		return $result;
 	}
+
 }
 ?>

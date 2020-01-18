@@ -6,6 +6,10 @@
 	<link rel="icon" type="image/jpg" href="http://www.iitpulse.com/test/assets/img/iitpulse_logo.png">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="<?= base_url()?>assets/css/bootstrap-datetimepicker.css">
 	<link rel="stylesheet" type="text/css" href="<?= base_url()?>assets/css/custom.css">
@@ -13,12 +17,12 @@
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-<script type="text/javascript">
-	var base_url = "<?=base_url()?>";
-</script>
+	<script type="text/javascript">
+		var base_url = "<?=base_url()?>";
+	</script>
 </head>
 <body>
-	<div class="container">
+	<div class="container-fluid" >
 		<div class="row" style="margin: 1em;">
 			<img src="<?= base_url()?>assets/img/logo.jpeg"  style="width:17%;">
 			<div class="p-4" style="float: left;">
@@ -35,113 +39,100 @@
 
 				<div class="collapse navbar-collapse" id="navbarColor01">
 					<ul class="navbar-nav mr-auto">
-						<li class="nav-item createTest">
-							<a class="nav-link" href="<?=base_url()?>createTest">Create Test</a>
-						</li>
+						<!-- <li class="nav-item createTest">
+							<a class="nav-link" href="<?=base_url()?>createTest"></a>
+						</li> -->
 						<li class="nav-item addQuestion">
-							<a class="nav-link" href="<?=base_url()?>addQuestion">Add Questions</a>
+							<a class="nav-link" href="<?=base_url()?>addQuestion">Publish notices</a>
 						</li>
 						<li class="nav-item testData">
-							<a class="nav-link" href="<?=base_url()?>admin/Test/showAllTest">Test Data</a>
+							<a class="nav-link" href="<?=base_url()?>admin/Test/showAllTest">Create events</a>
 						</li>
 						<li class="nav-item batch">
-							<a class="nav-link" href="<?=base_url()?>admin/Student/batchesPage">Manage Batches</a>
+							<a class="nav-link" href="<?=base_url()?>admin/Student/batchesPage">Send Email</a>
 						</li>
 						<li class="nav-item student">
-							<a class="nav-link" href="<?=base_url()?>admin/Student/studentPage">Manage Students</a>
+							<a class="nav-link" href="<?=base_url()?>admin/Student/studentPage">Pending Requests</a>
 						</li>
 					</ul>
-					<div class="float-right">
-						<div class="btn-group">
-							<button type="button" class="btn btn-outline-light "  aria-haspopup="true" aria-expanded="false">
-								Pending Requests
-							</button>
-							
+					<div class="dropdown show">
+						<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Hello, Admin
+						</a>
+
+						<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+							<a class="dropdown-item" href="#">My Profile</a>
+							<a class="dropdown-item" href="#">Logout</a>
+							<a class="dropdown-item" href="#">Something else </a>
 						</div>
 					</div>
 				</div>
 			</nav>
 		</div>
-	</div>
 
-
-
-<div class="container" id="admin-home-container">
-	<div class="row mt-4">
-		<div class="col-md-6">
-			<div class="card">
-				<div class="card-body">
-					<h4 class="card-title">Test Section:</h4>
-					<p class="card-text">You can Create New Test and also manage already created and previous test.</p>
-					<a href="<?=base_url()?>createTest" class="m-1 card-link btn btn-light btn-outline-dark">Create New Test</a>
-					<a href="<?=base_url()?>admin/Test/showAllTest" class="m-1 card-link btn btn-light btn-outline-dark">Manage Other Tests</a>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-6">
-			<div class="card">
-				<div class="card-body">
-					<h4 class="card-title">Batches and Students:</h4>
-					<p class="card-text">You can manage batches and students from here. You can also view details about them.</p>
-					<a href="<?=base_url()?>admin/Student/batchesPage" class="m-1 card-link btn btn-light btn-outline-dark">Manage Batches</a>
-					<a href="<?=base_url()?>admin/Student/studentPage" class="m-1 card-link btn btn-light btn-outline-dark">Manage Students</a>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="row mt-2">
-		<div class="col-md-6">
-			<div class="card">
-				<div class="card-body">
-					<h4 class="card-title">Subjects and Chapters:</h4>
-					<p class="card-text">You can manage Subjects and Chapters from here. You can also view details about them.</p>
-					<a href="<?=base_url()?>admin/Subject/showSubject" class="m-1 card-link btn btn-light btn-outline-dark">Manage Subjects/Chapters</a>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-6">
-			<div class="card">
-				<div class="card-body">
-					<h4 class="card-title">Questions and Pattern:</h4>
-					<p class="card-text">You can manage Questions and Test Pattern from here. You can also view details about them.</p>
-					<a href="<?=base_url()?>addQuestion" class="m-1 card-link btn btn-light btn-outline-dark">Add Questions</a>
-					<a href="<?=base_url()?>testPattern" class="m-1 card-link btn btn-light btn-outline-dark">Manage Pattern</a>
-					<a href="<?=base_url()?>editQuestion" class="m-1 card-link btn btn-light btn-outline-dark">Edit Questions</a>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="row mt-2">
-		<div class="col-md-6">
-			<div class="card">
-				<div class="card-body">
-					<h4 class="card-title">Operator:</h4>
-					<p class="card-text">You can manage data entry operator from here. You can also view details about them.</p>
-					<a href="<?=base_url()?>admin/Operator/add" class="m-1 card-link btn btn-light btn-outline-dark">Add Operator</a>
-					<a href="<?=base_url()?>admin/Operator/view" class="m-1 card-link btn btn-light btn-outline-dark">View Operators</a>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-6">
-			<div class="card">
-				<div class="card-body">
-					<h4 class="card-title">Ad Manager:</h4>
-					<p class="card-text">You can manage Test Screen Ads from here. You can do everything from one place only.</p>
-					<a href="<?=base_url()?>AdManager/manage_files" class="m-1 card-link btn btn-light btn-outline-dark">TestApp Ads</a>
-					<a href="<?=base_url()?>AdManager/manage_student_home_files" class="m-1 card-link btn btn-light btn-outline-dark">Student Ads</a>
-					<a href="<?=base_url()?>AdManager/manage_login_files" class="m-1 card-link btn btn-light btn-outline-dark">Login Ads</a>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-6">
-			<div class="card">
-				<div class="card-body">
-					<h4 class="card-title">Promocode:</h4>
-					<p class="card-text">You can manage promocodes from here. You can do everything from one place only.</p>
-					<a href="<?=base_url()?>Promocode/create" class="m-1 card-link btn btn-light btn-outline-dark">Create Promocode</a>
-					<a href="<?=base_url()?>Promocode/view" class="m-1 card-link btn btn-light btn-outline-dark">View Promocodes</a>
-				</div>
-			</div>
-		</div>
-	</div>
+<div >
+<u>	<h1 class="text-center pt-4">ALUMNI</h1></u>
+	
 </div>
+		<div class="row ml-4">
+
+			<nav class="navbar navbar-expand-sm bg-light navbar-light;" style="display: contents; margin-left: auto; margin-right: auto;">
+				<ul class="navbar-nav">
+					<li class="nav-item active">
+						<div class="form-group">
+							<select class="form-control" name="year">
+								<option disabled selected>Year </option>
+								<option value="">1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</div>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Link</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Link</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link disabled" href="#">Disabled</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		<div class="pt-4">
+			<table class="table table-hover ">
+				<thead>
+					<tr>
+						<th scope="col">S.no</th>
+						<th scope="col">Enroll no.</th>
+						<th scope="col">Name</th>
+						<th scope="col">Course</th>
+						<th scope="col">Batch</th>
+						<th scope="col">Email ID</th>
+					</tr>
+				</thead>
+				<tbody>
+
+					<?php 
+					foreach ($alumni as $key => $data) {?>
+						<tr>
+							<th scope="row"><?=$key?></th>
+							<td><?= $data->enroll_no;?></td>
+							<td><?= $data->fname;?> <?=$data->lname?></td>
+							<td><?= $data->course;?></td>
+							<td><?= $data->year_adm;?>-<?= $data->year_leaving?></td>
+							<td><?= $data->email_id;?></td>
+						</tr>
+
+					<?php } ?>					
+				</tbody>
+			</table>
+
+
+		</div>
+	</div>
+</body>
+</html>
