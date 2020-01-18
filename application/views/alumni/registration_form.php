@@ -37,18 +37,18 @@
 					<h1 class="title" align="center" style="font-size: 25px; margin-bottom: 5px;"><b>Government of GOA</b></h1>
 					<h2 class="title" align="center"><b>Alumni Registration Form </b></h2>
 					<!-- <span>Personal Details</span><br><br><br> -->
-					<form method="POST" action="#">
+					<form method="POST" action="<?=base_url();?>Alumni/register">
 						<div class="row row-space">
 							<div class="col-2">
 								<div class="input-group">
 									<label class="label">first name</label>
-									<input class="input--style-4" type="text" name="first_name" autofocus="" required="">
+									<input class="input--style-4" type="text" name="fname" autofocus="" required="">
 								</div>
 							</div>
 							<div class="col-2">
 								<div class="input-group">
 									<label class="label">last name</label>
-									<input class="input--style-4" type="text" name="last_name">
+									<input class="input--style-4" type="text" name="lname">
 								</div>
 							</div>
 						</div>
@@ -58,7 +58,7 @@
 								<div class="input-group">
 									<label class="label">Year of admission in College</label>
 									<div class="rs-select2 js-select-simple select--no-search">
-										<select name="admission_year" class="input--style-4" style="height: 30px;">
+										<select name="year_adm" class="input--style-4" style="height: 30px;">
 											<option selected disabled="">Select Year</option>
 
 											<option value="2019">2019</option>
@@ -111,7 +111,7 @@
 								<div class="input-group">
 									<label class="label">Year of leaving College</label>
 									<div class="rs-select2 js-select-simple select--no-search">
-										<select name="admission_year" class="input--style-4" style="height: 30px;">
+										<select name="year_leaving" class="input--style-4" style="height: 30px;">
 											<option selected="" disabled=""> Select Year </option>
 
 											<option value="2019">2019</option>
@@ -165,7 +165,7 @@
 						<div class="input-group">
 							<label class="label">email</label>
 							<div class="rs-select2 js-select-simple select--no-search">
-								<input class="input--style-4" type="text" name="email" autocomplete="off">
+								<input class="input--style-4" type="text" name="email_id" autocomplete="off">
 							</div>
 						</div>
 
@@ -173,7 +173,7 @@
 							<div class="col-2">
 								<div class="input-group">
 									<label class="label">Password</label>
-									<input class="input--style-4" type="password" name="email">
+									<input class="input--style-4" type="password" name="password">
 								</div>
 							</div>
 							<div class="col-2">
@@ -186,13 +186,13 @@
 						<div class="input-group">
 							<label class="label">College</label>
 							<div class="rs-select2 js-select-simple select--no-search">
-								<select name="college" class="input--style-4" style="height: 30px;">
+								<select name="college_id" class="input--style-4" style="height: 30px;">
 									<option disabled="disabled" selected="selected">Choose college</option>
-									<option>IET,DAVV</option>
-									<option>SGSITS</option>
-									<option>BITS GOA</option>
-									<option>IIPS</option>
-									<option>ISC</option>
+									<option value="1">IET,DAVV</option>
+									<option value="2">SGSITS</option>
+									<option value="3">BITS GOA</option>
+									<option value="4">IIPS</option>
+									<option value="5">ISC</option>
 								</select>
 								<div class="select-dropdown"></div>
 							</div>
@@ -201,13 +201,13 @@
 							<div class="col-2">
 								<div class="input-group">
 									<label class="label">Enrollment number</label>
-									<input class="input--style-4" type="text" name="enroll_num">
+									<input class="input--style-4" type="text" name="enroll_no">
 								</div>
 							</div>
 							<div class="col-2">
 								<div class="input-group">
 									<label class="label">Phone Number</label>
-									<input class="input--style-4" type="text" name="phone">
+									<input class="input--style-4" type="text" name="mob_no">
 								</div>
 							</div>
 						</div>
@@ -217,7 +217,7 @@
 								<div class="input-group">
 									<label class="label">Marital Status</label>
 									<div class="rs-select2 js-select-simple select--no-search">
-										<select required name="marital_status" class="input--style-4" style="height: 30px;">
+										<select required name="marital_stat" class="input--style-4" style="height: 30px;">
 											<option selected disabled>Select</option>
 											<option value="single">Single</option>
 											<option value="Married">Married</option>
@@ -233,7 +233,7 @@
 								<div class="input-group">
 									<label class="label">Date of Birth</label>
 									<div class="input-group-icon">
-										<input class="input--style-4 js-datepicker" type="text" name="birthday">
+										<input class="input--style-4 js-datepicker" type="text" name="dob">
 										<i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
 									</div>
 								</div>
@@ -282,14 +282,14 @@
 						<div class="input-group">
 							<label class="label">Brief Profile</label>
 							<strong>
-								<textarea class="input--style-4" maxlength="200" cols="60" rows="2" placeholder="max. 200 characters" name="profile"></textarea>		
+								<textarea class="input--style-4" maxlength="200" cols="60" rows="2" placeholder="max. 200 characters" name="brief_profile"></textarea>		
 							</strong>
 						</div>
 
 						<div class="input-group">
 							<label class="label">Special Achievements</label>
 							<strong>
-								<textarea class="input--style-4" maxlength="200" cols="60" rows="2" placeholder="max. 200 characters" name="profile"></textarea>		
+								<textarea class="input--style-4" maxlength="200" cols="60" rows="2" placeholder="max. 200 characters" name="achievements"></textarea>		
 							</strong>
 						</div>						
 						<div class="p-t-15">

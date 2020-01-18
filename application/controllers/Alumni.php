@@ -21,6 +21,41 @@ class Alumni extends CI_Controller {
 			echo "galat hai bhai";
 		}
 	}
+
+	public function form(){
+		$this->load->view('alumni/registration_form');
+	}
+
+	public function register(){
+		
+		$data = array(
+			"fname"=>$this->input->post('fname'),
+			"lname"=>$this->input->post('lname'),
+			"year_adm"=>$this->input->post('year_adm'),
+			"year_leaving"=>$this->input->post('year_leaving'),
+			"email_id"=>$this->input->post('email_id'),
+			"password"=>$this->input->post('password'),
+			"college_id"=>$this->input->post('college_id'),
+			"enroll_no"=>$this->input->post('enroll_no'),
+			"mob_no"=>$this->input->post('mob_no'),
+			"marital_stat"=>$this->input->post('marital_stat'),
+			"dob"=>$this->input->post('dob'),
+			"gender"=>$this->input->post('gender'),
+			"address"=>$this->input->post('address'),
+			"occupation"=>$this->input->post('occupation'),
+			"brief_profile"=>$this->input->post('brief_profile'),
+			"achievements"=>$this->input->post('achievements'),
+			);
+
+		$result = $this->Alumni_Model->registerAlumni($data);
+		if($result==TRUE){
+			echo "registered";
+		}else{
+			echo "not registered";
+		}
+	}
+
+
 	public function user(){
 		echo "This is admin user_page";
 	}

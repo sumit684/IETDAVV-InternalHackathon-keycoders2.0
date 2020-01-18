@@ -16,5 +16,10 @@ class Alumni_model extends CI_Model {
 			return array("id"=>0);
 		}
 	}
+
+	public function registerAlumni($data){
+		$result = $this->db->insert('alumni',$data);
+		return $result;
+	}
 }
 ?>
