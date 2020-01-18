@@ -64,6 +64,7 @@ class Alumni extends CI_Controller {
 		}
 	}
 	public function home(){
+		$this->load->view('include/alumni/header');
 		$this->load->view('alumni/home');
 	}
 	public function profile(){
@@ -71,9 +72,24 @@ class Alumni extends CI_Controller {
 		// print_r($data);
 		$result['alumni'] = $this->Alumni_Model->authenticateAlumni($data);
 		// print_r($result);
+		$this->load->view('include/alumni/header');
 		$this->load->view('alumni/profile',$result);
 	}
 	public function user(){
 		echo "This is admin user_page";
+	}
+
+	public function events(){
+		$data['events'] = $this->Alumni_Model->geteventList()->result();
+		$this->load->view('include/alumni/header');
+		$this->load->view('alumni/home',$data);
+		// print_r($data);
+	}
+
+	public function chat(){
+		$data['events'] = $this->Alumni_Model->geteventList()->result();
+		$this->load->view('include/alumni/header');
+		// $this->load->view('alumni/home',$data);
+		// print_r($data);
 	}
 }
