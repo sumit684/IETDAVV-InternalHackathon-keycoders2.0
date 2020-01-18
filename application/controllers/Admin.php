@@ -18,7 +18,7 @@ class Admin extends CI_Controller {
 		$data = array("mob_no"=>$this->input->post('mob-no'), "password"=>$this->input->post('login-password'));
 		$result = $this->Admin_Model->authenticateAdmin($data);
 		if($result["id"]){
-			echo "Authentic Admin User";
+			$this->load->view('admin/college/clgAdminLogin');
 		}else{
 			echo "Non-Authentic Admin User";
 		}
@@ -54,8 +54,8 @@ class Admin extends CI_Controller {
 	public function sendemail(){
 		echo "email is sent";
 	}
-    public function clgAdminLogin(){
-		$this->load->view('admin/college/clgAdminLogin');
-	}
+    // public function clgAdminLogin(){
+	// 	$this->load->view('admin/college/clgAdminLogin');
+	// }
 
 }

@@ -55,7 +55,7 @@
 				</div>
 				<div class="card-footer">
 				<div class="d-flex justify-content-center links">
-						Login as Alumni<a href="<?=base_url();?>alumni/index">Sign In</a>
+						Login as Alumni<a href="<?=base_url();?>alumni/login">Sign In</a>
 					</div>
 
 					<div class="d-flex justify-content-center links">

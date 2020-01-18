@@ -46,7 +46,7 @@
 							<input type="password" class="form-control" name="login-password" placeholder="password">
 						</div>
 						<div class="row align-items-center remember">
-							<input type="checkbox">Remember Metooo
+							<input type="checkbox">Remember Me
 						</div>
 						<div class="form-group">
 							<input type="submit" value="Login" class="btn float-right login_btn">
@@ -56,7 +56,7 @@
 				<span class="text-danger" align="center"><?php echo $this->session->flashdata('error')?></span>
 				<div class="card-footer">
 				<div class="d-flex justify-content-center links">
-						Login as Admin<a href="<?=base_url();?>Admin/clgAdminLogin">Sign In</a>
+						Login as Admin<a href="<?=base_url();?>Admin/">Sign In</a>
 					</div>
 
 					<div class="d-flex justify-content-center links">
