@@ -32,13 +32,13 @@
 <body>
 	<div class="container-fluid" >
 		<div class="row" style="margin: 1em;">
-			<img src="<?= base_url()?>assets/img/logo.jpeg"  style="width:17%;">
+			<img src="<?= base_url()?>assets/img/logo.jpeg"  style="width:10%;">
 			<div class="p-4" style="float: left;">
 				<div class="h1">Govt. of Goa | <b style="color:#858080">Admin</b>
 				</div>
 			</div>
 		</div>
-		<div class="row d-block border border-dark shadow">
+		<div class="row d-block border border-dark shadow sticky-top">
 			<nav class="navbar navbar-expand-lg navbar-dark bg-dark d-bl">
 				<a class="navbar-brand h2 font-weight-bold active" href="<?=base_url()?>admin/index"><i class="fas fa-home"></i> Home</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
