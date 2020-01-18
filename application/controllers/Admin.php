@@ -20,9 +20,12 @@ class Admin extends CI_Controller {
 	 */
 	public function index()
 	{
-		echo "This is admin panel";
+		$this->load->view('admin/college/home');
 	}
 
+	public function search(){
+		$this->load->view('admin/college/search');
+	}
 	public function user(){
 		echo "This is admin user_page";
 	}
