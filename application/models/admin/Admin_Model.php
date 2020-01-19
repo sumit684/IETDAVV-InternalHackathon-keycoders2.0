@@ -30,10 +30,14 @@ class Admin_model extends CI_Model {
 	}
 	public function acceptRequest($id){
 		$data = array(
-	'status' => 1
-	);
+			'status' => 1
+		);
 		$this->db->where('id', $id);
 		$this->db->update('alumni',$data);
+	}
+	public function rejectRequest($id){
+		$this -> db -> where('id', $id);
+		$this -> db -> delete('alumni');
 	}
 	
 }

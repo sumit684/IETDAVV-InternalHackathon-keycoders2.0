@@ -63,8 +63,8 @@
 					<td><?= $data->year_adm;?>-<?= $data->year_leaving?></td>
 					<td><?= $data->email_id;?></td>
 					<td><?= $data->created;?></td>
-					<td><a href="<?= base_url()?>Admin/accept/<?= $data->id ?>"><button class="btn btn-success accept" >Accept</button></a></td>
-					<td><button class="btn btn-danger">Reject</button></td>
+					<td><a href="<?= base_url()?>Admin/acceptRequest/<?= $data->id ?>"><button class="btn btn-success accept" >Accept</button></a></td>
+					<td><a href="<?= base_url()?>Admin/rejectRequest/<?= $data->id ?>"><button class="btn btn-danger">Reject</button></a></td>
 				</tr>
 
 			<?php } ?>					
