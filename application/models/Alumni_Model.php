@@ -21,7 +21,7 @@ class Alumni_model extends CI_Model {
 		$result = $this->db->insert('alumni',$data);
 		return $result;
 	}
-
+   
 	public function geteventList(){
 		return $this->db->get('events');
 	}

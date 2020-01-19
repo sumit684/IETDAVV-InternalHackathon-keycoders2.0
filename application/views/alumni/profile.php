@@ -1,3 +1,4 @@
+
 <div class="container" id="admin-home-container">
 	<div class="row mt-4">
 		
@@ -8,7 +9,6 @@
                     <h3><?=$value->fname?> <?=$value->lname?></h3>
                 </div>
             </div>
-
             <div class="col-md-9">
                 <div class="jumbotron text-center">
                     <h1>IET-DAVV Indore M.P</h1>
@@ -42,6 +42,7 @@
                                 <div class="col-md-6"><?=$value->address?></div>  
                             </div>                                                                                         
                         <?php } ?>           
+
                     </div>
                     <div class="col-md-2"></div> 
                 </div>
