@@ -26,5 +26,9 @@ class Alumni_model extends CI_Model {
 		return $this->db->get('events');
 	}
 
+	public function getAlumniDetails($data){
+		return $this->db->get_where('alumni',$data)->result();
+	}
+
 }
 ?>
