@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Directorate Home</title>
+	<title>college alumni </title>
 	<meta charset="utf-8">
 	<link rel="icon" type="image/jpg" href="<?=base_url();?>assets/img/logo1.png">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,7 +34,7 @@
 		<div class="row" style="margin: 1em;">
 			<img src="<?= base_url()?>assets/img/logo.jpeg"  style="width:10%;">
 			<div class="p-4" style="float: left;">
-				<div class="h1">Govt. of Goa | <b style="color:#858080">Directorate</b>
+				<div class="h1">Govt. of Goa | <b style="color:#858080">college alumni</b>
 				</div>
 			</div>
 		</div>
@@ -79,7 +79,7 @@
 		</div>
 
 		<div >
-			<u>	<h1 class="text-center pt-4">COLLEGES</h1></u>
+			<u>	<h1 class="text-center pt-4">Alumni</h1></u>
 
 		</div>
 		<div class="row ml-4">
@@ -131,24 +131,25 @@
 				<thead>
 					<tr>
 						<th scope="col">S.no</th>
-						<th scope="col">College id</th>
-						<th scope="col">College Name</th>
+						<th scope="col">Alumni id</th>
+						<th scope="col">Course</th>
 						<th scope="col">Address</th>
-						<th scope="col">Type</th>
-						<th scope="col"></th>
+						<th scope="col">Email_ID</th>
+						<th scope="col">Occupation</th>
 					</tr>
 				</thead>
 				<tbody>
 
 					<?php 
-					foreach ($colleges as $key => $data) {?>
+					foreach ($alumniList as $key => $data) {?>
 						<tr>
 							<th scope="row"><?=$key+1?></th>
 							<td><?= $data->id;?></td>
-							<td><?= $data->college_name;?></td>
+							<td><?= $data->course;?></td>
 							<td><?= $data->address;?></td>
-							<td><?= $data->type;?></td>
-							<td><a href="<?=base_url()?>directorate/alumniDisplay"><button class="btn btn-primary"> View Alumni</button></a></td>
+							<td><?= $data->email_id;?></td>
+							<td><?= $data->occupation;?></td>
+							
 							
 						</tr>
 
@@ -160,6 +161,8 @@
 					$('#college_table').DataTable();
 				} );
 			</script>
+
+			<?php print_r($collegeID) ?>
 
 		</div>
 	</div>

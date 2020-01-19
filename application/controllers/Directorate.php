@@ -13,5 +13,15 @@ class Directorate extends CI_Controller {
 		$this->load->view('directorate/directorate_home',$data);
 		// echo "This is Alumni Login Page";
 	}
+
+	
+	public function alumniDisplay()
+	{	
+		$data['collegeID']=$this->Directorate_Model->getCollegeId();
+		$data['alumniList']=$this->Directorate_Model->getAlumniList();
+		$this->load->view('directorate/college_alumni',$data);
+		// echo "This is Alumni Login Page";
+	}
+
 	
 }
