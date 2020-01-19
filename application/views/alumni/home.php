@@ -8,7 +8,7 @@
 				<div class="card-body">
 					<h4 class="card-title"><?=$data->event_name?></h4>
 					<p class="card-text"><?=$data->event_desc?></p>
-					<form method="POST" action="<?=base_url();?>alumni/readmore"><input value="<?=$mob_no?>" name="fname" type="hidden"><button type="submit" class="btn btn-primary">Read More</button></form>
+					<!-- <form method="POST" action="<?=base_url();?>alumni/readmore"><input value="<?=$mob_no?>" name="fname" type="hidden"><button type="submit" class="btn btn-primary">Read More</button></form> -->
 
 					<!-- <a href="<?=base_url()?>createTest" class="m-1 card-link btn btn-light btn-outline-dark">Create New Test</a>
 						<a href="<?=base_url()?>admin/Test/showAllTest" class="m-1 card-link btn btn-light btn-outline-dark">Manage Other Tests</a> -->
@@ -40,7 +40,7 @@
 
 					<!-- Modal body -->
 					<div class="modal-body">
-						<form method="POST" action="<?=base_url()?>alumni/addEvent">
+						<form method="POST" action="<?=base_url()?>alumni/addEvents">
 							<div class="row"> 
 								<div class="col-md-6"> 
 									<label>Event Name</label>
@@ -62,7 +62,7 @@
 
 						<!-- Modal footer -->
 						<div class="modal-footer">
-							<button type="submit" class="btn btn-danger" data-dismiss="modal">Submit</button>
+							<button type="submit" class="btn btn-danger" >Submit</button>
 						</div>
 					</form>
 
