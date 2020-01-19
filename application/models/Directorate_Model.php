@@ -7,8 +7,8 @@ public function getCollegeList(){
 		return $this->db->get('college')->result();
 	}
 
-	public function getAlumniList(){
-		return $this->db->get_where('alumni',array('college_id'=>'2'))->result();
+	public function getAlumniList($college_id){
+		return $this->db->get_where('alumni',array('college_id'=>$college_id))->result();
 	}
 
 	public function getCollegeId(){
