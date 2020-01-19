@@ -162,6 +162,26 @@
 							</div>
 						</div>
 
+						<div class="row row-space">
+							<div class="col-2">
+								<div class="input-group">
+									<label class="label">Course</label>
+									<div class="rs-select2 js-select-simple select--no-search">
+										<select name="course" class="input--style-4" style="height: 30px;">
+											<option selected="" disabled=""> Select Course</option>
+											<option value="B.E.">B.E.</option>
+											<option value="M.E.">M.E.</option>
+											<option value="B.Tech.">B.Tech.</option>
+											<option value="M.Tech">M.Tech.</option>
+											<option value="B.Com.">B.Com.</option>
+											<option value="M.Com.">M.Com.</option>
+											<option value="Others">Others</option>					
+										</select>
+										<div class="select-dropdown"></div>
+									</div>
+								</div>
+							</div>
+						</div>
 						<div class="input-group">
 							<label class="label">email</label>
 							<div class="rs-select2 js-select-simple select--no-search">
@@ -188,11 +208,11 @@
 							<div class="rs-select2 js-select-simple select--no-search">
 								<select name="college_id" class="input--style-4" style="height: 30px;">
 									<option disabled="disabled" selected="selected">Choose college</option>
-									<option>IET,DAVV</option>
-									<option>SGSITS</option>
-									<option>BITS GOA</option>
-									<option>IIPS</option>
-									<option>ISC</option>
+									<option value="1">IET,DAVV</option>
+									<option value="2">SGSITS</option>
+									<option value="3">BITS GOA</option>
+									<option value="4">IIPS</option>
+									<option value="5">ISC</option>
 								</select>
 								<div class="select-dropdown"></div>
 							</div>
@@ -292,14 +312,14 @@
 								<textarea class="input--style-4" maxlength="200" cols="60" rows="2" placeholder="max. 200 characters" name="achievements"></textarea>		
 							</strong>
 						</div>	
-						 <div class="form-group cpt m-b-30 col-md-2 col-sm-3 col-xs-6">
-                                            <label for="subject">Captcha *</label> <img src="https://mumbaipolice.gov.in/captcha/default?N23BnDhd"  id="mycaptcha" style="width:90px !important;">&nbsp;<img src="<?=base_url()?>assets/img/refresh.png" data-value="https://mumbaipolice.gov.in/captcha/default?9nwAjs4C" id="captcha_refresh" onclick="return refreshcaptcha();" style="cursor:pointer;width:30px;height:34px;">
-                         </div>
-                                        
-                          <div class="form-group m-b-30 mt-25 col-md-4 col-sm-4 col-xs-6">
-                                            <input class="form-control styCp" name="captcha" onkeyup="this.value=this.value.replace(/[^\d]/,'')" maxlength="5" placeholder="Enter Captcha Here *" type="text" title="Enter Captcha Here" autocomplete="off" required="">
-                                            <span class="validity"></span>
-                        </div>
+						<div class="form-group cpt m-b-30 col-md-2 col-sm-3 col-xs-6">
+							<label for="subject">Captcha *</label> <img src="https://mumbaipolice.gov.in/captcha/default?N23BnDhd"  id="mycaptcha" style="width:90px !important;">&nbsp;<img src="<?=base_url()?>assets/img/refresh.png" data-value="https://mumbaipolice.gov.in/captcha/default?9nwAjs4C" id="captcha_refresh" onclick="return refreshcaptcha();" style="cursor:pointer;width:30px;height:34px;">
+						</div>
+
+						<div class="form-group m-b-30 mt-25 col-md-4 col-sm-4 col-xs-6">
+							<input class="form-control styCp" name="captcha" onkeyup="this.value=this.value.replace(/[^\d]/,'')" maxlength="5" placeholder="Enter Captcha Here *" type="text" title="Enter Captcha Here" autocomplete="off" required="">
+							<span class="validity"></span>
+						</div>
 
 						<div class="p-t-15">
 							<button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
