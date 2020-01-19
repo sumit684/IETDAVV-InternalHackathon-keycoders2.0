@@ -27,9 +27,6 @@ class Admin_model extends CI_Model {
 	public function getnewstudents(){
 		$this->db->order_by("created", "asc");
 		return $this->db->get_where('alumni',array('status'=>'0'))->result();
-		// $this->db->get_where('alumni',array('status'=>'0'));
-		// $result = $this->db->order_by("created", "asc")->result();
-		// return $result;
 	}
 }
 ?>

@@ -22,6 +22,8 @@ class Admin extends CI_Controller {
 		if($result["id"]){
 			// echo "running";
 			$data['alumni'] = $this->Admin_Model->getregisteredAlumni();
+			$data['pending']=$this->Admin_Model->getnewstudents();
+			$this->load->view($this->header,$data);
 			$this->load->view('admin/college/home');
 		}else{
 			echo "Non-Authentic Admin User";

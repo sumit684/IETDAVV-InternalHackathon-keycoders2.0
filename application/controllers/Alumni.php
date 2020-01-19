@@ -8,7 +8,7 @@ class Alumni extends CI_Controller {
 	}
 
 	public function index(){
-		$this->load->view('index');
+		$this->load->view('alumni/alumniLogin');
 	}
 
 	
@@ -22,9 +22,11 @@ class Alumni extends CI_Controller {
 		$result = $this->Alumni_Model->authenticateAlumni($data);
 		if($result){
 			$this->session->set_userdata($data);
-			// $result['alumni'] = $result;
-			// $this->load->view('alumni/home',$result);
-			$this->events();
+			$result['alumni'] = $result;
+			$this->load->view('include/alumni/header');
+			$edata['events'] = $this->Alumni_Model->geteventList()->result();
+			$edata['mob_no'] = $data['mob_no'];
+			$this->load->view('alumni/home',$edata,$data);
 		}else{
 			$this->session->set_flashdata('error','Invalid Details');
 			$this->load->view('alumni/alumniLogin');
@@ -64,15 +66,28 @@ class Alumni extends CI_Controller {
 			echo "not registered";
 		}
 	}
+	public function readmore(){
+		$data = array(
+						"fname"=>$this->input->post('fname'),
+					);
+					echo $data['fname'];
+
+	}
 	public function home(){
+		$data['events'] = $this->Alumni_Model->geteventList()->result();
 		$this->load->view('include/alumni/header');
-		$this->load->view('alumni/home');
+		$this->load->view('alumni/home',$data);
 	}
 	public function profile(){
 		$data = array('mob_no'=>$this->session->userdata('mob_no'),'password'=>$this->session->userdata('password'));
 		// print_r($data);
 		$result['alumni'] = $this->Alumni_Model->authenticateAlumni($data);
 		// print_r($result);
+		$sdata = array(
+			"fname"=>$this->input->post('fname'),
+		);
+		echo $sdata['mob_no'];
+
 		$this->load->view('include/alumni/header');
 		$this->load->view('alumni/profile',$result);
 	}
@@ -92,6 +107,7 @@ class Alumni extends CI_Controller {
 		$this->load->view('include/alumni/header');
 		// $this->load->view('alumni/home',$data);
 		// print_r($data);
+
 	}
 
 	public function addEvents(){
