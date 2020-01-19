@@ -90,6 +90,7 @@ class Alumni extends CI_Controller {
 		$this->load->view('alumni/home',$data);
 	}
 	public function profile(){
+		
 		$this->check_login();
 		$data = array('mob_no'=>$this->session->userdata('mob_no'),'password'=>$this->session->userdata('password'));
 		// print_r($data);

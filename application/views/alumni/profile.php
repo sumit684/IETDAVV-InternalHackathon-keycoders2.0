@@ -1,3 +1,4 @@
+
 <div class="container" id="admin-home-container">
 	<div class="row mt-4">
 		
@@ -36,7 +37,7 @@
                         </div>
                         <div class="row"> 
                             <div class="col-md-6"><h5>Address :</h5></div>
-                            <div class="col-md-6">12 Sector Palasia Indore M.P India</div>  
+                            <div class="col-md-6">12 Sector Palasia Indore M.P India </div>  
                         </div>                                                                                                
                     </div>
                     <div class="col-md-2"></div> 
