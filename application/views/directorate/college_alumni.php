@@ -161,9 +161,6 @@
 					$('#college_table').DataTable();
 				} );
 			</script>
-
-			<?php print_r($collegeID) ?>
-
 		</div>
 	</div>
 
