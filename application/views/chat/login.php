@@ -15,7 +15,7 @@
 		<div class="panel panel-default	">
 			<div class="panel-heading">Chat Application Login</div>
 			<div class="panel-body">
-				<form action="<?php base_url()?>login" method="post" class="border rounded text-center" style="width:300px;">
+				<form action="<?php echo base_url()?>Chat/login" method="post" class="border rounded text-center" style="width:300px;">
 					<div class="form-group">
 						<label>Username</label>
 						<input type="text" name="username" class="form-control" required />

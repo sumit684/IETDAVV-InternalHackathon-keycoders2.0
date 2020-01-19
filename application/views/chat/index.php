@@ -81,7 +81,7 @@
 			function fetch_user()
 			{
 				$.ajax({
-					url:"<?php base_url()?>login1",
+					url:"<?php echo base_url()?>Chat/login1",
 					method:"POST",
 					success:function(data){
 						$('#user_details').html(data);
@@ -94,7 +94,7 @@
 			function update_last_activity()
 			{
 				$.ajax({
-					url:"<?php base_url()?>login",
+					url:"<?php echo base_url()?>Chat/login",
 					success:function()
 					{
 
