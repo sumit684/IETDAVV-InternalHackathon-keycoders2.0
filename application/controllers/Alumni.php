@@ -14,7 +14,11 @@ class Alumni extends CI_Controller {
 	}
 
 	public function index(){
+		if($this->session->userdata('mob_no')!=NULL){
+			redirect(base_url().'alumni/home');
+		}else{
 		$this->load->view('alumni/alumniLogin');
+		}
 	}
 	
 	public function destroy(){
@@ -94,7 +98,7 @@ class Alumni extends CI_Controller {
 		$sdata = array(
 			"fname"=>$this->input->post('fname'),
 		);
-		echo $sdata['mob_no'];
+		// echo $sdata['mob_no'];
 
 		$this->load->view('include/alumni/header');
 		$this->load->view('alumni/profile',$result);
