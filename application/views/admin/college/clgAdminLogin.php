@@ -31,7 +31,8 @@
 					</div>
 				</div>
 				<div class="card-body">
-					<form action="Admin/adminLogin" method="post">
+
+					<form action="<?=base_url();?>Admin/adminLogin" method="post">
 						<div class="input-group form-group">
 							<div class="input-group-prepend">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
