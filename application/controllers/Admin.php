@@ -58,4 +58,10 @@ class Admin extends CI_Controller {
 	// 	$this->load->view('admin/college/clgAdminLogin');
 	// }
 
+	public function acceptRequest($data){
+
+	
+
+	}
+
 }

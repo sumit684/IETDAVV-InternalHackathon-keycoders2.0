@@ -31,5 +31,6 @@ class Admin_model extends CI_Model {
 		// $result = $this->db->order_by("created", "asc")->result();
 		// return $result;
 	}
+	
 }
 ?>

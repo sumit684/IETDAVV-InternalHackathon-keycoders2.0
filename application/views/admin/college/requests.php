@@ -159,7 +159,8 @@
 							<td><button class="btn btn-danger">Reject</button></td>
 						</tr>
 
-					<?php } ?>					
+					<?php }
+					?>					
 				</tbody>
 			</table>
 			<script type="text/javascript">
