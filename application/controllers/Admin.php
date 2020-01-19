@@ -80,8 +80,13 @@ class Admin extends CI_Controller {
 		$this->load->view($this->header,$data);
 		echo "email is sent";
 	}
-    // public function clgAdminLogin(){
-	// 	$this->load->view('admin/college/clgAdminLogin');
-	// }
+    public function accept($id){
+		$this->Admin_Model->acceptRequest($id);
+		$data['pending']=$this->Admin_Model->getnewstudents();
+		$data['alumni'] = $this->Admin_Model->getregisteredAlumni();
+		$this->load->view($this->header,$data);
+		$this->load->view('admin/college/requests',$data);
+		
+	}
 
 }

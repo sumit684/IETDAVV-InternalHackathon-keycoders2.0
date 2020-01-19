@@ -28,5 +28,12 @@ class Admin_model extends CI_Model {
 		$this->db->order_by("created", "asc");
 		return $this->db->get_where('alumni',array('status'=>'0'))->result();
 	}
+	public function acceptRequest($id){
+		$data = array(
+	'status' => 1
+	);
+		$this->db->where('id', $id);
+		$this->db->update('alumni',$data);
+	}
 }
 ?>
