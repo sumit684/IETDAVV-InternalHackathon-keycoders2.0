@@ -107,5 +107,6 @@ class Alumni extends CI_Controller {
 		$this->load->view('include/alumni/header');
 		// $this->load->view('alumni/home',$data);
 		// print_r($data);
+
 	}
 }
