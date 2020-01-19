@@ -93,4 +93,11 @@ class Alumni extends CI_Controller {
 		// $this->load->view('alumni/home',$data);
 		// print_r($data);
 	}
+
+	public function addEvents(){
+		$this->input->post('event_name');
+		$this->input->post('event_desc');
+		// $data = array("event_name"=>,'sumit',"event_desc"=>'my event',"college_id"=>'1',"admin_id"=>'1',"event_date"=>'2020-01-01');
+		$this->db->insert('events',$data);
+	}
 }

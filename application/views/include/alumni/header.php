@@ -10,12 +10,15 @@
 	<link rel="stylesheet" type="text/css" href="<?= base_url()?>assets/css/bootstrap-datetimepicker.css">
 	<link rel="stylesheet" type="text/css" href="<?= base_url()?>assets/css/custom.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-<script type="text/javascript">
-	var base_url = "<?=base_url()?>";
-</script>
+	<script type="text/javascript">
+		var base_url = "<?=base_url()?>";
+	</script>
 </head>
 <body>
 	<div class="container">
@@ -38,19 +41,10 @@
 						<li class="nav-item createTest">
 							<a class="nav-link" href="<?=base_url()?>alumni/events">Events</a>
 						</li>
-						<!-- <li class="nav-item addQuestion">
-							<a class="nav-link" href="<?=base_url()?>addQuestion">Add Questions</a>
-						</li>
-						<li class="nav-item testData">
-							<a class="nav-link" href="<?=base_url()?>admin/Test/showAllTest">Test Data</a>
-						</li>
-						<li class="nav-item batch">
-							<a class="nav-link" href="<?=base_url()?>admin/Student/batchesPage">Manage Batches</a>
-						</li> -->
 						<li class="nav-item student">
 							<a class="nav-link" href="<?=base_url()?>alumni/profile">Profile</a>
 						</li>
-                        <li class="nav-item student">
+						<li class="nav-item student">
 							<a class="nav-link" href="<?=base_url()?>alumni/events">Chat</a>
 						</li>
 					</ul>
