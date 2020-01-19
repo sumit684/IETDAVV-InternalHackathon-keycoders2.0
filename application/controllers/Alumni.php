@@ -17,6 +17,11 @@ class Alumni extends CI_Controller {
 		$this->load->view('alumni/alumniLogin');
 	}
 	
+	public function destroy(){
+		$this->session->sess_destroy();
+		redirect(base_url().'alumni');
+	}
+
 	public function alumniLogin(){
 		$data = array("mob_no"=>$this->input->post('mob-no'), "password"=>$this->input->post('login-password'));
 		$result = $this->Alumni_Model->authenticateAlumni($data);

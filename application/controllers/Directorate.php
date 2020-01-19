@@ -14,6 +14,10 @@ class Directorate extends CI_Controller {
 		// echo "This is Alumni Login Page";
 	}
 
+	public function destroy(){
+		$this->session->sess_destroy();
+		redirect(base_url().'directorate');
+	}
 	
 	public function alumniDisplay($college_id)
 	{
