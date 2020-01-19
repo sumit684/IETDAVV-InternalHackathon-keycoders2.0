@@ -148,7 +148,7 @@
 							<td><?= $data->college_name;?></td>
 							<td><?= $data->address;?></td>
 							<td><?= $data->type;?></td>
-							<td><a href="<?=base_url()?>directorate/alumniDisplay"><button class="btn btn-primary"> View Alumni</button></a></td>
+							<td><a href="<?=base_url()?>directorate/alumniDisplay/<?= $data->id;?>"><button class="btn btn-primary"> View Alumni</button></a></td>
 							
 						</tr>
 

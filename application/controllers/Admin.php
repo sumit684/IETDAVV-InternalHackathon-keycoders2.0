@@ -10,35 +10,50 @@ class Admin extends CI_Controller {
 
 	}
 
-
+	public function check_login(){
+		if($this->session->userdata('mob_no')==NULL){
+			redirect(base_url().'admin');
+		}
+	}
 	public function index()
 	{	
-		$this->load->view('admin/college/clgAdminLogin');
-	}
-
-	public function adminLogin(){
-		$data = array("mob_no"=>$this->input->post('mob-no'), "password"=>$this->input->post('login-password'));
-		$result = $this->Admin_Model->authenticateAdmin($data);
-		if($result["id"]){
-			// echo "running";
-			$data['alumni'] = $this->Admin_Model->getregisteredAlumni();
-			$data['pending']=$this->Admin_Model->getnewstudents();
-			$this->load->view($this->header,$data);
-			$this->load->view('admin/college/home');
+		if($this->session->userdata('mob_no')!=NULL){
+			redirect(base_url().'admin/home');
 		}else{
-			echo "Non-Authentic Admin User";
+			$this->load->view('admin/college/clgAdminLogin');
 		}
 	}
 
 	public function home(){
-		// $data['alumni'] = $this->Admin_Model->getregisteredAlumni();
+		$this->check_login();
 		$data['pending']=$this->Admin_Model->getnewstudents();
 		$data['alumni'] = $this->Admin_Model->getregisteredAlumni();
 		$this->load->view($this->header,$data);
 		$this->load->view('admin/college/home',$data);
 	}
 
+	public function destroy(){
+		$this->session->sess_destroy();
+		redirect(base_url().'admin');
+	}
+
+	public function adminLogin(){
+		$data = array("mob_no"=>$this->input->post('mob-no'), "password"=>$this->input->post('login-password'));
+		$session_data = array("mob_no"=>$this->input->post('mob-no'));
+		$result = $this->Admin_Model->authenticateAdmin($session_data);
+		if($result["id"]){
+			$this->session->set_userdata($session_data);
+			$data['alumni'] = $this->Admin_Model->getregisteredAlumni();
+			$data['pending']=$this->Admin_Model->getnewstudents();
+			$this->home();
+		}else{
+			$this->set_flashdata('error','Invalid Details');
+			$this->index();
+		}
+	}
+
 	public function search(){
+		$this->check_login();
 		$data['pending']=$this->Admin_Model->getnewstudents();
 		$data['alumni'] = $this->Admin_Model->getregisteredAlumni();
 		$this->load->view($this->header,$data);
@@ -46,6 +61,7 @@ class Admin extends CI_Controller {
 	}
 
 	public function notices(){
+		$this->check_login();
 		$data['pending']=$this->Admin_Model->getnewstudents();
 		$data['alumni'] = $this->Admin_Model->getregisteredAlumni();
 		$this->load->view($this->header,$data);
@@ -53,6 +69,7 @@ class Admin extends CI_Controller {
 	}
 
 	public function alumni(){
+		$this->check_login();
 		$data['pending']=$this->Admin_Model->getnewstudents();
 		$data['alumni'] = $this->Admin_Model->getregisteredAlumni();
 		$this->load->view($this->header,$data);
@@ -60,6 +77,7 @@ class Admin extends CI_Controller {
 	}
 
 	public function requests(){
+		$this->check_login();
 		$data['pending']=$this->Admin_Model->getnewstudents();
 		$data['alumni'] = $this->Admin_Model->getregisteredAlumni();
 		$this->load->view($this->header,$data);
@@ -68,6 +86,7 @@ class Admin extends CI_Controller {
 	}
 
 	public function events(){
+		$this->check_login();
 		$data['pending']=$this->Admin_Model->getnewstudents();
 		$data['alumni'] = $this->Admin_Model->getregisteredAlumni();
 		// $this->load->view($this->header,$data);
@@ -75,6 +94,7 @@ class Admin extends CI_Controller {
 	}
 
 	public function email(){
+		$this->check_login();
 		$data['pending']=$this->Admin_Model->getnewstudents();
 		$data['alumni'] = $this->Admin_Model->getregisteredAlumni();
 		$this->load->view($this->header,$data);
