@@ -22,5 +22,9 @@ class Alumni_model extends CI_Model {
 		return $result;
 	}
 
+	public function geteventList(){
+		return $this->db->get('events');
+	}
+
 }
 ?>
