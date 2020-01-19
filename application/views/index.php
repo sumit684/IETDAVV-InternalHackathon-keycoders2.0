@@ -40,8 +40,8 @@
                 <h1 style="padding:30px;">Government of GOA</h1>
 
            <a href="<?=base_url();?>Admin/"><button type="button" class="btn btn-primary">Admin Login</button></a>
-           <a href="<?=base_url();?>alumni/login"><button type="button" class="btn btn-primary">Alumni Login</button></a>
-           <a href="<?=base_url();?>alumni/login"><button type="button" class="btn btn-primary">Directorate</button></a>
+           <a href="<?=base_url();?>Alumni"><button type="button" class="btn btn-primary">Alumni Login</button></a>
+           <a href="<?=base_url();?>Directorate"><button type="button" class="btn btn-primary">Directorate</button></a>
 </div>
  
 </body>

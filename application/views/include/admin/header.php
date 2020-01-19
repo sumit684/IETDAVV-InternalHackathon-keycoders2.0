@@ -74,7 +74,7 @@
 
 						<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
 							<a class="dropdown-item" href="#">My Profile</a>
-							<a class="dropdown-item" href="#">Logout</a>
+							<a class="dropdown-item" href="<?=base_url()?>admin/destroy">Logout</a>
 							<a class="dropdown-item" href="#">Something else </a>
 						</div>
 					</div>

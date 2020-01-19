@@ -17,8 +17,11 @@ class Admin extends CI_Controller {
 	}
 	public function index()
 	{	
-		$this->load->view('admin/college/clgAdminLogin');
-
+		if($this->session->userdata('mob_no')!=NULL){
+			redirect(base_url().'admin/home');
+		}else{
+			$this->load->view('admin/college/clgAdminLogin');
+		}
 	}
 
 	public function home(){
