@@ -14,7 +14,11 @@ class Alumni extends CI_Controller {
 	}
 
 	public function index(){
+		if($this->session->userdata('mob_no')!=NULL){
+			redirect(base_url().'alumni/home');
+		}else{
 		$this->load->view('alumni/alumniLogin');
+		}
 	}
 	
 	public function destroy(){
@@ -86,16 +90,14 @@ class Alumni extends CI_Controller {
 		$this->load->view('alumni/home',$data);
 	}
 	public function profile(){
+		
 		$this->check_login();
-		$data = array('mob_no'=>$this->session->userdata('mob_no'),'password'=>$this->session->userdata('password'));
+		$data = array('mob_no'=>$this->session->userdata('mob_no'));
 		// print_r($data);
-		$result['alumni'] = $this->Alumni_Model->authenticateAlumni($data);
+		$result['alumni'] = $this->Alumni_Model->getAlumniDetails($data);
+		// echo "<pre>";
 		// print_r($result);
-		$sdata = array(
-			"fname"=>$this->input->post('fname'),
-		);
-		echo $sdata['mob_no'];
-
+	
 		$this->load->view('include/alumni/header');
 		$this->load->view('alumni/profile',$result);
 	}

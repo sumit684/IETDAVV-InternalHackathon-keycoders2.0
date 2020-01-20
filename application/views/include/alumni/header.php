@@ -31,7 +31,7 @@
 		</div>
 		<div class="row d-block border border-dark shadow">
 			<nav class="navbar navbar-expand-lg navbar-dark bg-dark d-bl">
-				<a class="navbar-brand h2 font-weight-bold active" href="<?=base_url()?>admin/home"><i class="fas fa-home"></i> Home</a>
+				<a class="navbar-brand h2 font-weight-bold active" href="<?=base_url()?>alumni/home"><i class="fas fa-home"></i> Home</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
@@ -48,17 +48,20 @@
 
                         <li class="nav-item student">
 							<form method="POST" action="<?=base_url();?>alumni/profile">
-							<input type="hidden" value="pra" name="mob_no">
+							<!-- <input type="hidden" value="pra" name="mob_no"> -->
 							<button style="background-color: inherit;border: none;" class="nav-link" type="submit">Profile</button>
 							</form>
 						</li>
 					</ul>
-					<div class="float-right">
-						<div class="btn-group">
-							<button type="button" class="btn btn-outline-light "  aria-haspopup="true" aria-expanded="false">
-								Notifications
-							</button>
-							
+					<div class="dropdown show">
+						<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Hello, ALumni
+						</a>
+
+						<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+							<a class="dropdown-item" href="#">My Profile</a>
+							<a class="dropdown-item" href="<?=base_url()?>alumni/destroy">Logout</a>
+							<a class="dropdown-item" href="#">Something else </a>
 						</div>
 					</div>
 				</div>
