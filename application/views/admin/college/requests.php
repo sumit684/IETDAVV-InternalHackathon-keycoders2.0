@@ -1,4 +1,3 @@
-
 <div >
 	<u>	<h1 class="text-center pt-4">ALUMNI</h1></u>
 
@@ -63,22 +62,24 @@
 					<td><?= $data->year_adm;?>-<?= $data->year_leaving?></td>
 					<td><?= $data->email_id;?></td>
 					<td><?= $data->created;?></td>
-					<td><a href="<?= base_url()?>Admin/acceptRequest/<?= $data->id ?>"><button class="btn btn-success accept" >Accept</button></a></td>
-					<td><a href="<?= base_url()?>Admin/rejectRequest/<?= $data->id ?>"><button class="btn btn-danger">Reject</button></a></td>
+					<td><a href="<?= base_url()?>Admin/acceptRequest/<?= $data->id ?>"><button id="accept" class="btn btn-success accept" >Accept</button></a></td>
+					<td><a href="<?= base_url()?>Admin/rejectRequest/<?= $data->id ?>"><button id="reject" class="btn btn-danger">Reject</button></a></td>
 				</tr>
 
 			<?php } ?>					
 		</tbody>
 	</table>
 	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-	<script type="text/javascript">
-		$(document).ready( function () {
-			$('#alumni_table').DataTable();
-		} );
+			<script type="text/javascript">
 
 
-	</script>
-									
+
+				$(document).ready( function () {
+					$('#alumni_table').DataTable();
+				} );z
+
+
+           </script>					
 				</tbody>
 			</table>
 			<script type="text/javascript">

@@ -95,7 +95,7 @@ class Alumni extends CI_Controller {
 	}
 	public function profile(){
 		
-		$this->check_login();
+  		$this->check_login();
 		$data = array('mob_no'=>$this->session->userdata('mob_no'));
 		// print_r($data);
 		$result['alumni'] = $this->Alumni_Model->getAlumniDetails($data);
