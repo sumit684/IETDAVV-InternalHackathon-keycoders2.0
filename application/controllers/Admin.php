@@ -106,6 +106,7 @@ class Admin extends CI_Controller {
 		$data['alumni'] = $this->Admin_Model->getregisteredAlumni();
 		$this->load->view($this->header,$data);
 		$this->load->view('admin/college/requests',$data);
+		$this->load->view('admin/mail/mailSuccesful',$data);
 		
 	}
 
@@ -116,6 +117,7 @@ class Admin extends CI_Controller {
 		$data['alumni'] = $this->Admin_Model->getregisteredAlumni();
 		$this->load->view($this->header,$data);
 		$this->load->view('admin/college/requests',$data);
+		$this->load->view('admin/mail/mailRejected',$data);
 
 	}
 
