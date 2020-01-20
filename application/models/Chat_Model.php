@@ -32,11 +32,11 @@ class Chat_Model extends CI_Model{
 		return $this->db->get('login_details')->result_array();
 	}
 	public function fetch_user_last_activity($data){
-		$this->db->where('user_id',$data['user_id']);
-		$this->db->limit(1);
-		$this->db->order_by('last_activity','desc');
-		return 	$this->db->get('login_details')->result_array();
-
+		
+			$this->db->where('user_id',$data['user_id']);
+			$this->db->limit(1);
+			$this->db->order_by('last_activity','desc');
+			return $this->db->get('login_details')->result_array();
 	}
 
 	public function insertChat($data){

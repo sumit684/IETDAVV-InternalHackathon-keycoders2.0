@@ -70,13 +70,12 @@ class Chat extends CI_Controller {
 		';
 
 		foreach ($data['user_details']  as $key => $value) {
-
-
+			echo "<pre>";
 			$status = '';
 			date_default_timezone_set('Asia/Kolkata');
 			$current_timestamp = strtotime(date("Y-m-d H:i:s") . '- 10 second');
 			$current_timestamp = date('Y-m-d H:i:s', $current_timestamp);
-			$data['last_login'] = $this->Chat_Model->fetch_user_last_activity(array('user_id'=>$value['id']));
+		$data['last_login'] = $this->Chat_Model->fetch_user_last_activity(array('user_id'=>$value['id'] ));	
 			$last_activity = $data['last_login']['0']['last_activity'];
 			if($last_activity > $current_timestamp)
 			{
