@@ -19,11 +19,11 @@
 
 
 	</div>
-	<div align="center">  
+	<!-- <div align="center">  
 		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">ADD EVENTS</button>
 	</div>
 	
-	<div class="container">
+	<div class="container"> -->
 
 
 

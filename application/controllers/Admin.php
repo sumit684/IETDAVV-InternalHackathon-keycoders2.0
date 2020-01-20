@@ -120,5 +120,16 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/mail/mailRejected',$data);
 
 	}
+	public function addEvents(){
+		$this->check_login();
+		// $this->input->post('event_name');
+		// $this->input->post('event_desc');
+		$data = array("event_name"=>$this->input->post('event_name'),"event_desc"=>$this->input->post('event_desc'),"college_id"=>'1',"admin_id"=>'1',"event_date"=>'2020-01-01');
+		
+		$this->db->insert('events',$data);
+
+		// $data['events'] = $this->Alumni_Model->geteventList()->result();
+		redirect(base_url().'admin/home');
+	}
 
 }
