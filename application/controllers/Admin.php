@@ -15,6 +15,7 @@ class Admin extends CI_Controller {
 			redirect(base_url().'admin');
 		}
 	}
+	
 	public function index()
 	{	
 		if($this->session->userdata('mob_no')!=NULL){
@@ -100,6 +101,8 @@ class Admin extends CI_Controller {
 		$this->load->view($this->header,$data);
 		echo "email is sent";
 	}
+
+
 	public function acceptRequest($id){
 		$this->Admin_Model->acceptRequest($id);
 		$data['pending']=$this->Admin_Model->getnewstudents();
@@ -131,5 +134,6 @@ class Admin extends CI_Controller {
 		// $data['events'] = $this->Alumni_Model->geteventList()->result();
 		redirect(base_url().'admin/home');
 	}
+
 
 }

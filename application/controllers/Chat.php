@@ -52,37 +52,13 @@ class Chat extends CI_Controller {
 		}
 
 	}
-	function user_details(){
-
-	}
 	public function update(){
 		$user_id = $this->session->userdata('user_id');
 		$id = $this->Chat_Model->update_last_activity(array('user_id'=>$user_id));
 		// $this->Chat_Model->update_last_activity();
 	}
-	function login1(){
+	function fetch_user(){
 		$user_id = $this->session->userdata('user_id');
-		$status = '';
-		date_default_timezone_set('Asia/Kolkata');
-		$current_timestamp = strtotime(date("Y-m-d H:i:s") . '- 10 second');
-		$current_timestamp = date('Y-m-d H:i:s', $current_timestamp);
-		// $user_last_activity = fetch_user_last_activity($row['user_id'], $connect);
-		$data['last_login'] = $this->Chat_Model->fetch_user_last_activity(array('user_id'=>$user_id));
-		$last_activity = $data['last_login']['0']['last_activity'];
-		// $last_activity = $last_login['0']['last_activity'];
-		if($last_activity < $current_timestamp)
-		{
-			$status = '<span class="btn btn-success">Online</span>';
-		}
-		else
-		{
-			$status = '<span class="btn btn-danger">Offline</span>';
-		}
-		
-
-
-
-		
 		$data['user_details'] = $this->Chat_Model->user_details(array('user_id'=>$user_id));
 		$output = '
 		<table class="table table-bordered table-striped">
@@ -94,9 +70,25 @@ class Chat extends CI_Controller {
 		';
 
 		foreach ($data['user_details']  as $key => $value) {
+			echo "<pre>";
+			$status = '';
+			date_default_timezone_set('Asia/Kolkata');
+			$current_timestamp = strtotime(date("Y-m-d H:i:s") . '- 10 second');
+			$current_timestamp = date('Y-m-d H:i:s', $current_timestamp);
+		$data['last_login'] = $this->Chat_Model->fetch_user_last_activity(array('user_id'=>$value['id'] ));	
+			$last_activity = $data['last_login']['0']['last_activity'];
+			if($last_activity > $current_timestamp)
+			{
+				$status = '<span class="btn btn-success">Online</span>';
+			}
+			else
+			{
+				$status = '<span class="btn btn-danger">Offline</span>';
+			}
+
 			$output .= '
 			<tr>
-			<td>'.$value['username'].'</td>
+			<td>'.$value['username'].' '.$this->Chat_Model->count_unseen_message($value['id'], $user_id ).'</td>
 			<td>'.$status.'</td>
 			<td><button type="button" class="btn btn-info btn-xs start_chat" data-touserid="'.$value['id'].'" data-tousername="'.$value['username'].'">Start Chat</button></td>
 			</tr>
@@ -107,6 +99,27 @@ class Chat extends CI_Controller {
 
 		echo $output;
 
+	}
+
+	public function sendChat(){
+		$data = array(
+			':to_user_id'  => $_POST['to_user_id'],
+			':from_user_id'  => $_SESSION['user_id'],
+			':chat_message'  => $_POST['chat_message'],
+			':status'   => '1'
+		);
+		$this->Chat_Model->insertChat($data);
+		$this->Chat_Model->fetch_user_chat_history($data);
+
+	}
+	public function fetch_user_chat_history(){
+		$data = array(
+			':to_user_id'  => $_POST['to_user_id'],
+			':from_user_id'  => $_SESSION['user_id'],
+		);
+		// echo "<pre>";
+		// print_r($data);exit;
+		echo $this->Chat_Model->fetch_user_chat_history($data);
 	}
 
 	public function destroy()

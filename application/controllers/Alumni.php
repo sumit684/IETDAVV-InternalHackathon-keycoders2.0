@@ -17,7 +17,7 @@ class Alumni extends CI_Controller {
 		if($this->session->userdata('mob_no')!=NULL){
 			redirect(base_url().'alumni/home');
 		}else{
-		$this->load->view('alumni/alumniLogin');
+			$this->load->view('alumni/alumniLogin');
 		}
 	}
 	
@@ -28,10 +28,13 @@ class Alumni extends CI_Controller {
 
 	public function alumniLogin(){
 		$data = array("mob_no"=>$this->input->post('mob-no'), "password"=>$this->input->post('login-password'));
-		$session_data = array("mob_no"=>$this->input->post('mob-no'));
+		
 		$result = $this->Alumni_Model->authenticateAlumni($data);
+		// echo "<pre>";
+		// print_r($result[0]['id']);
+		// print_r($result[0]['fname']);exit;
 		if($result){
-			
+			$session_data = array("mob_no"=>$this->input->post('mob-no'),'username'=>$result[0]['fname'],'user_id'=>$result[0]['id']);
 			$this->session->set_userdata($session_data);
 			$result['alumni'] = $result;
 			$this->load->view('include/alumni/header');
@@ -68,7 +71,7 @@ class Alumni extends CI_Controller {
 			"occupation"=>$this->input->post('occupation'),
 			"brief_profile"=>$this->input->post('brief_profile'),
 			"achievements"=>$this->input->post('achievements'),
-			);
+		);
         // echo $data;
 		$result = $this->Alumni_Model->registerAlumni($data);
 		if($result==TRUE){
@@ -79,9 +82,9 @@ class Alumni extends CI_Controller {
 	}
 	public function readmore(){
 		$data = array(
-						"fname"=>$this->input->post('fname'),
-					);
-					echo $data['fname'];
+			"fname"=>$this->input->post('fname'),
+		);
+		echo $data['fname'];
 
 	}
 	public function home(){
@@ -98,7 +101,7 @@ class Alumni extends CI_Controller {
 		$result['alumni'] = $this->Alumni_Model->getAlumniDetails($data);
 		// echo "<pre>";
 		// print_r($result);
-	
+
 		$this->load->view('include/alumni/header');
 		$this->load->view('alumni/profile',$result);
 	}
