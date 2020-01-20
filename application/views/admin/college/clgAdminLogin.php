@@ -54,6 +54,7 @@
 						</div>
 					</form>
 				</div>
+				<span class="text-danger" align="center"><?php echo $this->session->flashdata('error')?></span>
 				<div class="card-footer">
 				<div class="d-flex justify-content-center links">
 						Login as Alumni<a href="<?=base_url();?>alumni">Sign In</a>

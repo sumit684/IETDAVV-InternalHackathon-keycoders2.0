@@ -40,14 +40,14 @@ class Admin extends CI_Controller {
 	public function adminLogin(){
 		$data = array("mob_no"=>$this->input->post('mob-no'), "password"=>$this->input->post('login-password'));
 		$session_data = array("mob_no"=>$this->input->post('mob-no'));
-		$result = $this->Admin_Model->authenticateAdmin($session_data);
+		$result = $this->Admin_Model->authenticateAdmin($data);
 		if($result["id"]){
 			$this->session->set_userdata($session_data);
 			$data['alumni'] = $this->Admin_Model->getregisteredAlumni();
 			$data['pending']=$this->Admin_Model->getnewstudents();
 			$this->home();
 		}else{
-			$this->set_flashdata('error','Invalid Details');
+			$this->session->set_flashdata('error','Invalid Details');
 			$this->index();
 		}
 	}
