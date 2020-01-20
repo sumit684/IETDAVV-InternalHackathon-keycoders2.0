@@ -31,6 +31,7 @@ class Alumni extends CI_Controller {
 		$session_data = array("mob_no"=>$this->input->post('mob-no'));
 		$result = $this->Alumni_Model->authenticateAlumni($data);
 		if($result){
+			
 			$this->session->set_userdata($session_data);
 			$result['alumni'] = $result;
 			$this->load->view('include/alumni/header');
@@ -91,7 +92,7 @@ class Alumni extends CI_Controller {
 	}
 	public function profile(){
 		
-		$this->check_login();
+  		$this->check_login();
 		$data = array('mob_no'=>$this->session->userdata('mob_no'));
 		// print_r($data);
 		$result['alumni'] = $this->Alumni_Model->getAlumniDetails($data);
