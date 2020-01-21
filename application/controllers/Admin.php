@@ -96,9 +96,13 @@ class Admin extends CI_Controller {
 	public function events(){
 		$this->check_login();
 		$data['pending']=$this->Admin_Model->getnewstudents();
-		$data['alumni'] = $this->Admin_Model->getregisteredAlumni();
-		// $this->load->view($this->header,$data);
-		echo "events Page";
+//		$data['alumni'] = $this->Admin_Model->getregisteredAlumni();
+		$edata['events'] = $this->Admin_Model->geteventList()->result();
+		//print_r($edata);
+		$this->load->view($this->header,$data);
+		$this->load->view('admin/college/event',$edata);
+		
+		//echo "events Page";
 	}
 
 	public function email(){
@@ -140,8 +144,19 @@ class Admin extends CI_Controller {
 		$this->db->insert('events',$data);
 
 		// $data['events'] = $this->Alumni_Model->geteventList()->result();
-		redirect(base_url().'admin/home');
+		redirect(base_url().'admin/events');
 	}
-
+	public function sendEmail(){
+		$edata = array("subject"=>$this->input->post('subject'),"body"=>$this->input->post('body'),"emailid"=>$this->input->post('emailid'));
+		
+// 		$email_data['edata']=$this->Admin_Model->acceptRequest($id);
+// //		print_r($email_data);
+ 		$data['pending']=$this->Admin_Model->getnewstudents();
+ 		$data['alumni'] = $this->Admin_Model->getregisteredAlumni();
+ 		$this->load->view($this->header,$data);
+ 		$this->load->view('admin/college/home',$data);
+ 		$this->load->view('admin/mail/sendEmail',$edata);
+		
+	}
 
 }

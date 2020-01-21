@@ -51,10 +51,10 @@
 							<a class="nav-link" href="<?=base_url()?>admin/notices">Publish notices</a>
 						</li>
 						<li class="nav-item testData">
-							<a class="nav-link" href="<?=base_url()?>admin/events" data-toggle="modal" data-target="#myModal">Create events</a>
+							<a class="nav-link" href="<?=base_url()?>admin/events" >Create events</a>
 						</li>
 						<li class="nav-item batch">
-							<a class="nav-link" href="<?=base_url()?>admin/email">Send Email</a>
+							<a class="nav-link" href="<?=base_url()?>admin/home">Send Email</a>
 						</li>
 						<li class="nav-item student">
 							<a class="nav-link" href="<?=base_url()?>admin/requests">Pending Requests <span class="badge badge-light">

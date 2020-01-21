@@ -40,6 +40,9 @@ class Admin_model extends CI_Model {
 		$this -> db -> where('id', $id);
 		$this -> db -> delete('alumni');
 	}
-	
+	public function geteventList(){
+		return $this->db->get('events');
+	}
+
 }
 ?>
