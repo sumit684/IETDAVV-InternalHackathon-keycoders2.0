@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Pending Requests</title>
+	<title>Admin Panel</title>
 	<meta charset="utf-8">
 	<link rel="icon" type="image/jpg" href="<?=base_url();?>assets/img/logo1.png">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,16 +18,13 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 	<script type="text/javascript">
+
 		var base_url = "<?=base_url()?>";
 	</script>
 	<!-- <script src="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css"></script>
 		<script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script> -->
 		<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
 		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 	</head>
 	<body>
 		<div class="container-fluid" >
@@ -54,10 +51,10 @@
 							<a class="nav-link" href="<?=base_url()?>admin/notices">Publish notices</a>
 						</li>
 						<li class="nav-item testData">
-							<a class="nav-link" href="<?=base_url()?>admin/events" data-toggle="modal" data-target="#myModal">Create events</a>
+							<a class="nav-link" href="<?=base_url()?>admin/events" >Create events</a>
 						</li>
 						<li class="nav-item batch">
-							<a class="nav-link" href="<?=base_url()?>admin/email">Send Email</a>
+							<a class="nav-link" href="<?=base_url()?>admin/home">Send Email</a>
 						</li>
 						<li class="nav-item student">
 							<a class="nav-link" href="<?=base_url()?>admin/requests">Pending Requests <span class="badge badge-light">

@@ -13,13 +13,14 @@ require 'vendor/autoload.php';
 //   $sendname = $value->fname;
   
 // }
-$address = $edata[0]->email_id;
-$sendname = $edata[0]->fname;
+$address = $emailid;
+//$sendname = $edata[0]->fname;
 // body
-$body1 = 'Dear '.$sendname.' your application has been verified and succesfully Registered, Kindly Login with your mob. No. And password on Alumni portal.<br>Thanks and Regards<br> University of GOA ';
+//$body1 = 'Dear '.$sendname.' your application has been verified and succesfully Registered, Kindly Login with your mob. No. And password on Alumni portal.<br>Thanks and Regards<br> University of GOA ';
+$body1 = $body;
 //Subject
-$subject1 = 'Sucessfully Registered';
-
+//$subject1 = 'Sucessfully Registered';
+$subject1 = $subject;
 
 $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
 try {
