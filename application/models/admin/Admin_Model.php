@@ -18,9 +18,9 @@ class Admin_model extends CI_Model {
 		}
 	}
 
-	public function getregisteredAlumni($collegeID){
+	public function getregisteredAlumni(){
 		$this->db->order_by("created", "asc");
-		return $this->db->get_where('alumni',array('status'=>'1','college_id'=>$collegeID))->result();
+		return $this->db->get_where('alumni',array('status'=>'1','college_id'=>'1'))->result();
 		
 	}
 
