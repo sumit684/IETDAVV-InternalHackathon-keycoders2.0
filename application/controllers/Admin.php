@@ -15,6 +15,7 @@ class Admin extends CI_Controller {
 			redirect(base_url().'admin');
 		}
 	}
+	
 	public function index()
 	{	
 		if($this->session->userdata('mob_no')!=NULL){
@@ -100,23 +101,10 @@ class Admin extends CI_Controller {
 		$this->load->view($this->header,$data);
 		echo "email is sent";
 	}
-	public function acceptRequest($id){
-		$this->Admin_Model->acceptRequest($id);
-		$data['pending']=$this->Admin_Model->getnewstudents();
-		$data['alumni'] = $this->Admin_Model->getregisteredAlumni();
-		$this->load->view($this->header,$data);
-		$this->load->view('admin/college/requests',$data);
-		
 	}
-
 	public function rejectRequest($id){
-
-		$this->Admin_Model->rejectRequest($id);
-		$data['pending']=$this->Admin_Model->getnewstudents();
-		$data['alumni'] = $this->Admin_Model->getregisteredAlumni();
-		$this->load->view($this->header,$data);
-		$this->load->view('admin/college/requests',$data);
-
-	}
+    // public function clgAdminLogin(){
+	// 	$this->load->view('admin/college/clgAdminLogin');
+	// }
 
 }
