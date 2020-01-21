@@ -55,6 +55,7 @@
 						<th scope="col">Course</th>
 						<th scope="col">Batch</th>
 						<th scope="col">Email ID</th>
+						<th scope="col">mail</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -68,6 +69,7 @@
 							<td><?= $data->course;?></td>
 							<td><?= $data->year_adm;?>-<?= $data->year_leaving?></td>
 							<td><?= $data->email_id;?></td>
+							<td><button type="button" class="btn btn-success" onclick="setEmailid('<?= $data->email_id;?>')" data-toggle="modal" data-target="#myModal" >Send</button></td>
 						</tr>
 
 					<?php } ?>					
@@ -81,7 +83,58 @@
 
 		</div>
 	</div>
+    <div class="container">
+	<script>
+function setEmailid(emailid) {
+//console.log(`${emailid} you called me`);
+document.getElementById("email_id").value = emailid;
+}
+</script>
 
+		<!-- The Modal -->
+		<div class="modal" id="myModal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+
+					<!-- Modal Header -->
+					<div class="modal-header">
+						<h4 class="modal-title">Send Email</h4>
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+					</div>
+
+					<!-- Modal body -->
+					<div class="modal-body">
+						<form method="POST" action="<?=base_url()?>admin/sendEmail">
+							<div class="row"> 
+								<div class="col-md-6"> 
+									<label>Subject</label>
+								</div>
+								<div class="col-md-6">
+									<input name="subject">   
+								</div>
+							</div> 
+							<div class="row"> 
+								<div class="col-md-6"> 
+									<label>Email body</label>
+								</div>
+								<div class="col-md-6">
+									<input name="body">   
+								</div>
+							</div>
+
+						</div>
+                         <input id="email_id" name="emailid" type="hidden" value="default">
+						<!-- Modal footer -->
+						<div class="modal-footer">
+							<button type="submit" class="btn btn-danger" >Submit</button>
+						</div>
+					</form>
+
+				</div>
+			</div>
+		</div>
+
+	</div>
 	<footer style="height: 20rem;">
 		
 	</footer>
