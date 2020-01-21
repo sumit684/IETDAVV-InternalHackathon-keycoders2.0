@@ -2,8 +2,8 @@
 <html>
 <head>
 	<title>Admin Home</title>
-<meta charset="utf-8">
-	<link rel="icon" type="image/jpg" href="http://www.iitpulse.com/test/assets/img/iitpulse_logo.png">
+	<meta charset="utf-8">
+	<link rel="icon" type="image/jpg" href="<?=base_url();?>assets/img/logo1.png">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -51,10 +51,10 @@
 							<a class="nav-link" href="<?=base_url()?>Chat">Chat</a>
 						</li>
 
-                        <li class="nav-item student">
+						<li class="nav-item student">
 							<form method="POST" action="<?=base_url();?>alumni/profile">
-							<!-- <input type="hidden" value="pra" name="mob_no"> -->
-							<button style="background-color: inherit;border: none;" class="nav-link" type="submit">Profile</button>
+								<!-- <input type="hidden" value="pra" name="mob_no"> -->
+								<button style="background-color: inherit;border: none;" class="nav-link" type="submit">Profile</button>
 							</form>
 						</li>
 					</ul>

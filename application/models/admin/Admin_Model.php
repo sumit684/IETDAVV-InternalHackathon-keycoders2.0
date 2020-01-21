@@ -37,8 +37,10 @@ class Admin_model extends CI_Model {
 		return $this->db->get_where('alumni',array('id'=>$id))->result();
 	}
 	public function rejectRequest($id){
-		$this -> db -> where('id', $id);
-		$this -> db -> delete('alumni');
+		$this ->db->where('id', $id);
+		$this ->db->delete('alumni');
+		// $this->db->where('user_id',$id);
+		// $this ->db->delete('login_details');
 	}
 	public function geteventList(){
 		return $this->db->get('events');
