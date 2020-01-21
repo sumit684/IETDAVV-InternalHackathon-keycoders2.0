@@ -5,6 +5,7 @@ class Alumni extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->model('Alumni_Model');
+		$this->load->model('Chat_Model');
 	}
 
 	public function check_login(){
@@ -36,6 +37,24 @@ class Alumni extends CI_Controller {
 		if($result){
 			$session_data = array("mob_no"=>$this->input->post('mob-no'),'username'=>$result[0]['fname'],'user_id'=>$result[0]['id']);
 			$this->session->set_userdata($session_data);
+
+
+			$user_id = $this->session->userdata('user_id');
+				$id = $this->Chat_Model->check_user_id(array('user_id'=>$user_id));
+				// $id= $this->Chat_Model->update_last_activity(array('user_id'=>$user_id));
+				if($id == TRUE){
+					$this->Chat_Model->update_last_activity(array('user_id'=>$user_id));
+					
+				}
+				else{
+					$this->Chat_Model->insert_last_activity(array('user_id'=>$user_id));
+				}
+
+
+
+
+
+
 			$result['alumni'] = $result;
 			$this->load->view('include/alumni/header');
 			$edata['events'] = $this->Alumni_Model->geteventList()->result();
