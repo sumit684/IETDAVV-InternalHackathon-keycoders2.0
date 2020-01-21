@@ -101,8 +101,6 @@ class Admin extends CI_Controller {
 		$this->load->view($this->header,$data);
 		echo "email is sent";
 	}
-	}
-	public function rejectRequest($id){
     // public function clgAdminLogin(){
 	// 	$this->load->view('admin/college/clgAdminLogin');
 	// }
