@@ -14,6 +14,7 @@ require 'vendor/autoload.php';
   
 // }
 $address = $emailid;
+$sendname = 'Receiver';
 //$sendname = $edata[0]->fname;
 // body
 //$body1 = 'Dear '.$sendname.' your application has been verified and succesfully Registered, Kindly Login with your mob. No. And password on Alumni portal.<br>Thanks and Regards<br> University of GOA ';
