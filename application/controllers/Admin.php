@@ -154,8 +154,9 @@ class Admin extends CI_Controller {
  		$data['pending']=$this->Admin_Model->getnewstudents();
  		$data['alumni'] = $this->Admin_Model->getregisteredAlumni();
  		$this->load->view($this->header,$data);
- 		$this->load->view('admin/college/home',$data);
- 		$this->load->view('admin/mail/sendEmail',$edata);
+		$this->load->view('admin/mail/sendEmail',$edata); 
+		$this->load->view('admin/college/home',$data);
+ 		
 		
 	}
 
