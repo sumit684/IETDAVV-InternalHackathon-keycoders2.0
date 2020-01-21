@@ -10,6 +10,7 @@
 	<!--Made with love by Mutiullah Samim -->
 	
 	<!--Bootsrap 4 CDN-->
+	<link rel="icon" type="image/jpg" href="<?=base_url();?>assets/img/logo1.png">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	
 	<!--Fontawesome CDN-->

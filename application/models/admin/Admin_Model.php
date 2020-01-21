@@ -36,8 +36,10 @@ class Admin_model extends CI_Model {
 		$this->db->update('alumni',$data);
 	}
 	public function rejectRequest($id){
-		$this -> db -> where('id', $id);
-		$this -> db -> delete('alumni');
+		$this ->db->where('id', $id);
+		$this ->db->delete('alumni');
+		// $this->db->where('user_id',$id);
+		// $this ->db->delete('login_details');
 	}
 	
 }

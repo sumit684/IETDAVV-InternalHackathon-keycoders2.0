@@ -6,6 +6,7 @@ class Admin extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->model('admin/Admin_Model');
+		$this->load->model('Chat_Model');
 		$this->header = 'include/admin/header';
 
 	}
@@ -112,6 +113,17 @@ class Admin extends CI_Controller {
 
 	public function acceptRequest($id){
 		$this->Admin_Model->acceptRequest($id);
+
+		$id = $this->Chat_Model->check_user_id(array('user_id'=>$id));
+				// $id= $this->Chat_Model->update_last_activity(array('user_id'=>$user_id));
+		if($id == TRUE){
+			$this->Chat_Model->update_last_activity(array('user_id'=>$id));
+
+		}
+		else{
+			$this->Chat_Model->insert_last_activity(array('user_id'=>$id));
+		}
+
 		$data['pending']=$this->Admin_Model->getnewstudents();
 		$data['alumni'] = $this->Admin_Model->getregisteredAlumni();
 		$this->load->view($this->header,$data);

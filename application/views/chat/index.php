@@ -29,7 +29,7 @@
 				fetch_user();
 				update_chat_history_data();
 				console.log("Ravindra");
-			}, 3000);
+			}, 2000);
 
 
 			function fetch_user()
@@ -59,7 +59,7 @@
 			function make_chat_dialog_box(to_user_id, to_user_name)
 			{
 				var modal_content = '<div id="user_dialog_'+to_user_id+'" class="user_dialog" title="You have chat with '+to_user_name+'" >';
-				modal_content += '<div style="height:400px; border:1px solid #ccc; overflow-y: scroll; margin-bottom:0px; padding:16px;" class="chat_history" data-touserid="'+to_user_id+'" id="chat_history_'+to_user_id+'">';
+				modal_content += '<div style="height:400px; border:1px solid #ccc; overflow-y: scroll; margin-bottom:24px; padding:16px;" class="chat_history" data-touserid="'+to_user_id+'" id="chat_history_'+to_user_id+'">';
 				modal_content += fetch_user_chat_history(to_user_id);
 				modal_content += '</div>';
 				modal_content += '<div class="form-group">';
