@@ -1,22 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-
-	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<!-- 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<title></title>
-</head>
-<body>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
 	<?php 
 	
 
 	?>
 	<div class="container ">
-		<h3>Chat Application</h3>
+		<!-- <h3>Chat Application</h3> -->
 		<div class="table-responsive text-center">
-			<h4>Online Users</h4>
+			<!-- <h4>Online Users</h4> -->
 			<p align="right"> Hi - <?php print_r($this->session->userdata('username')) ?> 
 			<!-- <a href="<?php base_url()?>destroy">Logout</a> </p> -->
 			<div id='user_details'></div>
@@ -36,7 +29,7 @@
 				fetch_user();
 				update_chat_history_data();
 				console.log("Ravindra");
-			}, 50);
+			}, 3000);
 
 
 			function fetch_user()
@@ -65,8 +58,8 @@
 
 			function make_chat_dialog_box(to_user_id, to_user_name)
 			{
-				var modal_content = '<div id="user_dialog_'+to_user_id+'" class="user_dialog" title="You have chat with '+to_user_name+'">';
-				modal_content += '<div style="height:400px; border:1px solid #ccc; overflow-y: scroll; margin-bottom:24px; padding:16px;" class="chat_history" data-touserid="'+to_user_id+'" id="chat_history_'+to_user_id+'">';
+				var modal_content = '<div id="user_dialog_'+to_user_id+'" class="user_dialog" title="You have chat with '+to_user_name+'" >';
+				modal_content += '<div style="height:400px; border:1px solid #ccc; overflow-y: scroll; margin-bottom:0px; padding:16px;" class="chat_history" data-touserid="'+to_user_id+'" id="chat_history_'+to_user_id+'">';
 				modal_content += fetch_user_chat_history(to_user_id);
 				modal_content += '</div>';
 				modal_content += '<div class="form-group">';

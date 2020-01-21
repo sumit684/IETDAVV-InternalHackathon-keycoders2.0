@@ -15,7 +15,8 @@ class Chat_Model extends CI_Model{
 	}
 	public function user_details($data){
 		$this->db->where_not_in('id',$data['user_id']);
-		return $this->db->get('chat_login')->result_array();
+		$this->db->where('status',1);
+		return $this->db->get('alumni')->result_array();
 		// return $data;
 	}
 	public function insert_last_activity($data){
@@ -103,7 +104,6 @@ class Chat_Model extends CI_Model{
 					$user_name = '<b class="text-danger">'.$value1['username'].'</b>';
 				}
 				
-
 			}
 			$output .= '
 			<li style="border-bottom:1px dotted #ccc">
@@ -116,18 +116,6 @@ class Chat_Model extends CI_Model{
 			';
 		}
 		$output .= '</ul>';
-
-		// $query = "
-		// UPDATE chat_message 
-		// SET status = '0' 
-		// WHERE from_user_id = '".$to_user_id."' 
-		// AND to_user_id = '".$from_user_id."' 
-		// AND status = '1'
-		// ";
-		// $statement = $connect->prepare($query);
-		// $statement->execute();
-		// return $output;
-
 		$updatenotification = array(
 			'status' => 0
 		);
