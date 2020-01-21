@@ -32,6 +32,13 @@ class Admin extends CI_Controller {
 		$this->load->view($this->header,$data);
 		$this->load->view('admin/college/home',$data);
 	}
+	public function newsletter(){
+		$this->check_login();
+		$data['pending']=$this->Admin_Model->getnewstudents();
+		$data['alumni'] = $this->Admin_Model->getregisteredAlumni();
+		$this->load->view($this->header,$data);
+		$this->load->view('admin/college/newsletter',$data);
+	}
 
 	public function destroy(){
 		$this->session->sess_destroy();
