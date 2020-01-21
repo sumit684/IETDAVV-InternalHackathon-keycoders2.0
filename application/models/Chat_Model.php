@@ -16,6 +16,7 @@ class Chat_Model extends CI_Model{
 	public function user_details($data){
 		$this->db->where_not_in('id',$data['user_id']);
 		$this->db->where('status',1);
+		
 		return $this->db->get('alumni')->result_array();
 		// return $data;
 	}
@@ -34,10 +35,10 @@ class Chat_Model extends CI_Model{
 	}
 	public function fetch_user_last_activity($data){
 		
-			$this->db->where('user_id',$data['user_id']);
-			$this->db->limit(1);
-			$this->db->order_by('last_activity','desc');
-			return $this->db->get('login_details')->result_array();
+		$this->db->where('user_id',$data['user_id']);
+		$this->db->limit(1);
+		$this->db->order_by('last_activity','desc');
+		return $this->db->get('login_details')->result_array();
 	}
 
 	public function insertChat($data){
@@ -76,7 +77,7 @@ class Chat_Model extends CI_Model{
 		$this->db->order_by('timestamp','DESC');
 
 		$result = $this->db->get('chat_messages')->result_array();
-		
+
 
 		$output = '<ul class="list-unstyled">';
 
@@ -94,17 +95,18 @@ class Chat_Model extends CI_Model{
 			else
 			{
 				
-				$this->db->select('username');
+				$this->db->select('fname');
 				$this->db->where('id',$value["from_user_id"]);
-				$result1 = $this->db->get('chat_login')->result_array();
+				$result1 = $this->db->get('alumni')->result_array();
 				// print_r($result1);exit;
 				foreach ($result1 as $key1 => $value1)
 				{
 					// return ;
-					$user_name = '<b class="text-danger">'.$value1['username'].'</b>';
+					$user_name = '<b class="text-danger">'.$value1['fname'].'</b>';
 				}
 				
 			}
+
 			$output .= '
 			<li style="border-bottom:1px dotted #ccc">
 			<p>'.$user_name.' - '.$value["chat_message"].'
@@ -114,8 +116,10 @@ class Chat_Model extends CI_Model{
 			</p>
 			</li>
 			';
+
 		}
 		$output .= '</ul>';
+		
 		$updatenotification = array(
 			'status' => 0
 		);
@@ -124,8 +128,8 @@ class Chat_Model extends CI_Model{
 		$this->db->where('status',1);
 		$this->db->update('chat_messages',$updatenotification);
 
-
 		return $output;
+		
 	}
 
 
@@ -145,7 +149,7 @@ class Chat_Model extends CI_Model{
 		$output = '';
 		if(count($unreadmessage) > 0)
 		{
-			$output = '<span class="label label-success ">'.count($unreadmessage).'</span>';
+			$output = '<span class="btn btn-success " ><center><b>'.count($unreadmessage).'</b></center></span>';
 		}
 		return $output;
 	}
