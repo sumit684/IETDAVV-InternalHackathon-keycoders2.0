@@ -1,5 +1,5 @@
 <?php
-
+//print_r($edata[0]->email_id);
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -7,12 +7,14 @@ require 'vendor/autoload.php';
 
 // All variables descirbed below
 //add emails in this array to those we want to send files and message
-foreach ($pending as $key => $value) {
-    # code...
-  $address = $value->email_id;  
-  $sendname = $value->fname;
-}
-
+// foreach ($pending as $key => $value) {
+//     # code...
+//   $address = $value->email_id;  
+//   $sendname = $value->fname;
+  
+// }
+$address = $edata[0]->email_id;
+$sendname = $edata[0]->fname;
 // body
 $body1 = 'Dear '.$sendname.' your application has been verified and succesfully Registered, Kindly Login with your mob. No. And password on Alumni portal.<br>Thanks and Regards<br> University of GOA ';
 //Subject
@@ -56,7 +58,8 @@ try {
     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     $mail->send();
-   echo "<script type='text/javascript'>alert('Email Send');</script>";
+//    print_r ();
+   echo "<script type='text/javascript'>alert('Email Send to $address');</script>";
 } catch (Exception $e) {
     echo "<script type='text/javascript'>alert('Message could not be sent. Mailer Error: ', $mail->ErrorInfo;);</script>";
 

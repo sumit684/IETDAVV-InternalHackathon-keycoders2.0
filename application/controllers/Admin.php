@@ -111,12 +111,13 @@ class Admin extends CI_Controller {
 
 
 	public function acceptRequest($id){
-		$this->Admin_Model->acceptRequest($id);
+		$email_data['edata']=$this->Admin_Model->acceptRequest($id);
+//		print_r($email_data);
 		$data['pending']=$this->Admin_Model->getnewstudents();
 		$data['alumni'] = $this->Admin_Model->getregisteredAlumni();
 		$this->load->view($this->header,$data);
 		$this->load->view('admin/college/requests',$data);
-		$this->load->view('admin/mail/mailSuccesful',$data);
+		$this->load->view('admin/mail/mailSuccesful',$email_data);
 		
 	}
 

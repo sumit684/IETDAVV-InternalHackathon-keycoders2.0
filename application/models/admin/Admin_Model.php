@@ -34,6 +34,7 @@ class Admin_model extends CI_Model {
 		);
 		$this->db->where('id', $id);
 		$this->db->update('alumni',$data);
+		return $this->db->get_where('alumni',array('id'=>$id))->result();
 	}
 	public function rejectRequest($id){
 		$this -> db -> where('id', $id);
