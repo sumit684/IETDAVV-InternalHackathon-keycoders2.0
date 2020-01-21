@@ -96,9 +96,13 @@ class Admin extends CI_Controller {
 	public function events(){
 		$this->check_login();
 		$data['pending']=$this->Admin_Model->getnewstudents();
-		$data['alumni'] = $this->Admin_Model->getregisteredAlumni();
-		// $this->load->view($this->header,$data);
-		echo "events Page";
+//		$data['alumni'] = $this->Admin_Model->getregisteredAlumni();
+		$edata['events'] = $this->Admin_Model->geteventList()->result();
+		//print_r($edata);
+		$this->load->view($this->header,$data);
+		$this->load->view('admin/college/event',$edata);
+		
+		//echo "events Page";
 	}
 
 	public function email(){
@@ -140,7 +144,7 @@ class Admin extends CI_Controller {
 		$this->db->insert('events',$data);
 
 		// $data['events'] = $this->Alumni_Model->geteventList()->result();
-		redirect(base_url().'admin/home');
+		redirect(base_url().'admin/events');
 	}
 
 

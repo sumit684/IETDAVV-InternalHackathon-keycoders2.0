@@ -2,54 +2,7 @@
 			<u>	<h1 class="text-center pt-4">ALUMNI</h1></u>
 
 		</div>
-		<div class="container">
-
-
-
-		<!-- The Modal -->
-		<div class="modal" id="myModal">
-			<div class="modal-dialog">
-				<div class="modal-content">
-
-					<!-- Modal Header -->
-					<div class="modal-header">
-						<h4 class="modal-title">Add Events</h4>
-						<button type="button" class="close" data-dismiss="modal">&times;</button>
-					</div>
-
-					<!-- Modal body -->
-					<div class="modal-body">
-						<form method="POST" action="<?=base_url()?>admin/addEvents">
-							<div class="row"> 
-								<div class="col-md-6"> 
-									<label>Event Name</label>
-								</div>
-								<div class="col-md-6">
-									<input name="event_name">   
-								</div>
-							</div> 
-							<div class="row"> 
-								<div class="col-md-6"> 
-									<label>Event Description</label>
-								</div>
-								<div class="col-md-6">
-									<input name="event_desc">   
-								</div>
-							</div>
-
-						</div>
-
-						<!-- Modal footer -->
-						<div class="modal-footer">
-							<button type="submit" class="btn btn-danger" >Submit</button>
-						</div>
-					</form>
-
-				</div>
-			</div>
-		</div>
-
-	</div>
+		
 		<div class="row ml-4">
 
 			<nav class="navbar navbar-expand-sm bg-light navbar-light;" style="display: contents; margin-left: auto; margin-right: auto;">
