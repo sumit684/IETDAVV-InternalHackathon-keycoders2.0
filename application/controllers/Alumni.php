@@ -52,9 +52,6 @@ class Alumni extends CI_Controller {
 
 
 
-
-
-
 			$result['alumni'] = $result;
 			$this->load->view('include/alumni/header');
 			$edata['events'] = $this->Alumni_Model->geteventList()->result();
@@ -94,9 +91,11 @@ class Alumni extends CI_Controller {
         // echo $data;
 		$result = $this->Alumni_Model->registerAlumni($data);
 		if($result==TRUE){
-			echo "registered";
+			$this->session->set_flashdata('reg_success',"Successfully Registered");
+			redirect(base_url()."alumni");
 		}else{
-			echo "not registered";
+			$this->session->set_flashdata('reg_error',"Not Registered");
+			redirect(base_url()."alumni");
 		}
 	}
 	public function readmore(){

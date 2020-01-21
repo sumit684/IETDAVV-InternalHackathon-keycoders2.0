@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login Page</title>
+	<title>Alumni Login Page</title>
 	<!--Made with love by Mutiullah Samim -->
 	
 	<!--Bootsrap 4 CDN-->
@@ -18,7 +18,9 @@
 
 	<!--Custom styles-->
 	<link rel="stylesheet" type="text/css" href="styles.css">
+
 </head>
+
 <body>
 	<div class="container">
 		<div class="d-flex justify-content-center h-100">
@@ -28,7 +30,7 @@
 					<div class="d-flex justify-content-end social_icon">
 						<span><i class="fab fa-facebook-square"></i></span>
 						<span><i class="fab fa-google-plus-square"></i></span>
-						<span><i class="fab fa-twitter-square"></i></span>
+						<span><i class="fab fa-linkedin"></i></span>
 					</div>
 				</div>
 				<div class="card-body">
@@ -56,7 +58,7 @@
 				</div>
 				<span class="text-danger" align="center"><?php echo $this->session->flashdata('error')?></span>
 				<div class="card-footer">
-				<div class="d-flex justify-content-center links">
+					<div class="d-flex justify-content-center links">
 						Login as Admin<a href="<?=base_url();?>Admin/">Sign In</a>
 					</div>
 
@@ -82,7 +84,7 @@
 	@import url('https://fonts.googleapis.com/css?family=Numans');
 
 	html,body{
-		background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
+		background-image: url('<?php base_url();?>assets/img/background.jpg');
 		background-size: cover;
 		background-repeat: no-repeat;
 		height: 100%;
@@ -167,3 +169,40 @@
 		margin-left: 4px;
 	}
 </style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+<link rel="stylesheet" href="@sweetalert2/theme-material-ui/material-ui.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+	<?php
+
+	if ($this->session->flashdata('reg_success') !== null) {
+		echo "<script>
+		Swal.fire({
+			type: 'success',
+			icon: 'success',
+			title: 'Your Application Form Submitted Successfully!',
+			text:' You will receive an email once verified by your college',
+			showClass: {
+				popup: 'animated fadeInDown faster'
+				},
+				hideClass: {
+					popup: 'animated fadeOutUp faster'
+				}
+			});</script>";
+		}
+		if ($this->session->flashdata('reg_fail') !== null) {
+			echo "<script>
+			Swal.fire({type: 'error',
+			icon: 'error',
+			title: 'Application Form was not submitted!',
+			html:'It seems some Error has occured <br> Please Try Again!!!',
+			showClass: {
+				popup: 'animated fadeInDown faster'
+				},
+				hideClass: {
+					popup: 'animated fadeOutUp faster'
+					}});
+					</script>";
+				}
+				?>

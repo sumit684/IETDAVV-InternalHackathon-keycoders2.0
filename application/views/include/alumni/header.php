@@ -29,12 +29,15 @@
 	<div class="container">
 		<div class="row" style="margin: 1em;">
 			<img src="<?= base_url()?>assets/img/logo.jpeg"  style="width:17%;">
-			<div class="p-4" style="float: left;">
-				<div class="h1">Govt. of Goa | <b style="color:#858080">Alumni</b>
+			<div class="p-5" style="float: left;">
+				<div class="h1">Goa University| <b style="color:#858080">Alumni</b>
+				</div>
+				<div class="h3"><span style="color:#858080">Govt. of Goa</span>
 				</div>
 			</div>
 		</div>
-		<div class="row d-block border border-dark shadow">
+
+		<div class="card row d-block border border-dark shadow">
 			<nav class="navbar navbar-expand-lg navbar-dark bg-dark d-bl">
 				<a class="navbar-brand h2 font-weight-bold active" href="<?=base_url()?>alumni/home"><i class="fas fa-home"></i> Home</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,21 +55,17 @@
 						</li>
 
 						<li class="nav-item student">
-							<form method="POST" action="<?=base_url();?>alumni/profile">
-								<!-- <input type="hidden" value="pra" name="mob_no"> -->
-								<button style="background-color: inherit;border: none;" class="nav-link" type="submit">Profile</button>
-							</form>
+							<a class="nav-link" href="<?=base_url();?>alumni/profile">Profile</a>
 						</li>
 					</ul>
 					<div class="dropdown show">
 						<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							Hello, ALumni
+							Hello, Alumni
 						</a>
 
 						<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-							<a class="dropdown-item" href="#">My Profile</a>
+							<a class="dropdown-item" href="<?=base_url();?>alumni/profile">My Profile</a>
 							<a class="dropdown-item" href="<?=base_url()?>alumni/destroy">Logout</a>
-							<a class="dropdown-item" href="#">Something else </a>
 						</div>
 					</div>
 				</div>
