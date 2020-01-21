@@ -11,9 +11,9 @@ public function getCollegeList(){
 		return $this->db->get_where('alumni',array('college_id'=>$college_id))->result();
 	}
 
-	public function getCollegeId(){
-		return $this->db->get('college')->result();
-	}
+	// public function getCollegeId(){
+	// 	return $this->db->get('college')->result();
+	// }
 }
 
 ?>

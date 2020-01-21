@@ -1,6 +1,6 @@
 
 <div class="container-fluid"  ">
-
+<br>
   <h1  align="center"><u>NEWSLETTER </u></h1>
   <br>
  <div class="container mt-3" >
@@ -49,10 +49,10 @@
   <div class="media " style="border-style: solid;">
     <img src="<?=base_url()?>assets/img/officer.jpg"  class="mr-3 mt-3 rounded-circle" style="width:70px;">
     <div class="media-body">
-      <h4>Sumit Singh <small><i>Posted on February 15 2020</i></small></h4>
-      <p><b> Launched a new app-Paypal</b></p>
-      <p>Have a look at it guys.<br>
-       All criticisms are welcomed<br>
+      <h4>Sarthak Joshi <small><i>Posted on February 11 2020</i></small></h4>
+      <p><b> American Express providing free programme</b></p>
+      <p>AMEX is providing free funding programme for students who cant afford.<br>
+       for further details contact <a href="mailto:nitimangwani@gmail.com?subject=funding programme">Click here to send us email</a><br>
       </p>
       <div class="media p-3">
          <img src="<?=base_url()?>assets/img/officer1.jpg"  class="mr-3 mt-3 rounded-circle" style="width:35px;">
