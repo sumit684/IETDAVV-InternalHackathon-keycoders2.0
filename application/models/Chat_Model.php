@@ -21,6 +21,7 @@ class Chat_Model extends CI_Model{
 		// return $data;
 	}
 	public function insert_last_activity($data){
+		// print_r($data);exit;
 		$this->db->insert('login_details',$data);
 	}
 	public function update_last_activity($data){
