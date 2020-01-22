@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Admin Home</title>
+	<title>Alumni Home</title>
 	<meta charset="utf-8">
 	<link rel="icon" type="image/jpg" href="<?=base_url();?>assets/img/logo1.png">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
