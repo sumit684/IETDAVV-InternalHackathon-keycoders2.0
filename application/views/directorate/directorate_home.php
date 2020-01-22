@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Directorate Home</title>
 	<meta charset="utf-8">
-	<link rel="icon" type="image/jpg" href="<?=base_url();?>assets/img/logo1.png">
+	<link rel="icon" type="image/jpg" href="<?= base_url(); ?>assets/img/logo1.png">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<!-- Bootstrap -->
@@ -15,24 +16,25 @@
 
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="<?= base_url()?>assets/css/bootstrap-datetimepicker.css">
-	<link rel="stylesheet" type="text/css" href="<?= base_url()?>assets/css/custom.css">
+	<link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/bootstrap-datetimepicker.css">
+	<link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/custom.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 	<script type="text/javascript">
-		var base_url = "<?=base_url()?>";
+		var base_url = "<?= base_url() ?>";
 	</script>
 
 	<!-- Data Table -->
 	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
 </head>
+
 <body>
-	<div class="container-fluid" >
+	<div class="container-fluid">
 		<div class="row" style="margin: 1em;">
-			<img src="<?= base_url()?>assets/img/logo.jpeg"  style="width:10%;">
+			<img src="<?= base_url() ?>assets/img/logo.jpeg" style="width:10%;">
 			<div class="p-4" style="float: left;">
 				<div class="h1">Govt. of Goa | <b style="color:#858080">Directorate</b>
 				</div>
@@ -40,7 +42,7 @@
 		</div>
 		<div class="row d-block border border-dark shadow sticky-top">
 			<nav class="navbar navbar-expand-lg navbar-dark bg-dark d-bl">
-				<a class="navbar-brand h2 font-weight-bold active" href="<?=base_url()?>admin/index"><i class="fas fa-home"></i> Home</a>
+				<a class="navbar-brand h2 font-weight-bold active" href="<?= base_url() ?>admin/index"><i class="fas fa-home"></i> Home</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
@@ -48,19 +50,22 @@
 				<div class="collapse navbar-collapse" id="navbarColor01">
 					<ul class="navbar-nav mr-auto">
 						<!-- <li class="nav-item createTest">
-							<a class="nav-link" href="<?=base_url()?>createTest"></a>
+							<a class="nav-link" href="<?= base_url() ?>createTest"></a>
 						</li> -->
 						<li class="nav-item addQuestion">
-							<a class="nav-link" href="<?=base_url()?>addQuestion">Publish notices</a>
+							<a class="nav-link" href="<?= base_url() ?>addQuestion">Publish notices</a>
 						</li>
 						<li class="nav-item testData">
-							<a class="nav-link" href="<?=base_url()?>admin/Test/showAllTest">Create events</a>
+							<a class="nav-link" href="<?= base_url() ?>admin/Test/showAllTest">Create events</a>
 						</li>
 						<li class="nav-item batch">
-							<a class="nav-link" href="<?=base_url()?>admin/Student/batchesPage">Send Email</a>
+							<a class="nav-link" href="<?= base_url() ?>admin/Student/batchesPage">Send Email</a>
+						</li>
+						<li class="nav-item batch">
+							<a class="nav-link" data-toggle="modal" data-target="#addAdminModal">Add Admin</a>
 						</li>
 						<!-- <li class="nav-item student">
-							<a class="nav-link" href="<?=base_url()?>admin/requests">Pending Requests</a>
+							<a class="nav-link" href="<?= base_url() ?>admin/requests">Pending Requests</a>
 						</li> -->
 					</ul>
 					<div class="dropdown show">
@@ -71,15 +76,17 @@
 						<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
 							<a class="dropdown-item" href="#">My Profile</a>
 							<a class="dropdown-item" href="#">Logout</a>
-							<a class="dropdown-item" href="#">Something else </a>
+							<!-- <a class="dropdown-item" href="#">Something else </a> -->
 						</div>
 					</div>
 				</div>
 			</nav>
 		</div>
 
-		<div >
-			<u>	<h1 class="text-center pt-4">COLLEGES</h1></u>
+		<div>
+			<u>
+				<h1 class="text-center pt-4">COLLEGES</h1>
+			</u>
 
 		</div>
 		<div class="row ml-4">
@@ -140,32 +147,87 @@
 				</thead>
 				<tbody>
 
-					<?php 
-					foreach ($colleges as $key => $data) {?>
+					<?php
+					foreach ($colleges as $key => $data) { ?>
 						<tr>
-							<th scope="row"><?=$key+1?></th>
-							<td><?= $data->id;?></td>
-							<td><?= $data->college_name;?></td>
-							<td><?= $data->address;?></td>
-							<td><?= $data->type;?></td>
-							<td><a href="<?=base_url()?>directorate/alumniDisplay/<?= $data->id;?>"><button class="btn btn-primary"> View Alumni</button></a></td>
-							
+							<th scope="row"><?= $key + 1 ?></th>
+							<td><?= $data->id; ?></td>
+							<td><?= $data->college_name; ?></td>
+							<td><?= $data->address; ?></td>
+							<td><?= $data->type; ?></td>
+							<td><a href="<?= base_url() ?>directorate/alumniDisplay/<?= $data->id; ?>"><button class="btn btn-primary"> View Alumni</button></a></td>
+
 						</tr>
 
-					<?php } ?>					
+					<?php } ?>
 				</tbody>
-			</table> 
+			</table>
 			<script type="text/javascript">
-				$(document).ready( function () {
+				$(document).ready(function() {
 					$('#college_table').DataTable();
-				} );
+				});
 			</script>
 
 		</div>
 	</div>
 
+	<!-- Modal -->
+
+	<div class="modal fade" id="addAdminModal" tabindex="-1" role="dialog" aria-labelledby="addAdminModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="addAdminModalLabel">Add Admin</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form action="<?=base_url();?>directorate/addAdmin" method="post">
+						<div class="form-group">
+							<label for="recipient-name" class="col-form-label">Name:</label>
+							<input type="text" class="form-control" id="recipient-name" name="name">
+						</div>
+						<div class="form-group">
+							<label for="recipient-name" class="col-form-label">Email Id:</label>
+							<input type="email" class="form-control" id="recipient-name" name="email_id">
+						</div>
+						<div class="form-group">
+							<label for="recipient-name" class="col-form-label">Password:</label>
+							<input type="password" class="form-control" id="recipient-name" name="password">
+						</div>
+						<div class="form-group">
+							<label for="recipient-name" class="col-form-label">Mobile No.:</label>
+							<input type="number" class="form-control" id="recipient-name" name="mob_no">
+						</div>
+						<div class="form-group">
+							<label for="recipient-name" class="col-form-label">College Id:</label>
+							<input type="text" class="form-control" id="recipient-name" name="college_id">
+						</div>
+						<div class="form-group">
+							<label for="recipient-name" class="col-form-label">Status:</label>
+							<input type="text" class="form-control" id="recipient-name" name="status">
+						</div>
+						<div class="form-group">
+							<label for="recipient-name" class="col-form-label">Privilege:</label>
+							<input type="text" class="form-control" id="recipient-name" name="privilege">
+						</div>
+						
+					
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button type="submit" class="btn btn-primary">Add Admin</button>
+				</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
 	<footer style="height: 20rem;">
-		
+
 	</footer>
 </body>
+
 </html>
