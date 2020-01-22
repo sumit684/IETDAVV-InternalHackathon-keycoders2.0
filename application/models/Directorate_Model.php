@@ -14,6 +14,10 @@ public function getCollegeList(){
 	// public function getCollegeId(){
 	// 	return $this->db->get('college')->result();
 	// }
-}
 
+public function addAdmin($data)
+{
+	$this->db->insert('admin',$data);
+}
+}
 ?>

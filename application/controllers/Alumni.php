@@ -39,7 +39,7 @@ class Alumni extends CI_Controller {
 	}
 
 	public function alumniLogin(){
-		$data = array("mob_no"=>$this->input->post('mob-no'), "password"=>$this->input->post('login-password'));
+		$data = array("mob_no"=>$this->input->post('mob-no'), "password"=>md5($this->input->post('login-password')));
 		
 		$result = $this->Alumni_Model->authenticateAlumni($data);
 		// echo "<pre>";
@@ -87,7 +87,7 @@ class Alumni extends CI_Controller {
 			"year_adm"=>$this->input->post('year_adm'),
 			"year_leaving"=>$this->input->post('year_leaving'),
 			"email_id"=>$this->input->post('email_id'),
-			"password"=>$this->input->post('password'),
+			"password"=>md5($this->input->post('password')),
 			"college_id"=>$this->input->post('college_id'),
 			"enroll_no"=>$this->input->post('enroll_no'),
 			"mob_no"=>$this->input->post('mob_no'),

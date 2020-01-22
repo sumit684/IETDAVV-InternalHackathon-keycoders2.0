@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 21, 2020 at 06:50 PM
+-- Generation Time: Jan 22, 2020 at 11:28 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.1
 
@@ -48,7 +48,7 @@ INSERT INTO `admin` (`id`, `name`, `email_id`, `password`, `mob_no`, `college_id
 (1, 'Sumit Kr Singh', 'singh.sumit684@gmail.com', 'Sumit@123', '9929321677', 1, 1, 1, '2020-01-16 21:09:34'),
 (2, 'Pratik Mehta', 'pratikjain17291729@gmail.com', 'Pratik@123', '7722833474', 1, 1, 1, '2020-01-16 21:58:36'),
 (3, 'Ravindra Kumar Kushwaha', 'ravindrakushwahanwg@gmail.com', 'Ravindra@123', '7047178936', 1, 1, 1, '2020-01-16 22:00:32'),
-(4, 'Niti Mangwani', 'nitimangwani@gmail.com', 'Niti@123', '7047178936', 3, 1, 1, '2020-01-16 22:00:32');
+(4, 'Niti Mangwani', 'nitimangwani@gmail.com', 'Niti@123', '9893000535', 3, 1, 1, '2020-01-22 09:25:25');
 
 -- --------------------------------------------------------
 
@@ -63,10 +63,10 @@ CREATE TABLE `alumni` (
   `year_adm` int(11) NOT NULL,
   `year_leaving` int(11) NOT NULL,
   `email_id` text NOT NULL,
-  `password` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL,
   `college_id` int(11) NOT NULL,
   `course` varchar(255) NOT NULL,
-  `enroll_no` int(11) NOT NULL,
+  `enroll_no` varchar(255) NOT NULL,
   `mob_no` varchar(12) NOT NULL,
   `marital_stat` varchar(50) NOT NULL,
   `dob` date NOT NULL,
@@ -84,18 +84,10 @@ CREATE TABLE `alumni` (
 --
 
 INSERT INTO `alumni` (`id`, `fname`, `lname`, `year_adm`, `year_leaving`, `email_id`, `password`, `college_id`, `course`, `enroll_no`, `mob_no`, `marital_stat`, `dob`, `gender`, `address`, `occupation`, `brief_profile`, `achievements`, `status`, `created`) VALUES
-(1, 'Sumit Kr Singh', '', 0, 0, 'singh.sumit684@gmail.com', '12345678', 1, 'BE', 0, '9929321677', '', '1999-05-27', 'Male', 'Vill & Post - Dharhara, Munger, Bihar\r\nPincode - 811212', 'Software Engg.', ' ABC Technologies mein kaam karta hun', '0', 1, '2020-01-21 17:04:24'),
-(2, 'Sumit', 'Singh', 2018, 2019, 'singh.sumit684@gmail.com', '1234567', 1, 'ME', 0, '9929321677', 'single', '0000-00-00', 'on', 'addfasdf', 'BUSINESS', 'asdfads', 'asdfsadf', 0, '2020-01-21 17:04:29'),
-(3, 'pratik', 'Singh', 2018, 2019, 'pratik.sumit684@gmail.com', '123456', 1, 'MTech', 8, '9929321677', 'single', '0000-00-00', 'on', 'addfasdf', 'BUSINESS', 'asdfads', 'asdfsadf', 1, '2020-01-21 16:59:48'),
-(4, 'Deepam Gupta', '', 0, 0, 'deepam@gmail.com', '12345', 1, 'BE', 0, '9131879713', '', '1999-05-12', 'Male', 'Vill & Post - Dharhara, Munger, Bihar\r\nPincode - 811212', 'Software Engg.', ' ABC Technologies mein kaam karta hun', '0', 0, '2020-01-21 17:05:08'),
-(5, 'Niti', 'Mangloo', 2018, 2019, 'niti.mangloo@gmail.com', '1234', 1, 'BCom', 0, '9929321677', 'single', '0000-00-00', 'on', 'addfasdf', 'BUSINESS', 'asdfads', 'asdfsadf', 1, '2020-01-21 17:05:15'),
-(6, 'Ravinda', 'Singh', 2018, 2019, 'pratik.sumit684@gmail.com', '123', 1, 'ME', 8, '9929321677', 'single', '0000-00-00', 'on', 'addfasdf', 'BUSINESS', 'asdfads', 'asdfsadf', 0, '2020-01-21 17:05:21'),
-(7, 'Kamen Shripal', '', 0, 0, 'kamen@xqq.com', '12', 1, 'MTech', 0, '74585695523', '', '1999-05-27', 'Female', 'Amravalli , Delhi', 'Carpenter', ' ABC Technologies ', '0', 0, '2020-01-21 17:05:27'),
-(8, 'Arpit', 'Kumar', 2018, 2020, 'arpit.arpit@gmail.com', '1111', 1, 'BE', 0, '9929321677', 'married', '1975-02-05', 'on', 'addfasdf', 'BUSINESS', 'asdfads', 'asdfsadf', 1, '2020-01-21 17:05:35'),
-(9, 'Kartik', 'Arya', 1999, 2002, 'kartik@yahoo.com', '2222', 1, 'BCom', 8, '9929321677', 'single', '1977-05-25', 'on', 'addfasdf', 'BUSINESS', 'asdfads', 'asdfsadf', 0, '2020-01-21 17:05:41'),
-(10, 'Gopu ', 'Bhaiya', 0, 0, 'gopu@gmail.com', '3333', 1, 'MBA', 0, '465465465', '', '1999-05-12', 'Male', 'Mandu', 'Mithaiwaala', 'KB', '0', 0, '2020-01-21 17:05:48'),
-(11, 'Ravindra', 'Kumar', 1948, 1952, 'manav@gmail.com', '4444', 1, 'MBBS', 0, '7047178936', 'single', '1945-06-02', 'on', 'addfasdf', 'BUSINESS', 'asdfads', 'asdfsadf', 1, '2020-01-21 17:05:54'),
-(12, 'Kantabai', 'Chawla', 2010, 2015, 'kanta@gmail.com', '5555', 1, 'BE', 8, '9929321677', 'married', '1976-09-08', 'on', 'addfasdf', 'CEO', 'asdfads', 'asdfsadf', 0, '2020-01-21 17:06:02');
+(15, 'Ravindra', 'Kushwaha', 2018, 2019, 'ravindrakushwahanwg@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 1, '', 'DE18707', '7047178936', 'single', '0000-00-00', 'on', 'IET Boy,s Hostel', 'STUDENT', 'HEllo', 'HI', 1, '2020-01-22 09:43:24'),
+(16, 'Deepam', 'Gupta', 2017, 2019, 'deepam.gupta@outlook.com', '827ccb0eea8a706c4c34a16891f84e7b', 1, '', 'DE17201', '9131879713', 'single', '0000-00-00', 'on', 'IET Boy,s Hostel', 'STUDENT', 'Hi', 'Hello', 1, '2020-01-22 09:47:35'),
+(17, 'Sarthak ', 'Joshi', 2015, 2018, 'Sarthakj24@gmail.com', '85064efb60a9601805dcea56ec5402f7', 3, '', 'DE17163', '7441169471', 'single', '0000-00-00', 'on', '208 ujjain', 'ENTREPRENEUR', 'I am Entrepreneur', 'SIH2019 Winner', 1, '2020-01-22 09:56:18'),
+(18, 'Pratik ', 'Mehta', 2015, 2018, 'pratikjain17291729@gmail.com', '58b4e38f66bcdb546380845d6af27187', 1, '', 'DE17161', '7722833474', 'Married', '0000-00-00', 'on', 'Geeta Bhawan', 'OTHER', 'I am very Intelligent', 'NOthing', 0, '2020-01-22 10:02:44');
 
 -- --------------------------------------------------------
 
@@ -117,8 +109,11 @@ CREATE TABLE `chat_messages` (
 --
 
 INSERT INTO `chat_messages` (`id`, `to_user_id`, `from_user_id`, `chat_message`, `status`, `timestamp`) VALUES
-(74, 8, 2, 'hi', '1', '2020-01-21 17:16:46'),
-(75, 1, 2, 'hello', '1', '2020-01-21 17:26:06');
+(81, 16, 15, 'hi', '0', '2020-01-22 09:50:46'),
+(82, 15, 16, 'hello', '0', '2020-01-22 09:50:56'),
+(83, 16, 17, 'mouse k paise kab dega\n', '0', '2020-01-22 09:57:28'),
+(84, 17, 16, 'hi\n', '0', '2020-01-22 09:57:54'),
+(85, 17, 16, 'rv', '0', '2020-01-22 09:58:18');
 
 -- --------------------------------------------------------
 
@@ -164,7 +159,8 @@ CREATE TABLE `events` (
 
 INSERT INTO `events` (`id`, `event_name`, `college_id`, `admin_id`, `event_desc`, `event_date`, `created`) VALUES
 (1, 'AAKSHANK', 1, 1, 'AAKASHANK is biggest central india cultural fest', '2020-03-01', '2020-01-18 12:57:31'),
-(2, 'INVENTO', 1, 1, 'This is technical fest of IET DAVV', '2020-02-01', '2020-01-18 12:58:48');
+(2, 'INVENTO', 1, 1, 'This is technical fest of IET DAVV', '2020-02-01', '2020-01-18 12:58:48'),
+(3, 'SIH2020', 1, 1, 'kjgdkj', '2020-01-01', '2020-01-22 08:40:31');
 
 -- --------------------------------------------------------
 
@@ -183,18 +179,10 @@ CREATE TABLE `login_details` (
 --
 
 INSERT INTO `login_details` (`id`, `user_id`, `last_activity`) VALUES
-(4, 11, '2020-01-21 17:50:09'),
-(5, 1, '2020-01-21 17:03:13'),
-(6, 3, '2020-01-21 17:04:43'),
-(7, 4, '2020-01-21 17:07:28'),
-(8, 5, '2020-01-21 17:08:01'),
-(9, 6, '2020-01-21 17:08:22'),
-(10, 7, '2020-01-21 17:08:55'),
-(11, 8, '2020-01-21 17:09:24'),
-(12, 9, '2020-01-21 17:09:50'),
-(13, 10, '2020-01-21 17:10:30'),
-(14, 12, '2020-01-21 17:11:36'),
-(15, 2, '2020-01-21 17:49:10');
+(18, 15, '2020-01-22 10:27:18'),
+(19, 16, '2020-01-22 10:28:12'),
+(20, 17, '2020-01-22 09:59:30'),
+(21, 18, '2020-01-22 10:03:09');
 
 --
 -- Indexes for dumped tables
@@ -205,6 +193,7 @@ INSERT INTO `login_details` (`id`, `user_id`, `last_activity`) VALUES
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `mob_no` (`mob_no`),
   ADD KEY `college_id` (`college_id`);
 
 --
@@ -212,6 +201,7 @@ ALTER TABLE `admin`
 --
 ALTER TABLE `alumni`
   ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `mob_no` (`mob_no`),
   ADD KEY `college_id` (`college_id`);
 
 --
@@ -255,13 +245,13 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `alumni`
 --
 ALTER TABLE `alumni`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `chat_messages`
 --
 ALTER TABLE `chat_messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
 
 --
 -- AUTO_INCREMENT for table `college`
@@ -273,13 +263,13 @@ ALTER TABLE `college`
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `login_details`
 --
 ALTER TABLE `login_details`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- Constraints for dumped tables

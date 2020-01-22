@@ -26,5 +26,19 @@ class Directorate extends CI_Controller {
 		// echo "This is Alumni Login Page";
 	}
 
+    public function addAdmin()
+	{
+		$data = array(
+			'name'=>$this->input->post('name'),
+			'email_id'=>$this->input->post('email_id'),
+			'password'=>$this->input->post('password'),
+			'mob_no'=>$this->input->post('mob_no'),
+			'college_id'=>$this->input->post('college_id'),
+			'status'=>$this->input->post('status'),
+			'privilege'=>$this->input->post('privilege')	
+	);
+		$this->Directorate_Model->addAdmin($data);
+		redirect(base_url().'directorate');
+	}
 	
 }
