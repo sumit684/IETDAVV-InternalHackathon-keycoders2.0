@@ -65,6 +65,7 @@
 <link rel="stylesheet" href="@sweetalert2/theme-material-ui/material-ui.css">
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 <script type="text/javascript">
+	
 	const Toast = Swal.mixin({
 		toast: true,
 		position: 'bottom-end',
@@ -81,4 +82,5 @@
 		icon: 'success',
 		title: 'Signed in successfully'
 	})
+
 </script>

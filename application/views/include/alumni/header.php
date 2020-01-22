@@ -57,6 +57,18 @@
 						<li class="nav-item student">
 							<a class="nav-link" href="<?=base_url();?>alumni/profile">Profile</a>
 						</li>
+
+						<li class="nav-item student">
+							<a class="nav-link" href="<?=base_url();?>alumni/newsletters">Newsletters</a>
+						</li>
+
+						<li class="nav-item student">
+							<a class="nav-link" href="<?=base_url();?>alumni/profile">Jobs</a>
+						</li>
+
+						<li class="nav-item student">
+							<a class="nav-link" href="<?=base_url();?>alumni/profile">Alumni Association</a>
+						</li>
 					</ul>
 					<div class="dropdown show">
 						<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

@@ -40,15 +40,15 @@ class Alumni extends CI_Controller {
 
 
 			$user_id = $this->session->userdata('user_id');
-				$id = $this->Chat_Model->check_user_id(array('user_id'=>$user_id));
+			$id = $this->Chat_Model->check_user_id(array('user_id'=>$user_id));
 				// $id= $this->Chat_Model->update_last_activity(array('user_id'=>$user_id));
-				if($id == TRUE){
-					$this->Chat_Model->update_last_activity(array('user_id'=>$user_id));
-					
-				}
-				else{
-					$this->Chat_Model->insert_last_activity(array('user_id'=>$user_id));
-				}
+			if($id == TRUE){
+				$this->Chat_Model->update_last_activity(array('user_id'=>$user_id));
+
+			}
+			else{
+				$this->Chat_Model->insert_last_activity(array('user_id'=>$user_id));
+			}
 
 
 
@@ -113,18 +113,19 @@ class Alumni extends CI_Controller {
 	}
 	public function profile(){
 		
-  		$this->check_login();
+		$this->check_login();
 		$data = array('mob_no'=>$this->session->userdata('mob_no'));
-		// print_r($data);
 		$result['alumni'] = $this->Alumni_Model->getAlumniDetails($data);
-		// echo "<pre>";
-		// print_r($result);
-
 		$this->load->view('include/alumni/header');
 		$this->load->view('alumni/profile',$result);
 	}
-	public function user(){
-		echo "This is admin user_page";
+	public function newsletters(){
+		$this->check_login();
+		$data = array('mob_no'=>$this->session->userdata('mob_no'));
+		$result['alumni'] = $this->Alumni_Model->getAlumniDetails($data);
+	
+		$this->load->view('include/alumni/header',$result);
+		$this->load->view('admin/college/newsletter');
 	}
 
 	public function events(){
