@@ -3,8 +3,8 @@
 <br>
   <h1  align="center"><u>NEWSLETTER </u></h1>
   <br>
- <div class="container mt-3" >
-  <div class="media " style="border-style: solid;">
+ <div class="container mt-3">
+  <div class="media " style="border-style: solid; padding:10px;">
     <img src="<?=base_url()?>assets/img/officer1.jpg"  class="mr-3 mt-3 rounded-circle" style="width:70px;">
     <div class="media-body">
       <h4>Niti Mangwani <small><i>Posted on February 19, 2020</i></small></h4>
@@ -25,10 +25,10 @@
 </div>
 <br><br>
  <div class="container mt-3" >
-  <div class="media " style="border-style: solid;">
+  <div class="media " style="border-style: solid; padding: 10px;">
     <img src="<?=base_url()?>assets/img/officer.jpg"  class="mr-3 mt-3 rounded-circle" style="width:70px;">
     <div class="media-body">
-      <h4>Sumit Singh <small><i>Posted on February 15 2020</i></small></h4>
+      <h4>Sumit Singh <small><i>Posted on February 15, 2020</i></small></h4>
       <p><b> Launched a new app-Paypal</b></p>
       <p>Have a look at it guys.<br>
        All criticisms are welcomed<br>
@@ -46,10 +46,10 @@
 </div>
 <br><br>
 <div class="container mt-3" >
-  <div class="media " style="border-style: solid;">
+  <div class="media " style="border-style: solid; padding: 10px;">
     <img src="<?=base_url()?>assets/img/officer.jpg"  class="mr-3 mt-3 rounded-circle" style="width:70px;">
     <div class="media-body">
-      <h4>Sarthak Joshi <small><i>Posted on February 11 2020</i></small></h4>
+      <h4>Sarthak Joshi <small><i>Posted on February 11, 2020</i></small></h4>
       <p><b> American Express providing free programme</b></p>
       <p>AMEX is providing free funding programme for students who cant afford.<br>
        for further details contact <a href="mailto:nitimangwani@gmail.com?subject=funding programme">Click here to send us email</a><br>
@@ -67,10 +67,10 @@
 </div>
 <br><br>
 <div class="container mt-3" >
-  <div class="media " style="border-style: solid;">
+  <div class="media " style="border-style: solid; padding: 10px;">
     <img src="<?=base_url()?>assets/img/officer.jpg"  class="mr-3 mt-3 rounded-circle" style="width:70px;">
     <div class="media-body">
-      <h4>Sumit Singh <small><i>Posted on February 15 2020</i></small></h4>
+      <h4>Sumit Singh <small><i>Posted on February 15, 2020</i></small></h4>
       <p><b> Launched a new app-Paypal</b></p>
       <p>Have a look at it guys.<br>
        All criticisms are welcomed<br>
