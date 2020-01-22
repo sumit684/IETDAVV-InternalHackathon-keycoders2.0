@@ -24,11 +24,11 @@
 			<div class="card">
 				<div class="card-header">
 					<h3>Admin Sign In</h3>
-					<div class="d-flex justify-content-end social_icon">
+				<!-- 	<div class="d-flex justify-content-end social_icon">
 						<span><i class="fab fa-facebook-square"></i></span>
 						<span><i class="fab fa-google-plus-square"></i></span>
 						<span><i class="fab fa-twitter-square"></i></span>
-					</div>
+					</div> -->
 				</div>
 				<div class="card-body">
 
@@ -59,10 +59,10 @@
 				<div class="d-flex justify-content-center links">
 						Login as Alumni<a href="<?=base_url();?>alumni">Sign In</a>
 					</div>
-
+<!-- 
 					<div class="d-flex justify-content-center links">
 						Don't have an account?<a href="#">Sign Up</a>
-					</div>
+					</div> -->
 					<div class="d-flex justify-content-center">
 						<a href="#">Forgot your password?</a>
 					</div>
@@ -80,7 +80,7 @@
 	@import url('https://fonts.googleapis.com/css?family=Numans');
 
 	html,body{
-		background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
+		background-image: url('<?= base_url();?>assets/img/background.jpg');
 		background-size: cover;
 		background-repeat: no-repeat;
 		height: 100%;
