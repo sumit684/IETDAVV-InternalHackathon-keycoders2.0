@@ -46,10 +46,10 @@
 
 				<div class="collapse navbar-collapse" id="navbarColor01">
 					<ul class="navbar-nav mr-auto">
-						<li class="nav-item createTest">
+						<!-- <li class="nav-item createTest">
 							<a class="nav-link" href="<?=base_url()?>alumni/events">Events</a>
 							
-						</li>
+						</li> -->
 						<li class="nav-item student">
 							<a class="nav-link" href="<?=base_url()?>Chat">Chat</a>
 						</li>
@@ -63,7 +63,7 @@
 						</li>
 
 						<li class="nav-item student">
-							<a class="nav-link" href="<?=base_url();?>alumni/profile">Jobs</a>
+							<a class="nav-link" href="<?=base_url();?>alumni/jobs_page">Jobs</a>
 						</li>
 
 						<li class="nav-item student">

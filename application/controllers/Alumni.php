@@ -21,6 +21,17 @@ class Alumni extends CI_Controller {
 			$this->load->view('alumni/alumniLogin');
 		}
 	}
+
+	public function jobs_page(){
+		if($this->session->userdata('mob_no')!=NULL){
+			$edata['events'] = $this->Alumni_Model->geteventList()->result();
+		
+						$this->load->view('include/alumni/header');
+						$this->load->view('alumni/jobs',$edata);}
+			// redirect(base_url().'alumni/home');
+		else{	$this->load->view('include/alumni/header');
+				$this->load->view('alumni/alumniLogin');
+	}}
 	
 	public function destroy(){
 		$this->session->sess_destroy();

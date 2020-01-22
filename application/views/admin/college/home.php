@@ -1,5 +1,5 @@
 		<div >
-			<u>	<h1 class="text-center pt-4">ALUMNI</h1></u>
+			<u>	<h1 class="text-center pt-4">ALUMNI LIST</h1></u>
 
 		</div>
 		
