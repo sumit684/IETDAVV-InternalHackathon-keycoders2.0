@@ -62,7 +62,7 @@ class Chat extends CI_Controller {
 		$user_id = $this->session->userdata('user_id');
 		$data['user_details'] = $this->Chat_Model->user_details(array('user_id'=>$user_id));
 		$output = '
-		<table class="table table-bordered table-striped">
+		<table class="table table-bordered table-striped" >
 		<tr>
 		<td>Username</td>
 		<td>Status</td>
