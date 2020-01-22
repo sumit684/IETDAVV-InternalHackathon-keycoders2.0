@@ -40,8 +40,9 @@
                             <div class="row"> 
                                 <div class="col-md-6"><h5>Address :</h5></div>
                                 <div class="col-md-6"><?=$value->address?></div>  
-                            </div>                                                                                         
-                        <?php } ?>           
+                            </div>      
+                                                                                                               
+                        <?php break; } ?>           
 
                     </div>
                     <div class="col-md-2"></div> 

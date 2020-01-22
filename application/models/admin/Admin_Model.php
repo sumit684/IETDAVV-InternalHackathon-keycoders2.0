@@ -20,7 +20,7 @@ class Admin_model extends CI_Model {
 
 	public function getregisteredAlumni(){
 		$this->db->order_by("created", "asc");
-		return $this->db->get_where('alumni',array('status'=>'1'))->result();
+		return $this->db->get_where('alumni',array('status'=>'1','college_id'=>'1'))->result();
 		
 	}
 
@@ -34,11 +34,17 @@ class Admin_model extends CI_Model {
 		);
 		$this->db->where('id', $id);
 		$this->db->update('alumni',$data);
+		return $this->db->get_where('alumni',array('id'=>$id))->result();
 	}
 	public function rejectRequest($id){
-		$this -> db -> where('id', $id);
-		$this -> db -> delete('alumni');
+		$this ->db->where('id', $id);
+		$this ->db->delete('alumni');
+		// $this->db->where('user_id',$id);
+		// $this ->db->delete('login_details');
 	}
-	
+	public function geteventList(){
+		return $this->db->get('events');
+	}
+
 }
 ?>

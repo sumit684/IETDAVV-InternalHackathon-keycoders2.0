@@ -5,6 +5,7 @@ class Alumni extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->model('Alumni_Model');
+		$this->load->model('Chat_Model');
 	}
 
 	public function check_login(){
@@ -17,7 +18,7 @@ class Alumni extends CI_Controller {
 		if($this->session->userdata('mob_no')!=NULL){
 			redirect(base_url().'alumni/home');
 		}else{
-		$this->load->view('alumni/alumniLogin');
+			$this->load->view('alumni/alumniLogin');
 		}
 	}
 	
@@ -28,11 +29,29 @@ class Alumni extends CI_Controller {
 
 	public function alumniLogin(){
 		$data = array("mob_no"=>$this->input->post('mob-no'), "password"=>$this->input->post('login-password'));
-		$session_data = array("mob_no"=>$this->input->post('mob-no'));
+		
 		$result = $this->Alumni_Model->authenticateAlumni($data);
+		// echo "<pre>";
+		// print_r($result[0]['id']);
+		// print_r($result[0]['fname']);exit;
 		if($result){
-			
+			$session_data = array("mob_no"=>$this->input->post('mob-no'),'username'=>$result[0]['fname'],'user_id'=>$result[0]['id']);
 			$this->session->set_userdata($session_data);
+
+
+			$user_id = $this->session->userdata('user_id');
+			$id = $this->Chat_Model->check_user_id(array('user_id'=>$user_id));
+				// $id= $this->Chat_Model->update_last_activity(array('user_id'=>$user_id));
+			if($id == TRUE){
+				$this->Chat_Model->update_last_activity(array('user_id'=>$user_id));
+
+			}
+			else{
+				$this->Chat_Model->insert_last_activity(array('user_id'=>$user_id));
+			}
+
+
+
 			$result['alumni'] = $result;
 			$this->load->view('include/alumni/header');
 			$edata['events'] = $this->Alumni_Model->geteventList()->result();
@@ -68,20 +87,22 @@ class Alumni extends CI_Controller {
 			"occupation"=>$this->input->post('occupation'),
 			"brief_profile"=>$this->input->post('brief_profile'),
 			"achievements"=>$this->input->post('achievements'),
-			);
+		);
         // echo $data;
 		$result = $this->Alumni_Model->registerAlumni($data);
 		if($result==TRUE){
-			echo "registered";
+			$this->session->set_flashdata('reg_success',"Successfully Registered");
+			redirect(base_url()."alumni");
 		}else{
-			echo "not registered";
+			$this->session->set_flashdata('reg_error',"Not Registered");
+			redirect(base_url()."alumni");
 		}
 	}
 	public function readmore(){
 		$data = array(
-						"fname"=>$this->input->post('fname'),
-					);
-					echo $data['fname'];
+			"fname"=>$this->input->post('fname'),
+		);
+		echo $data['fname'];
 
 	}
 	public function home(){
@@ -92,18 +113,19 @@ class Alumni extends CI_Controller {
 	}
 	public function profile(){
 		
-  		$this->check_login();
+		$this->check_login();
 		$data = array('mob_no'=>$this->session->userdata('mob_no'));
-		// print_r($data);
 		$result['alumni'] = $this->Alumni_Model->getAlumniDetails($data);
-		// echo "<pre>";
-		// print_r($result);
-	
 		$this->load->view('include/alumni/header');
 		$this->load->view('alumni/profile',$result);
 	}
-	public function user(){
-		echo "This is admin user_page";
+	public function newsletters(){
+		$this->check_login();
+		$data = array('mob_no'=>$this->session->userdata('mob_no'));
+		$result['alumni'] = $this->Alumni_Model->getAlumniDetails($data);
+	
+		$this->load->view('include/alumni/header',$result);
+		$this->load->view('admin/college/newsletter');
 	}
 
 	public function events(){

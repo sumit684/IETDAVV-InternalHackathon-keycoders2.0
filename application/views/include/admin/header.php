@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Pending Requests</title>
+	<title>Admin Panel</title>
 	<meta charset="utf-8">
 	<link rel="icon" type="image/jpg" href="<?=base_url();?>assets/img/logo1.png">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,16 +25,28 @@
 		<script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script> -->
 		<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
 		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
 	</head>
 	<body>
 		<div class="container-fluid" >
 			<div class="row" style="margin: 1em;">
-				<img src="<?= base_url()?>assets/img/logo.jpeg"  style="width:10%;">
-				<div class="p-4" style="float: left;">
-					<div class="h1">Govt. of Goa | <b style="color:#858080">Admin</b>
+				<img src="<?= base_url()?>assets/img/logo.jpeg"  style="width:10%;" class="img-fluid">
+				<div class="p-4" align="right">
+					<div class="h1" align="right">Govt. of Goa | <b style="color:#858080">Admin</b>
 					</div>
 				</div>
 			</div>
+
+			<!-- <div class="row">
+				<img src="<?= base_url()?>assets/img/logo.jpeg" class="m-3 col-lg-3 col-md-10 col-sm-10 col-xs-10 mr-auto img-fluid"  style="max-width:180px;">
+				<div class="p-5">
+					<div class="h1" align="left">Govt. of Goa | <b style="color:#858080">Admin</b>
+					</div>
+				</div>
+			</div> -->
 			<div class="row d-block border border-dark shadow sticky-top">
 				<nav class="navbar navbar-expand-lg navbar-dark bg-dark d-bl">
 					<a class="navbar-brand h2 font-weight-bold active" href="<?=base_url()?>admin/index"><i class="fas fa-home"></i> Home</a>
@@ -44,40 +56,36 @@
 
 					<div class="collapse navbar-collapse" id="navbarColor01">
 						<ul class="navbar-nav mr-auto">
-						<!-- <li class="nav-item createTest">
-							<a class="nav-link" href="<?=base_url()?>createTest"></a>
-						</li> -->
-						<li class="nav-item addQuestion">
-							<a class="nav-link" href="<?=base_url()?>admin/notices">Publish notices</a>
-						</li>
-						<li class="nav-item testData">
-							<a class="nav-link" href="<?=base_url()?>admin/events">Create events</a>
-						</li>
-						<li class="nav-item batch">
-							<a class="nav-link" href="<?=base_url()?>admin/email">Send Email</a>
-						</li>
-						<li class="nav-item student">
-							<a class="nav-link" href="<?=base_url()?>admin/requests">Pending Requests <span class="badge badge-light">
-								<?php 
-								$i=0;
-								foreach ($pending as $key => $value) {
-									$i++;
-								}
-								echo $i;?>
-							</span></a>
-						</li>
-					</ul>
-					<div class="dropdown show">
-						<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							Hello, Admin
-						</a>
+							<li class="nav-item addQuestion">
+								<a class="nav-link" href="<?=base_url()?>admin/newsletter">NewsLetters</a>
+							</li>
+							<li class="nav-item testData">
+								<a class="nav-link" href="<?=base_url()?>admin/events" >Create events</a>
+							</li>
+							<li class="nav-item batch">
+								<a class="nav-link" href="<?=base_url()?>admin/home">Send Email</a>
+							</li>
+							<li class="nav-item student">
+								<a class="nav-link" href="<?=base_url()?>admin/requests">Pending Requests <span class="badge badge-light">
+									<?php 
+									$i=0;
+									foreach ($pending as $key => $value) {
+										$i++;
+									}
+									echo $i;?>
+								</span></a>
+							</li>
+						</ul>
+						<div class="dropdown show">
+							<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Hello, Admin
+							</a>
 
-						<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-							<a class="dropdown-item" href="#">My Profile</a>
-							<a class="dropdown-item" href="<?=base_url()?>admin/destroy">Logout</a>
-							<a class="dropdown-item" href="#">Something else </a>
+							<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+								<a class="dropdown-item" href="#">My Profile</a>
+								<a class="dropdown-item" href="<?=base_url()?>admin/destroy">Logout</a>
+							</div>
 						</div>
 					</div>
-				</div>
-			</nav>
-		</div>
+				</nav>
+			</div>
