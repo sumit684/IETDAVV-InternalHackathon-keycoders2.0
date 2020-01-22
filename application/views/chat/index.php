@@ -6,11 +6,11 @@
 	
 
 	?>
-	<div class="container ">
+	<div class="container mt-3">
 		<!-- <h3>Chat Application</h3> -->
 		<div class="table-responsive text-center">
 			<!-- <h4>Online Users</h4> -->
-			<p align="right"> Hi - <?php print_r($this->session->userdata('username')) ?> 
+			<!-- <p align="right"> Hi - <?php print_r($this->session->userdata('username')) ?>  -->
 			<!-- <a href="<?php base_url()?>destroy">Logout</a> </p> -->
 			<div id='user_details'></div>
 			<div id="user_model_details"></div>
