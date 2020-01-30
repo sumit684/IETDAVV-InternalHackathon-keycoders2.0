@@ -98,6 +98,9 @@ class Alumni extends CI_Controller {
 			"occupation"=>$this->input->post('occupation'),
 			"brief_profile"=>$this->input->post('brief_profile'),
 			"achievements"=>$this->input->post('achievements'),
+			"country"=>$this->input->post('country'),
+			"course"=>$this->input->post('course'),
+
 		);
         // echo $data;
 		$result = $this->Alumni_Model->registerAlumni($data);

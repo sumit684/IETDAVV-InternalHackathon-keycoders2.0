@@ -232,21 +232,6 @@
 							</div>
 						</div>
 
-						<div class="row row-space">
-							<div class="col-2">
-								<div class="input-group">
-									<label class="label">Marital Status</label>
-									<div class="rs-select2 js-select-simple select--no-search">
-										<select required name="marital_stat" class="input--style-4" style="height: 30px;">
-											<option selected disabled>Select</option>
-											<option value="single">Single</option>
-											<option value="Married">Married</option>
-										</select>
-										<div class="select-dropdown"></div>
-									</div>
-								</div>
-							</div>
-						</div>
 
 						<div class="row row-space">
 							<div class="col-2">
@@ -275,6 +260,45 @@
 							</div>
 						</div>
 
+						<div class="row row-space">
+							<div class="col-2">
+								<div class="input-group">
+									<label class="label">Marital Status</label>
+									<div class="rs-select2 js-select-simple select--no-search">
+										<select required name="marital_stat" class="input--style-4" style="height: 30px;">
+											<option selected disabled>Select</option>
+											<option value="single">Single</option>
+											<option value="Married">Married</option>
+										</select>
+										<div class="select-dropdown"></div>
+									</div>
+								</div>
+							</div>
+						
+
+
+						<!-- Current Working Country -->
+						
+							<div class="col-2">
+								<div class="input-group">
+									<label class="label">Current Working Country</label>
+									<div class="rs-select2 js-select-simple select--no-search">
+										<select name="country" class="input--style-4" style="height: 30px;">
+											<option selected="India" disabled=""> Select Country</option>
+											<option value="IN">India.</option>
+											<option value="RU">Russia</option>
+											<option value="US">United States</option>
+											<option value="UK">United Kingdom</option>
+											<option value="AU">Australia</option>
+											<option value="FR">France</option>
+											<option value="Others">Others</option>					
+										</select>
+										<div class="select-dropdown"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+									
 
 						<div class="input-group">
 							<label class="label">Address</label>

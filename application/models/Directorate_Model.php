@@ -14,7 +14,13 @@ public function getCollegeList(){
 	// public function getCollegeId(){
 	// 	return $this->db->get('college')->result();
 	// }
-
+ public function getregisteredAlumni(){
+ 	    $this->db->select('country, COUNT(country) as sumc');
+		$this->db->order_by("created", "asc");
+		$this->db->group_by("country");
+		return $this->db->get_where('alumni',array('status'=>'1'))->result();
+		
+	}
 public function addAdmin($data)
 {
 	$this->db->insert('admin',$data);
