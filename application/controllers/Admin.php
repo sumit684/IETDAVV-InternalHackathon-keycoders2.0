@@ -47,10 +47,13 @@ class Admin extends CI_Controller {
 	}
 
 	public function adminLogin(){
-		$data = array("mob_no"=>$this->input->post('mob-no'), "password"=>$this->input->post('login-password'));
-		$session_data = array("mob_no"=>$this->input->post('mob-no'));
+		$data = array("email_id"=>$this->input->post('email'), "password"=>$this->input->post('login-password'));
+		
 		$result = $this->Admin_Model->authenticateAdmin($data);
+		// echo "<pre>";
+		// print_r($result);exit;
 		if($result["id"]){
+			$session_data = array("email_id"=>$this->input->post('email'),'name'=>$result['name'],'mob_no'=>$result['mob_no'],'college_id'=>$result['college_id']);
 			$this->session->set_userdata($session_data);
 			$data['alumni'] = $this->Admin_Model->getregisteredAlumni();
 			$data['pending']=$this->Admin_Model->getnewstudents();
