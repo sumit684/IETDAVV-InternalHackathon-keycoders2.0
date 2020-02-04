@@ -47,9 +47,9 @@
 						<!-- <li class="nav-item createTest">
 							<a class="nav-link" href="<?=base_url()?>createTest"></a>
 						</li> -->
-						<li class="nav-item addQuestion">
+						<!-- <li class="nav-item addQuestion">
 							<a class="nav-link" href="<?=base_url()?>admin/notices">Publish notices</a>
-						</li>
+						</li> -->
 						<li class="nav-item testData">
 							<a class="nav-link" href="<?=base_url()?>admin/events">Create events</a>
 						</li>

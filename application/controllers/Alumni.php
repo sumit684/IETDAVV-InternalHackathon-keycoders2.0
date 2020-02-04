@@ -14,6 +14,37 @@ class Alumni extends CI_Controller {
 		}
 	}
 
+	public function feedback(){
+		$this->load->view('alumni/feedback');
+	}
+
+	public function feedback_register(){
+		
+		$data = array(
+			"q1"=>$this->input->post('q1'),
+			"q2"=>$this->input->post('q2'),
+			"q3"=>$this->input->post('q3'),
+			"q4"=>$this->input->post('q4'),
+			"q5"=>$this->input->post('q5'),
+			"q6"=>$this->input->post('q6'),
+			"q7"=>$this->input->post('q7'),
+			"q8"=>$this->input->post('q8'),
+			"q9"=>$this->input->post('q9'),
+			"q10"=>$this->input->post('q10'),
+			
+		);
+        // echo $data;
+		$result = $this->Alumni_Model->registerAlumni($data);
+		if($result==TRUE){
+			$this->session->set_flashdata('reg_success',"Successfully Registered");
+			redirect(base_url()."alumni");
+		}else{
+			$this->session->set_flashdata('reg_error',"Not Registered");
+			redirect(base_url()."alumni");
+		}
+	}
+	
+
 	public function index(){
 		if($this->session->userdata('mob_no')!=NULL){
 			redirect(base_url().'alumni/home');
