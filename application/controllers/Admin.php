@@ -33,13 +33,13 @@ class Admin extends CI_Controller {
 		$this->load->view($this->header,$data);
 		$this->load->view('admin/college/home',$data);
 	}
-	public function newsletter(){
-		$this->check_login();
-		$data['pending']=$this->Admin_Model->getnewstudents();
-		$data['alumni'] = $this->Admin_Model->getregisteredAlumni();
-		$this->load->view($this->header,$data);
-		$this->load->view('admin/college/newsletter',$data);
-	}
+	// public function newsletter(){
+	// 	$this->check_login();
+	// 	$data['pending']=$this->Admin_Model->getnewstudents();
+	// 	$data['alumni'] = $this->Admin_Model->getregisteredAlumni();
+	// 	$this->load->view($this->header,$data);
+	// 	$this->load->view('admin/college/newsletter',$data);
+	// }
 
 	public function destroy(){
 		$this->session->sess_destroy();
@@ -53,7 +53,7 @@ class Admin extends CI_Controller {
 		// echo "<pre>";
 		// print_r($result);exit;
 		if($result["id"]){
-			$session_data = array("email_id"=>$this->input->post('email'),'name'=>$result['name'],'mob_no'=>$result['mob_no'],'college_id'=>$result['college_id']);
+			$session_data = array("email_id"=>$this->input->post('email'),'username'=>$result['name'],'mob_no'=>$result['mob_no'],'college_id'=>$result['college_id'],'role'=>'admin');
 			$this->session->set_userdata($session_data);
 			$data['alumni'] = $this->Admin_Model->getregisteredAlumni();
 			$data['pending']=$this->Admin_Model->getnewstudents();
@@ -153,6 +153,17 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/mail/mailRejected',$data);
 
 	}
+
+	public function newsletter(){
+        $this->check_login();
+		$data['pending']=$this->Admin_Model->getnewstudents();
+
+		$newsletter['newsletters'] = $this->Admin_Model->newsLetters()->result();
+		$newsletter['comments'] = $this->Admin_Model->comments()->result();
+		$this->load->view($this->header,$data);
+		$this->load->view('admin/college/newsletter',$newsletter);
+	}
+
 	public function addEvents(){
 		$this->check_login();
 		// $this->input->post('event_name');
@@ -164,6 +175,38 @@ class Admin extends CI_Controller {
 		// $data['events'] = $this->Alumni_Model->geteventList()->result();
 		redirect(base_url().'admin/events');
 	}
+    public function addNewsletters(){
+		$this->check_login();
+		// $this->input->post('event_name');
+		// $this->input->post('event_desc');
+		$data = array("name"=>$this->input->post('name'),"title"=>$this->input->post('title'),"content"=>$this->input->post('content'));
+		
+		$this->db->insert('newsletter',$data);
+       // print_r($data);
+		// $data['events'] = $this->Alumni_Model->geteventList()->result();
+		if($this->session->userdata('role')=='alumni'){
+		redirect(base_url().'alumni/newsletters');}
+		else{redirect(base_url().'admin/newsletter');}
+	}
+
+
+    public function addcomments(){
+		$this->check_login();
+		// $this->input->post('event_name');
+		// $this->input->post('event_desc');
+		$data = array("name"=>$this->input->post('name'),"post_id"=>$this->input->post('post_id'),"content"=>$this->input->post('content'));
+		
+		$this->db->insert('comments',$data);
+       // print_r($data);
+		// $data['events'] = $this->Alumni_Model->geteventList()->result();
+		if($this->session->userdata('role')=='alumni'){
+		redirect(base_url().'alumni/newsletters');}
+		else{redirect(base_url().'admin/newsletter');}
+	}
+	
+
+
+
 	public function sendEmail(){
 		$edata = array("subject"=>$this->input->post('subject'),"body"=>$this->input->post('body'),"emailid"=>$this->input->post('emailid'));
 		

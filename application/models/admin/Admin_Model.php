@@ -38,6 +38,15 @@ class Admin_model extends CI_Model {
 		$this->Chat_Model->insert_last_activity(array('user_id'=>$user_id));
 		return $data;
 	}
+
+	public function newsLetters(){
+		return $this->db->get('newsletter');
+	}
+	public function comments(){
+		return $this->db->get('comments');
+	}
+
+
 	public function rejectRequest($id){
 		$this ->db->where('id', $id);
 		$this ->db->delete('alumni');

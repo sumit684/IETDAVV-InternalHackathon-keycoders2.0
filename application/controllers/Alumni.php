@@ -76,10 +76,9 @@ class Alumni extends CI_Controller {
 		// print_r($result[0]['id']);
 		// print_r($result[0]['fname']);exit;
 		if($result){
-			$session_data = array('email_id'=>$this->input->post('email'),'mob_no'=>$result[0]['mob_no'],'username'=>$result[0]['fname'],'user_id'=>$result[0]['id']);
+			$session_data = array('email_id'=>$this->input->post('email'),'mob_no'=>$result[0]['mob_no'],'username'=>$result[0]['fname'],'user_id'=>$result[0]['id'],'lname'=>$result[0]['lname'],'role'=>'alumni');
 			$this->session->set_userdata($session_data);
-
-
+			
 			$user_id = $this->session->userdata('user_id');
 			$id = $this->Chat_Model->check_user_id(array('user_id'=>$user_id));
 				// $id= $this->Chat_Model->update_last_activity(array('user_id'=>$user_id));
@@ -167,9 +166,10 @@ class Alumni extends CI_Controller {
 		$this->check_login();
 		$data = array('mob_no'=>$this->session->userdata('mob_no'));
 		$result['alumni'] = $this->Alumni_Model->getAlumniDetails($data);
-	
+		$newsletter['newsletters'] = $this->Alumni_Model->newsLetters()->result();
+		$newsletter['comments'] = $this->Alumni_Model->comments()->result();
 		$this->load->view('include/alumni/header',$result);
-		$this->load->view('admin/college/newsletter');
+		$this->load->view('admin/college/newsletter',$newsletter);
 	}
 
 	public function events(){

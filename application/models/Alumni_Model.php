@@ -25,7 +25,12 @@ class Alumni_model extends CI_Model {
 	public function geteventList(){
 		return $this->db->get('events');
 	}
-
+	public function newsLetters(){
+		return $this->db->get('newsletter');
+	}
+	public function comments(){
+		return $this->db->get('comments');
+	}
 	public function getAlumniDetails($data){
 		return $this->db->get_where('alumni',$data)->result();
 	}

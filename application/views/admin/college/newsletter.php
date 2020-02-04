@@ -1,91 +1,112 @@
-
+<!-- <?php print_r($this->session->userdata('username'))?> -->
+<!-- <?php print_r($newsletters) ;?> -->
+<!-- <?php print_r($comments); ?>  -->
+<?php $l = $this->session->userdata('lname');
+			  $s=" ";
+			  $f = $this->session->userdata('username');
+        //    print_r($f.$s.$l);
+         ?>
 <div class="container-fluid"  ">
 <br>
   <h1  align="center"><u>NEWSLETTER </u></h1>
   <br>
+  <div align="center">  
+		<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">ADD NEWSLETTER</button>
+	</div>
+
+
+
+  <div class="container">
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Add Newsletter</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <!-- Modal body -->
+      <div class="modal-body">
+        <form method="POST" action="<?=base_url()?>admin/addNewsletters">
+          <div class="row"> 
+            <div class="col-md-6"> 
+              <label>Title</label>
+            </div>
+            <div class="col-md-6">
+              <input name="title">   
+            </div>
+          </div> 
+          <div class="row"> 
+            <div class="col-md-6"> 
+              <label>Content</label>
+            </div>
+            <div class="col-md-6">
+              <input name="content">   
+            </div>
+            <input type="hidden" name="name" value="<?php print_r($f.$s.$l) ?>">
+          </div>
+        </div>
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-danger" >Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+<?php foreach ($newsletters as $key => $data) {?>
+
  <div class="container mt-3">
   <div class="media " style="border-style: solid; padding:10px;">
     <img src="<?=base_url()?>assets/img/officer1.jpg"  class="mr-3 mt-3 rounded-circle" style="width:70px;">
     <div class="media-body">
-      <h4>Niti Mangwani <small><i>Posted on February 19, 2020</i></small></h4>
-      <p><b> Job openings in Google</b></p>
-      <p>Key Skills Required:react,flask.<br>
-       Preferred Location:singapore<br>
-       Notice Period should be immediate to 60 days.If you feel that this job is a fit,apply soon.</p>
+      <h4><?=$data->name?> <small><i>Posted on <?=$data->date?></i></small></h4>
+      <p><b> <?=$data->title?></b></p>
+      <p><?=$data->content?></p>
+     
+      <?php foreach ($comments as $key => $cata) {?>
+      <?php if($cata->post_id==$data->post_id) {?>
       <div class="media p-3">
          <img src="<?=base_url()?>assets/img/officer.jpg"  class="mr-3 mt-3 rounded-circle" style="width:35px;">
         <div class="media-body">
-          <h4>Pratik Mehta <small><i>Posted on February 20 2020</i></small></h4>
-          <p>I am interested, please share further details.</p>
+          <h4><?=$cata->name?><small><i> Posted on <?=$cata->date?></i></small></h4>
+          <p><?=$cata->content?></p>
           
         </div>
-      </div>  
+      </div>
+      <?php } }?>
+     
+     <!-- comment box -->
+     <div>
+        <h5>Add Comment</h5>
+        <form method="POST" action="<?=base_url()?>admin/addComments">
+        <input style="
+                     border-color: cornflowerblue;
+                     border-radius: 30px;
+                     border-width: 3px;
+                     width: 250px;"
+        name="content"
+        >
+
+        <input type="hidden" name="post_id" value="<?php print_r($data->post_id) ?>">
+        
+
+
+        <input type="hidden" name="name" value="<?php print_r($f.$s.$l) ?>">
+        <button type="submit" style="border-radius: 20px; width: 70px; border: 37px;color: white; background-color: #406099"> Post</button>
+        </form>
+     </div>
+
     </div>
   </div>
 </div>
-<br><br>
- <div class="container mt-3" >
-  <div class="media " style="border-style: solid; padding: 10px;">
-    <img src="<?=base_url()?>assets/img/officer.jpg"  class="mr-3 mt-3 rounded-circle" style="width:70px;">
-    <div class="media-body">
-      <h4>Sumit Singh <small><i>Posted on February 15, 2020</i></small></h4>
-      <p><b> Launched a new app-Paypal</b></p>
-      <p>Have a look at it guys.<br>
-       All criticisms are welcomed<br>
-      </p>
-      <div class="media p-3">
-         <img src="<?=base_url()?>assets/img/officer1.jpg"  class="mr-3 mt-3 rounded-circle" style="width:35px;">
-        <div class="media-body">
-          <h4>Ravindra Khushwaha <small><i>Posted on February 15 2020</i></small></h4>
-          <p>It was amazing, just the navigation could be improved upon.</p>
-          
-        </div>
-      </div>  
-    </div>
-  </div>
-</div>
-<br><br>
-<div class="container mt-3" >
-  <div class="media " style="border-style: solid; padding: 10px;">
-    <img src="<?=base_url()?>assets/img/officer.jpg"  class="mr-3 mt-3 rounded-circle" style="width:70px;">
-    <div class="media-body">
-      <h4>Sarthak Joshi <small><i>Posted on February 11, 2020</i></small></h4>
-      <p><b> American Express providing free programme</b></p>
-      <p>AMEX is providing free funding programme for students who cant afford.<br>
-       for further details contact <a href="mailto:nitimangwani@gmail.com?subject=funding programme">Click here to send us email</a><br>
-      </p>
-      <div class="media p-3">
-         <img src="<?=base_url()?>assets/img/officer1.jpg"  class="mr-3 mt-3 rounded-circle" style="width:35px;">
-        <div class="media-body">
-          <h4>Ravindra Khushwaha <small><i>Posted on February 15 2020</i></small></h4>
-          <p>It was amazing, just the navigation could be improved upon.</p>
-          
-        </div>
-      </div>  
-    </div>
-  </div>
-</div>
-<br><br>
-<div class="container mt-3" >
-  <div class="media " style="border-style: solid; padding: 10px;">
-    <img src="<?=base_url()?>assets/img/officer.jpg"  class="mr-3 mt-3 rounded-circle" style="width:70px;">
-    <div class="media-body">
-      <h4>Sumit Singh <small><i>Posted on February 15, 2020</i></small></h4>
-      <p><b> Launched a new app-Paypal</b></p>
-      <p>Have a look at it guys.<br>
-       All criticisms are welcomed<br>
-      </p>
-      <div class="media p-3">
-         <img src="<?=base_url()?>assets/img/officer1.jpg"  class="mr-3 mt-3 rounded-circle" style="width:35px;">
-        <div class="media-body">
-          <h4>Ravindra Khushwaha <small><i>Posted on February 15 2020</i></small></h4>
-          <p>It was amazing, just the navigation could be improved upon.</p>
-          
-        </div>
-      </div>  
-    </div>
-  </div>
-</div>
-</div>
+<?php } ?>
+
+
 
 </html>
