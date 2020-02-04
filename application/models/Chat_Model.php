@@ -6,13 +6,13 @@ class Chat_Model extends CI_Model{
 		parent::__cunstructor();
 	}
 
-	public function login($data){
-		// print_r($data);exit;
-		$this->db->where('username',$data['username']);
-		$this->db->where('password',$data['password']);
-		$data['authenticate'] = $this->db->get('chat_login')->result_array();
-		return $data;
-	}
+	// public function login($data){
+	// 	// print_r($data);exit;
+	// 	$this->db->where('username',$data['username']);
+	// 	$this->db->where('password',$data['password']);
+	// 	$data['authenticate'] = $this->db->get('chat_login')->result_array();
+	// 	return $data;
+	// }
 	public function user_details($data){
 		$this->db->where_not_in('id',$data['user_id']);
 		$this->db->where('status',1);

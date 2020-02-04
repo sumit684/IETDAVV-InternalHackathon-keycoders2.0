@@ -70,14 +70,14 @@ class Alumni extends CI_Controller {
 	}
 
 	public function alumniLogin(){
-		$data = array("mob_no"=>$this->input->post('mob-no'), "password"=>md5($this->input->post('login-password')));
+		$data = array("email_id"=>$this->input->post('email'), "password"=>md5($this->input->post('login-password')),'status'=>1);
 		
 		$result = $this->Alumni_Model->authenticateAlumni($data);
 		// echo "<pre>";
 		// print_r($result[0]['id']);
 		// print_r($result[0]['fname']);exit;
 		if($result){
-			$session_data = array("mob_no"=>$this->input->post('mob-no'),'username'=>$result[0]['fname'],'user_id'=>$result[0]['id']);
+			$session_data = array('email_id'=>$this->input->post('email'),'mob_no'=>$result[0]['mob_no'],'username'=>$result[0]['fname'],'user_id'=>$result[0]['id']);
 			$this->session->set_userdata($session_data);
 
 
@@ -97,7 +97,7 @@ class Alumni extends CI_Controller {
 			$result['alumni'] = $result;
 			$this->load->view('include/alumni/header');
 			$edata['events'] = $this->Alumni_Model->geteventList()->result();
-			$edata['mob_no'] = $data['mob_no'];
+			$edata['mob_no'] = $this->session->userdata('mob_no');
 			$this->load->view('alumni/home',$edata,$data);
 		}else{
 			$this->session->set_flashdata('error','Invalid Details');
@@ -129,6 +129,9 @@ class Alumni extends CI_Controller {
 			"occupation"=>$this->input->post('occupation'),
 			"brief_profile"=>$this->input->post('brief_profile'),
 			"achievements"=>$this->input->post('achievements'),
+			"country"=>$this->input->post('country'),
+			"course"=>$this->input->post('course'),
+
 		);
         // echo $data;
 		$result = $this->Alumni_Model->registerAlumni($data);

@@ -225,7 +225,7 @@
 	</div>
 
 
-	<footer style="height: 20rem;">
+	<footer style="height: 5rem;">
 
 	</footer>
 </body>

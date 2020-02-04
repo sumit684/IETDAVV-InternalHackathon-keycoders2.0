@@ -10,7 +10,9 @@ class Directorate extends CI_Controller {
 	public function index()
 	{	
 		$data['colleges']=$this->Directorate_Model->getCollegeList();
+		$map_data['mapdata'] = $this->Directorate_Model->getregisteredAlumni();
 		$this->load->view('directorate/directorate_home',$data);
+		$this->load->view('directorate/worldMap',$map_data);
 		// echo "This is Alumni Login Page";
 	}
 
@@ -40,5 +42,7 @@ class Directorate extends CI_Controller {
 		$this->Directorate_Model->addAdmin($data);
 		redirect(base_url().'directorate');
 	}
+
+	// show maxdb_param_count()
 	
 }
