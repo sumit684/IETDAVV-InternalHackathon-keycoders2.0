@@ -16,7 +16,7 @@ require 'vendor/autoload.php';
 $address = $edata[0]->email_id;
 $sendname = $edata[0]->fname;
 // body
-$body1 = 'Dear '.$sendname.' your application has been verified and succesfully Registered, Kindly Login with your mob. No. And password on Alumni portal.<br>Thanks and Regards<br> University of GOA ';
+$body1 = 'Dear '.$sendname.' your application has been verified and succesfully Registered, Kindly Login with your Email id And password on Alumni portal.<br>Thanks and Regards<br> University of GOA ';
 //Subject
 $subject1 = 'Sucessfully Registered';
 

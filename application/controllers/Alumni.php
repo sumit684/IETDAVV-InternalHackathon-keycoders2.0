@@ -40,7 +40,6 @@ class Alumni extends CI_Controller {
 
 	public function alumniLogin(){
 		$data = array("email_id"=>$this->input->post('email'), "password"=>md5($this->input->post('login-password')),'status'=>1);
-		
 		$result = $this->Alumni_Model->authenticateAlumni($data);
 		// echo "<pre>";
 		// print_r($result[0]['id']);
