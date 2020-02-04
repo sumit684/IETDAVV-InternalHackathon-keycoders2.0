@@ -10,6 +10,7 @@ class Directorate extends CI_Controller {
 	public function index()
 	{	
 		$data['colleges']=$this->Directorate_Model->getCollegeList();
+		$data['college_type']=$this->Directorate_Model->getCollegeType();
 		$map_data['mapdata'] = $this->Directorate_Model->getregisteredAlumni();
 		$this->load->view('directorate/directorate_home',$data);
 		$this->load->view('directorate/worldMap',$map_data);

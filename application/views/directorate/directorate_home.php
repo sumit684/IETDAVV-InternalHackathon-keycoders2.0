@@ -29,26 +29,32 @@
 	<!-- Data Table -->
 	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
-</head>
+	<style>
+		/* placing the footer on top */
+		tfoot {
+			display: table-header-group!important;
+			}}
+		</style>
+	</head>
 
-<body>
-	<div class="container-fluid">
-		<div class="row" style="margin: 1em;">
-			<img src="<?= base_url() ?>assets/img/logo.jpeg" style="width:10%;">
-			<div class="p-4" style="float: left;">
-				<div class="h1">Govt. of Goa | <b style="color:#858080">Directorate</b>
+	<body>
+		<div class="container-fluid">
+			<div class="row" style="margin: 1em;">
+				<img src="<?= base_url() ?>assets/img/logo.jpeg" style="width:10%;">
+				<div class="p-4" style="float: left;">
+					<div class="h1">Govt. of Goa | <b style="color:#858080">Directorate</b>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="row d-block border border-dark shadow sticky-top">
-			<nav class="navbar navbar-expand-lg navbar-dark bg-dark d-bl">
-				<a class="navbar-brand h2 font-weight-bold active" href="<?= base_url() ?>admin/index"><i class="fas fa-home"></i> Home</a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
+			<div class="row d-block border border-dark shadow sticky-top">
+				<nav class="navbar navbar-expand-lg navbar-dark bg-dark d-bl">
+					<a class="navbar-brand h2 font-weight-bold active" href="<?= base_url() ?>admin/index"><i class="fas fa-home"></i> Home</a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
 
-				<div class="collapse navbar-collapse" id="navbarColor01">
-					<ul class="navbar-nav mr-auto">
+					<div class="collapse navbar-collapse" id="navbarColor01">
+						<ul class="navbar-nav mr-auto">
 						<!-- <li class="nav-item createTest">
 							<a class="nav-link" href="<?= base_url() ?>createTest"></a>
 						</li> -->
@@ -89,145 +95,139 @@
 			</u>
 
 		</div>
-		<div class="row ml-4">
-
-			<nav class="navbar navbar-expand-sm bg-light navbar-light;" style="display: contents; margin-left: auto; margin-right: auto;">
-				<ul class="navbar-nav">
-					<li class="nav-item active mr-5">
-						<div class="form-group">
-							<label>Select Batch</label>
-							<select class="form-control" name="year">
-								<option disabled selected> Select Batch </option>
-								<option value="">1</option>
-								<option>2</option>
-								<option>3</option>
-								<option>4</option>
-								<option>5</option>
-							</select>
-						</div>
-					</li>
-					<li class="nav-item active">
-						<div class="form-group">
-							<label>Select Batch</label>
-							<select class="form-control" name="year">
-								<option disabled selected> Select Course </option>
-								<option value="">1</option>
-								<option>2</option>
-								<option>3</option>
-								<option>4</option>
-								<option>5</option>
-							</select>
-						</div>
-					</li>
-					<!-- <li class="nav-item">
-						<a class="nav-link" href="#">Link</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">Link</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link disabled" href="#">Disabled</a>
-					</li> -->
-				</ul>
-			</nav>
-		</div>
-
 
 		<div class="pt-4">
 			<table class="table table-hover " id="college_table">
 				<thead>
 					<tr>
 						<th scope="col">S.no</th>
-						<th scope="col">College id</th>
 						<th scope="col">College Name</th>
-						<th scope="col">Address</th>
 						<th scope="col">Type</th>
+						<th scope="col">Aided</th>
 						<th scope="col"></th>
 					</tr>
 				</thead>
+				<tfoot style="display: table-header-group;">
+					<tr>
+						<th scope="col" class="hide_filter">S.no</th>
+						<th scope="col">College Name</th>
+						<th scope="col">Type</th>
+						<th scope="col">Aided</th>
+						<th scope="col" class="hide_filter"></th>
+					</tr>
+				</tfoot>
 				<tbody>
 
 					<?php
-					foreach ($colleges as $key => $data) { ?>
-						<tr>
-							<th scope="row"><?= $key + 1 ?></th>
-							<td><?= $data->id; ?></td>
-							<td><?= $data->college_name; ?></td>
-							<td><?= $data->address; ?></td>
-							<td><?= $data->type; ?></td>
-							<td><a href="<?= base_url() ?>directorate/alumniDisplay/<?= $data->id; ?>"><button class="btn btn-primary"> View Alumni</button></a></td>
+					$aided = array('1'=>'Government Colleges',
+						'2'=>'Government Aided Colleges',
+						'3'=>'Non Aided Colleges',
+						'4'=>'Non Aided Private Colleges',
+						'5'=>'Private Aided Colleges');
 
-						</tr>
+						foreach ($colleges as $key => $data) { ?>
+							<tr>
+								<th scope="row"><?= $key + 1 ?></th>
+								<!-- <td><?php print_r($college_type);?></td> -->
+								<td><?= $data->college_name; ?></td>
+								<td><?php print_r($college_type[($data->college_type-1)]['type']); ?></td>
+								<td><?= $aided[$data->aided]; ?></td>
+								<td><a href="<?= base_url() ?>directorate/alumniDisplay/<?= $data->id; ?>"><button class="btn btn-primary"> View Alumni</button></a></td>
 
-					<?php } ?>
-				</tbody>
-			</table>
-			<script type="text/javascript">
-				$(document).ready(function() {
-					$('#college_table').DataTable();
-				});
-			</script>
+							</tr>
 
-		</div>
-	</div>
-
-	<!-- Modal -->
-
-	<div class="modal fade" id="addAdminModal" tabindex="-1" role="dialog" aria-labelledby="addAdminModalLabel" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="addAdminModalLabel">Add Admin</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					<form action="<?=base_url();?>directorate/addAdmin" method="post">
-						<div class="form-group">
-							<label for="recipient-name" class="col-form-label">Name:</label>
-							<input type="text" class="form-control" id="recipient-name" name="name">
-						</div>
-						<div class="form-group">
-							<label for="recipient-name" class="col-form-label">Email Id:</label>
-							<input type="email" class="form-control" id="recipient-name" name="email_id">
-						</div>
-						<div class="form-group">
-							<label for="recipient-name" class="col-form-label">Password:</label>
-							<input type="password" class="form-control" id="recipient-name" name="password">
-						</div>
-						<div class="form-group">
-							<label for="recipient-name" class="col-form-label">Mobile No.:</label>
-							<input type="number" class="form-control" id="recipient-name" name="mob_no">
-						</div>
-						<div class="form-group">
-							<label for="recipient-name" class="col-form-label">College Id:</label>
-							<input type="text" class="form-control" id="recipient-name" name="college_id">
-						</div>
-						<div class="form-group">
-							<label for="recipient-name" class="col-form-label">Status:</label>
-							<input type="text" class="form-control" id="recipient-name" name="status">
-						</div>
-						<div class="form-group">
-							<label for="recipient-name" class="col-form-label">Privilege:</label>
-							<input type="text" class="form-control" id="recipient-name" name="privilege">
-						</div>
-						
+							<?php
+						} ?>
+					</tbody>
 					
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-					<button type="submit" class="btn btn-primary">Add Admin</button>
-				</div>
-				</form>
+				</table>
+				<script type="text/javascript">
+
+					$(document).ready(function() {
+						$('#college_table').DataTable( {
+							initComplete: function () {
+								this.api().columns().every( function () {
+									console.log('running');
+									var column = this;
+									console.log(column.header());
+									var select = $('<select class="form-control"><option value=""> Select to filter</option></select>')
+									.appendTo( $(column.footer()).empty() )
+									.on( 'change', function () {
+										var val = $.fn.dataTable.util.escapeRegex(
+											$(this).val()
+											);
+										column
+										.search( val ? '^'+val+'$' : '', true, false )
+										.draw();
+									} );
+
+									column.data().unique().sort().each( function ( d, j ) {
+										select.append( '<option value="'+d+'">'+d+'</option>' )
+									} );
+								} );
+							}
+						} );
+						$('.hide_filter select').hide();
+					} );
+				</script>
+
 			</div>
 		</div>
-	</div>
+		<div class="modal fade" id="addAdminModal" tabindex="-1" role="dialog" aria-labelledby="addAdminModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="addAdminModalLabel">Add Admin</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<form action="<?=base_url();?>directorate/addAdmin" method="post">
+							<div class="form-group">
+								<label for="recipient-name" class="col-form-label">Name:</label>
+								<input type="text" class="form-control" id="recipient-name" name="name">
+							</div>
+							<div class="form-group">
+								<label for="recipient-name" class="col-form-label">Email Id:</label>
+								<input type="email" class="form-control" id="recipient-name" name="email_id">
+							</div>
+							<div class="form-group">
+								<label for="recipient-name" class="col-form-label">Password:</label>
+								<input type="password" class="form-control" id="recipient-name" name="password">
+							</div>
+							<div class="form-group">
+								<label for="recipient-name" class="col-form-label">Mobile No.:</label>
+								<input type="number" class="form-control" id="recipient-name" name="mob_no">
+							</div>
+							<div class="form-group">
+								<label for="recipient-name" class="col-form-label">College Id:</label>
+								<input type="text" class="form-control" id="recipient-name" name="college_id">
+							</div>
+							<div class="form-group">
+								<label for="recipient-name" class="col-form-label">Status:</label>
+								<input type="text" class="form-control" id="recipient-name" name="status">
+							</div>
+							<div class="form-group">
+								<label for="recipient-name" class="col-form-label">Privilege:</label>
+								<input type="text" class="form-control" id="recipient-name" name="privilege">
+							</div>
 
 
-	<footer style="height: 5rem;">
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+							<button type="submit" class="btn btn-primary">Add Admin</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
 
-	</footer>
-</body>
 
-</html>
+		<footer style="height: 5rem;">
+
+		</footer>
+	</body>
+
+	</html>
