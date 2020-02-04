@@ -2,49 +2,7 @@
 			<u>	<h1 class="text-center pt-4">ALUMNI LIST</h1></u>
 
 		</div>
-		
-		<div class="row ml-4">
-
-			<nav class="navbar navbar-expand-sm bg-light navbar-light;" style="display: contents; margin-left: auto; margin-right: auto;">
-				<ul class="navbar-nav">
-					<li class="nav-item active mr-5">
-						<div class="form-group">
-							<label>Select Batch</label>
-							<select class="form-control" name="year">
-								<option disabled selected> Select Batch </option>
-								<option value="">1</option>
-								<option>2</option>
-								<option>3</option>
-								<option>4</option>
-								<option>5</option>
-							</select>
-						</div>
-					</li>
-					<li class="nav-item active">
-						<div class="form-group">
-							<label>Select Batch</label>
-							<select class="form-control" name="year">
-								<option disabled selected> Select Course </option>
-								<option value="">1</option>
-								<option>2</option>
-								<option>3</option>
-								<option>4</option>
-								<option>5</option>
-							</select>
-						</div>
-					</li>
-					<!-- <li class="nav-item">
-						<a class="nav-link" href="#">Link</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">Link</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link disabled" href="#">Disabled</a>
-					</li> -->
-				</ul>
-			</nav>
-		</div>
+	
 		<div class="pt-4">
 			<table class="table table-hover " id="alumni_table">
 				<thead>
@@ -76,20 +34,50 @@
 				</tbody>
 			</table>
 			<script type="text/javascript">
-				$(document).ready( function () {
-					$('#alumni_table').DataTable();
+				$(document).ready(function() {
+					$('#alumni_table').DataTable( {
+						stateSave: true,
+						dom: 'lBfrtip',
+						buttons: ['excelHtml5',  'copyHtml5',
+						'excelHtml5',
+						'csvHtml5',
+						'pdfHtml5'],
+
+						initComplete: function () {
+							this.api().columns().every( function () {
+								console.log('running');
+								var column = this;
+								console.log(column.header());
+								var select = $('<select class="form-control"><option value=""> Select to filter</option></select>')
+								.appendTo( $(column.footer()).empty() )
+								.on( 'change', function () {
+									var val = $.fn.dataTable.util.escapeRegex(
+										$(this).val()
+										);
+									column
+									.search( val ? '^'+val+'$' : '', true, false )
+									.draw();
+								} );
+
+								column.data().unique().sort().each( function ( d, j ) {
+									select.append( '<option value="'+d+'">'+d+'</option>' )
+								} );
+
+							} );
+						}
+					} );
+					$('.hide_filter select').hide();
 				} );
 			</script>
 
 		</div>
 	</div>
-    <div class="container">
-	<script>
-function setEmailid(emailid) {
-//console.log(`${emailid} you called me`);
-document.getElementById("email_id").value = emailid;
-}
-</script>
+	<div class="container">
+		<script>
+			function setEmailid(emailid) {
+				document.getElementById("email_id").value = emailid;
+			}
+		</script>
 
 		<!-- The Modal -->
 		<div class="modal" id="myModal">
@@ -123,7 +111,7 @@ document.getElementById("email_id").value = emailid;
 							</div>
 
 						</div>
-                         <input id="email_id" name="emailid" type="hidden" value="default">
+						<input id="email_id" name="emailid" type="hidden" value="default">
 						<!-- Modal footer -->
 						<div class="modal-footer">
 							<button type="submit" class="btn btn-danger" >Submit</button>
@@ -136,7 +124,7 @@ document.getElementById("email_id").value = emailid;
 
 	</div>
 	<footer style="height: 20rem;">
-		
+
 	</footer>
 </body>
 </html>

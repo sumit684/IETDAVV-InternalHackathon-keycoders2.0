@@ -17,24 +17,23 @@
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-	<script type="text/javascript">
+	
+	<!-- Datatables -->
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jq-3.3.1/jszip-2.5.0/dt-1.10.20/af-2.3.4/b-1.6.1/b-colvis-1.6.1/b-flash-1.6.1/b-html5-1.6.1/b-print-1.6.1/cr-1.5.2/fc-3.3.0/fh-3.1.6/kt-2.5.1/r-2.2.3/rg-1.1.1/rr-1.2.6/sc-2.0.1/sp-1.0.1/sl-1.3.1/datatables.min.css"/>
 
-		var base_url = "<?=base_url()?>";
-	</script>
-	<!-- <script src="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css"></script>
-		<script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script> -->
-		<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
-		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
-	</head>
-	<body>
-		<div class="container-fluid" >
-			<div class="row" style="margin: 1em;">
-				<img src="<?= base_url()?>assets/img/logo.jpeg"  style="width:10%;" class="img-fluid">
-				<div class="p-4" align="right">
-					<div class="h1" align="right">Govt. of Goa | <b style="color:#858080">Admin</b>
-					</div>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jq-3.3.1/jszip-2.5.0/dt-1.10.20/af-2.3.4/b-1.6.1/b-colvis-1.6.1/b-flash-1.6.1/b-html5-1.6.1/b-print-1.6.1/cr-1.5.2/fc-3.3.0/fh-3.1.6/kt-2.5.1/r-2.2.3/rg-1.1.1/rr-1.2.6/sc-2.0.1/sp-1.0.1/sl-1.3.1/datatables.min.js"></script>
+</head>
+<body>
+	<div class="container-fluid" >
+		<div class="row" style="margin: 1em;">
+			<img src="<?= base_url()?>assets/img/logo.jpeg"  style="width:10%;" class="img-fluid">
+			<div class="p-4" align="right">
+				<div class="h1" align="right">Govt. of Goa | <b style="color:#858080">Admin</b>
 				</div>
 			</div>
+		</div>
 
 			<!-- <div class="row">
 				<img src="<?= base_url()?>assets/img/logo.jpeg" class="m-3 col-lg-3 col-md-10 col-sm-10 col-xs-10 mr-auto img-fluid"  style="max-width:180px;">

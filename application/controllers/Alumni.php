@@ -56,14 +56,15 @@ class Alumni extends CI_Controller {
 	public function jobs_page(){
 		if($this->session->userdata('mob_no')!=NULL){
 			$edata['events'] = $this->Alumni_Model->geteventList()->result();
-		
-						$this->load->view('include/alumni/header');
-						$this->load->view('alumni/jobs',$edata);}
+
+			$this->load->view('include/alumni/header');
+			$this->load->view('alumni/jobs',$edata);}
 			// redirect(base_url().'alumni/home');
-		else{	$this->load->view('include/alumni/header');
-				$this->load->view('alumni/alumniLogin');
-	}}
-	
+			else{	$this->load->view('include/alumni/header');
+			$this->load->view('alumni/alumniLogin');
+		}
+	}
+
 	public function destroy(){
 		$this->session->sess_destroy();
 		redirect(base_url().'alumni');
@@ -78,20 +79,16 @@ class Alumni extends CI_Controller {
 		if($result){
 			$session_data = array('email_id'=>$this->input->post('email'),'mob_no'=>$result[0]['mob_no'],'username'=>$result[0]['fname'],'user_id'=>$result[0]['id'],'lname'=>$result[0]['lname'],'role'=>'alumni');
 			$this->session->set_userdata($session_data);
-			
+
 			$user_id = $this->session->userdata('user_id');
 			$id = $this->Chat_Model->check_user_id(array('user_id'=>$user_id));
 				// $id= $this->Chat_Model->update_last_activity(array('user_id'=>$user_id));
 			if($id == TRUE){
 				$this->Chat_Model->update_last_activity(array('user_id'=>$user_id));
-
 			}
 			else{
 				$this->Chat_Model->insert_last_activity(array('user_id'=>$user_id));
 			}
-
-
-
 			$result['alumni'] = $result;
 			$this->load->view('include/alumni/header');
 			$edata['events'] = $this->Alumni_Model->geteventList()->result();
@@ -109,7 +106,7 @@ class Alumni extends CI_Controller {
 	}
 
 	public function register(){
-		
+
 		$data = array(
 			"fname"=>$this->input->post('fname'),
 			"lname"=>$this->input->post('lname'),
@@ -155,7 +152,7 @@ class Alumni extends CI_Controller {
 		$this->load->view('alumni/home',$data);
 	}
 	public function profile(){
-		
+
 		$this->check_login();
 		$data = array('mob_no'=>$this->session->userdata('mob_no'));
 		$result['alumni'] = $this->Alumni_Model->getAlumniDetails($data);
@@ -191,12 +188,8 @@ class Alumni extends CI_Controller {
 
 	public function addEvents(){
 		$this->check_login();
-		// $this->input->post('event_name');
-		// $this->input->post('event_desc');
 		$data = array("event_name"=>$this->input->post('event_name'),"event_desc"=>$this->input->post('event_desc'),"college_id"=>'1',"admin_id"=>'1',"event_date"=>'2020-01-01');
-		
 		$this->db->insert('events',$data);
-
 		$data['events'] = $this->Alumni_Model->geteventList()->result();
 		redirect(base_url().'alumni/home');
 	}
