@@ -169,13 +169,13 @@
 									<div class="rs-select2 js-select-simple select--no-search">
 										<select name="course" class="input--style-4" style="height: 30px;">
 											<option selected="" disabled=""> Select Course</option>
-											<option value="B.E.">B.E.</option>
-											<option value="M.E.">M.E.</option>
-											<option value="B.Tech.">B.Tech.</option>
-											<option value="M.Tech">M.Tech.</option>
-											<option value="B.Com.">B.Com.</option>
-											<option value="M.Com.">M.Com.</option>
-											<option value="Others">Others</option>					
+											<option value="1">B.E.</option>
+											<option value="2">M.E.</option>
+											<option value="3">B.Tech.</option>
+											<option value="4">M.Tech.</option>
+											<option value="5">B.Com.</option>
+											<option value="6">M.Com.</option>
+											<option value="7">Others</option>					
 										</select>
 										<div class="select-dropdown"></div>
 									</div>

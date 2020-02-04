@@ -34,7 +34,9 @@ class Admin_model extends CI_Model {
 		);
 		$this->db->where('id', $id);
 		$this->db->update('alumni',$data);
-		return $this->db->get_where('alumni',array('id'=>$id))->result();
+		$data = $this->db->get_where('alumni',array('id'=>$id))->result();
+		$this->Chat_Model->insert_last_activity(array('user_id'=>$user_id));
+		return $data;
 	}
 	public function rejectRequest($id){
 		$this ->db->where('id', $id);
