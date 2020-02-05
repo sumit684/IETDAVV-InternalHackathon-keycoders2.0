@@ -201,7 +201,8 @@ class Admin extends CI_Controller {
 		// $data['events'] = $this->Alumni_Model->geteventList()->result();
 		if($this->session->userdata('role')=='alumni'){
 		redirect(base_url().'alumni/newsletters');}
-		else{redirect(base_url().'admin/newsletter');}
+		else if($this->session->userdata('role')=='admin'){redirect(base_url().'admin/newsletter');}
+		else if($this->session->userdata('role')=='director'){redirect(base_url().'Directorate/newsletters');}
 	}
 	
 
