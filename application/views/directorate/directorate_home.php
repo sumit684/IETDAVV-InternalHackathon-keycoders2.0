@@ -147,12 +147,10 @@
 
 					$(document).ready(function() {
 						$('#college_table').DataTable( {
-							stateSave: true,
+							// stateSave: true,
 							dom: 'lBfrtip',
-							buttons: ['excelHtml5',  'copyHtml5',
-							'excelHtml5',
-							'csvHtml5',
-							'pdfHtml5'],
+							buttons: ['excelHtml5',  'copyHtml5','csvHtml5','pdfHtml5'],
+							select:true,
 
 							initComplete: function () {
 								this.api().columns().every( function () {
