@@ -21,6 +21,16 @@ class Directorate_Model extends CI_Model {
 		return $this->db->get_where('alumni',array('status'=>'1'))->result();
 		
 	}
+
+	public function newsLetters(){
+		return $this->db->get('newsletter');
+	}
+	public function comments(){
+		return $this->db->get('comments');
+	}
+
+	 
+
 	public function addAdmin($data)
 	{
 		$this->db->insert('admin',$data);

@@ -9,9 +9,13 @@ class Directorate extends CI_Controller {
 
 	public function index()
 	{	
+		$session_data = array('mob_no'=>"1234567890",'username'=>"DIRECTORATE OF GOA",'role'=>'director');
+		$this->session->set_userdata($session_data);
+
 		$data['colleges']=$this->Directorate_Model->getCollegeList();
 		$data['college_type']=$this->Directorate_Model->getCollegeType();
 		$map_data['mapdata'] = $this->Directorate_Model->getregisteredAlumni();
+		$this->load->view('include/directorate/header');
 		$this->load->view('directorate/directorate_home',$data);
 		$this->load->view('directorate/worldMap',$map_data);
 		// echo "This is Alumni Login Page";
@@ -42,6 +46,15 @@ class Directorate extends CI_Controller {
 	);
 		$this->Directorate_Model->addAdmin($data);
 		redirect(base_url().'directorate');
+	}
+
+	public function newsletters(){
+		
+		
+		$newsletter['newsletters'] = $this->Directorate_Model->newsLetters()->result();
+		$newsletter['comments'] = $this->Directorate_Model->comments()->result();
+		$this->load->view('include/directorate/header');
+		$this->load->view('admin/college/newsletter',$newsletter);
 	}
 
 	// show maxdb_param_count()
